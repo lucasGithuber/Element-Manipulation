@@ -18,12 +18,16 @@ public class Categories {
             new CustomItemStack(Textures.EMELEMENTS_GUI.getAsItem(), BukkitComponentSerializer.legacy().serialize
                     (MM.parse("<gradient:#ff0000:#f4ff00>Elements</gradient>")))
     );
+    public static final ItemGroup EMMACHINES = new SubGroup(
+            "em_machines",
+            new CustomItemStack(Textures.EMMACHINES_GUI.getAsItem(), BukkitComponentSerializer.legacy().serialize
+                    (MM.parse("<gradient:#A3A3A3:#818181>Machines</gradient>"))));
 
     public static final ItemGroup EMMAIN = new MultiGroup(
             "em_manipulation",
             new CustomItemStack(Textures.EMMAIN_GUI.getAsItem(), BukkitComponentSerializer.legacy().serialize
-                    (MM.parse("<gradient:#ff0000:#f4ff00>Elements Manipulation</gradient>"))),
-            EMELEMENTS
+                    (MM.parse("<rainbow>Elements Manipulation</rainbow>"))),
+            EMELEMENTS, EMMACHINES
     );
 
 }
