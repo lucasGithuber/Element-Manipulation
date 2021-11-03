@@ -2,9 +2,8 @@ package me.lucasgithuber.elementmanipulation;
 
 import me.lucasgithuber.elementmanipulation.elements.nonmetals.EM_Hydrogen;
 import me.lucasgithuber.elementmanipulation.elements.nonmetals.EM_Oxygen;
-import me.lucasgithuber.elementmanipulation.machines.EM_Deconstructor;
+import me.lucasgithuber.elementmanipulation.machines.EM_JunctionTable;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
-
 
 
 public class Setup {
@@ -15,7 +14,8 @@ public class Setup {
             // Items
             new EM_Hydrogen(Categories.EMELEMENTS).register(p);
             new EM_Oxygen(Categories.EMELEMENTS).register(p);
-            new EM_Deconstructor(Categories.EMMACHINES).register(p);
+            new EM_JunctionTable(Categories.EMMACHINES).register(p);
+
         }
 
     }

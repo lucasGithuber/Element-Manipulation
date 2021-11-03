@@ -26,7 +26,6 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
     public void enable() {
         // Instance and super
         i = this;
-
         // Setup items and listeners
         Setup.setup(this);
     }

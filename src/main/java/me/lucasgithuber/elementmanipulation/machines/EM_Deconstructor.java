@@ -1,21 +1,19 @@
 package me.lucasgithuber.elementmanipulation.machines;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.utils.itemstack.SlimefunGuideItem;
-import me.lucasgithuber.elementmanipulation.elements.Items;
-import me.lucasgithuber.elementmanipulation.utils.MachinesGUI;
+import me.lucasgithuber.elementmanipulation.Items;
+import me.lucasgithuber.elementmanipulation.utils.GiantTable;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
 
 
-public class EM_Deconstructor extends MachinesGUI implements RecipeDisplayItem {
+public class EM_Deconstructor extends GiantTable implements RecipeDisplayItem {
 
     public EM_Deconstructor(ItemGroup c) {
 
@@ -34,11 +32,6 @@ public class EM_Deconstructor extends MachinesGUI implements RecipeDisplayItem {
                 new ItemStack[] {new ItemStack(Material.BUCKET),
                         new CustomItemStack(Items.EM_Hydrogen, 2), new CustomItemStack(Items.EM_Oxygen, 1)
                 });
-    }
-
-    @Override
-    public ItemStack getProgressBar() {
-        return new ItemStack(Material.NETHERITE_PICKAXE);
     }
 
     @Nonnull
