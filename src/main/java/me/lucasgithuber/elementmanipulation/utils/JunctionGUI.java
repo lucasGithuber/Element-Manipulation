@@ -53,11 +53,11 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
  *
  *
  */
-public abstract class MachinesGUI extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
+public abstract class JunctionGUI extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
 
-    private static final int[] BORDER = {3, 11, 18, 19, 20};
-    private static final int[] BORDER_IN = {1, 9,10};
-    private static final int[] BORDER_OUT = { 3, 4, 5, 6, 7, 8, 12, 17, 21, 26, 30, 35, 39, 40, 41, 42, 43, 44};
+    private static final int[] BORDER = {4, 13, 22, 31, 40};
+    private static final int[] BORDER_IN = {3, 12, 21, 30, 39};
+    private static final int[] BORDER_OUT = { 5, 14, 23, 32, 41};
 
     protected final List<MachineRecipe> recipes = new ArrayList<>();
     private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
@@ -67,7 +67,7 @@ public abstract class MachinesGUI extends SlimefunItem implements InventoryBlock
     private int processingSpeed = -1;
 
     @ParametersAreNonnullByDefault
-    protected MachinesGUI(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    protected JunctionGUI(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
         processor.setProgressBar(getProgressBar());
@@ -96,7 +96,7 @@ public abstract class MachinesGUI extends SlimefunItem implements InventoryBlock
     }
 
     @ParametersAreNonnullByDefault
-    protected MachinesGUI(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, ItemStack recipeOutput) {
+    protected JunctionGUI(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, ItemStack recipeOutput) {
         this(itemGroup, item, recipeType, recipe);
         this.recipeOutput = recipeOutput;
     }
@@ -119,7 +119,7 @@ public abstract class MachinesGUI extends SlimefunItem implements InventoryBlock
             preset.addItem(i, ChestMenuUtils.getOutputSlotTexture(), ChestMenuUtils.getEmptyClickHandler());
         }
 
-        preset.addItem(21, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
 
         for (int i : getOutputSlots()) {
             preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
@@ -200,7 +200,7 @@ public abstract class MachinesGUI extends SlimefunItem implements InventoryBlock
      *
      * @return This method will return the current instance of  AContainer, so that can be chained.
      */
-    public final MachinesGUI setCapacity(int capacity) {
+    public final JunctionGUI setCapacity(int capacity) {
         Validate.isTrue(capacity > 0, "The capacity must be greater than zero!");
 
         if (getState() == ItemState.UNREGISTERED) {
@@ -219,7 +219,7 @@ public abstract class MachinesGUI extends SlimefunItem implements InventoryBlock
      *
      * @return This method will return the current instance of {@link AContainer}, so that can be chained.
      */
-    public final MachinesGUI setProcessingSpeed(int speed) {
+    public final JunctionGUI setProcessingSpeed(int speed) {
         Validate.isTrue(speed > 0, "The speed must be greater than zero!");
 
         this.processingSpeed = speed;
@@ -234,7 +234,7 @@ public abstract class MachinesGUI extends SlimefunItem implements InventoryBlock
      *
      * @return This method will return the current instance of {@link AContainer}, so that can be chained.
      */
-    public final MachinesGUI setEnergyConsumption(int energyConsumption) {
+    public final JunctionGUI setEnergyConsumption(int energyConsumption) {
         Validate.isTrue(energyConsumption > 0, "The energy consumption must be greater than zero!");
         Validate.isTrue(energyCapacity > 0, "You must specify the capacity before you can set the consumption amount.");
         Validate.isTrue(energyConsumption <= energyCapacity, "The energy consumption cannot be higher than the capacity (" + energyCapacity + ')');
@@ -312,12 +312,12 @@ public abstract class MachinesGUI extends SlimefunItem implements InventoryBlock
 
     @Override
     public int[] getInputSlots() {
-        return new int[] {0  };
+        return new int[] {0, 1, 2, 9, 10, 11, 18, 19, 20, 27, 28, 29,36,37, 38};
     }
 
     @Override
     public int[] getOutputSlots() {
-        return new int[] {13, 14, 15, 16,22,23,24,25,31,32,33,34 };
+        return new int[] {6, 7, 8, 15, 16, 17, 24,25,26,33,34,35,42,43,44};
     }
 
     @Override
@@ -344,7 +344,7 @@ public abstract class MachinesGUI extends SlimefunItem implements InventoryBlock
 
             @Override
             public void tick(Block b, SlimefunItem sf, Config data) {
-                MachinesGUI.this.tick(b);
+                JunctionGUI.this.tick(b);
             }
 
             @Override
@@ -362,10 +362,10 @@ public abstract class MachinesGUI extends SlimefunItem implements InventoryBlock
             if (takeCharge(b.getLocation())) {
 
                 if (!currentOperation.isFinished()) {
-                    processor.updateProgressBar(inv, 21, currentOperation);
+                    processor.updateProgressBar(inv, 22, currentOperation);
                     currentOperation.addProgress(1);
                 } else {
-                    inv.replaceExistingItem(21, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "));
+                    inv.replaceExistingItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "));
 
                     for (ItemStack output : currentOperation.getResults()) {
                         inv.pushItem(output.clone(), getOutputSlots());

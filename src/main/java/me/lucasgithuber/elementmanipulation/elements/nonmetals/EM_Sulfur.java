@@ -13,10 +13,10 @@ import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
 
-public class EM_Hydrogen extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
-    public EM_Hydrogen (ItemGroup c) {
+public class EM_Sulfur extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
+    public EM_Sulfur (ItemGroup c) {
 
-        super(c, Items.EM_Hydrogen, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
+        super(c, Items.EM_Sulfur, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
                 null, null, null,
                 null,null,null
                 ,null,null,null

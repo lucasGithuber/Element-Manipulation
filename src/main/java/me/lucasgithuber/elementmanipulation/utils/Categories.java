@@ -32,7 +32,7 @@ public class Categories {
 
     public static final ItemGroup EMMAIN = new MultiGroup(
             "em_manipulation",
-            new CustomItemStack(SlimefunItems.NUCLEAR_REACTOR, BukkitComponentSerializer.legacy().serialize
+            new CustomItemStack(Material.NETHERITE_BLOCK, BukkitComponentSerializer.legacy().serialize
                     (MM.parse("<gradient:#5e4fa2:#f79459>Elements Manipulation</gradient>"))),
             EMELEMENTS, EMMACHINES
     );

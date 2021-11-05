@@ -7,5 +7,5 @@ import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 
 public class RecipeTypes {
-    public static final RecipeType JUNCTION_TABLE_TYPE = new RecipeType(new NamespacedKey(ElementManipulation.i(), "soul_collector_type"), Items.EM_JUNCTION_TABLE, "", ChatColor.DARK_PURPLE+"Crafted in the Junction Table");
+    public static final RecipeType EM_DECONSTRUCTOR = new RecipeType(new NamespacedKey(ElementManipulation.i(), "em_deconstructor_recipetype"), Items.EM_Deconstructor, "", "&8Extract using the deconstructor");
 }

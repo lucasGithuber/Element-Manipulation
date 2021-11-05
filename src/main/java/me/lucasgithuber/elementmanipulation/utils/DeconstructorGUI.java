@@ -53,11 +53,11 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
  *
  *
  */
-public abstract class GiantTable extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
+public abstract class DeconstructorGUI extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
 
-    private static final int[] BORDER = {};
-    private static final int[] BORDER_IN = {};
-    private static final int[] BORDER_OUT = { 33, 34, 35, 42, 44, 51,52,53};
+    private static final int[] BORDER = {2, 11, 20, 29, 38};
+    private static final int[] BORDER_IN = {1,10, 19, 28, 37};
+    private static final int[] BORDER_OUT = { 3, 4, 5, 6, 7, 8, 12, 17, 21, 26, 30, 35, 39, 40, 41, 42, 43, 44};
 
     protected final List<MachineRecipe> recipes = new ArrayList<>();
     private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
@@ -67,9 +67,12 @@ public abstract class GiantTable extends SlimefunItem implements InventoryBlock,
     private int processingSpeed = -1;
 
     @ParametersAreNonnullByDefault
-    protected GiantTable(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    protected DeconstructorGUI(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
+
+        processor.setProgressBar(getProgressBar());
         createPreset(this, getInventoryTitle(), this::constructMenu);
+
         addItemHandler(onBlockBreak());
     }
 
@@ -93,7 +96,7 @@ public abstract class GiantTable extends SlimefunItem implements InventoryBlock,
     }
 
     @ParametersAreNonnullByDefault
-    protected GiantTable(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, ItemStack recipeOutput) {
+    protected DeconstructorGUI(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, ItemStack recipeOutput) {
         this(itemGroup, item, recipeType, recipe);
         this.recipeOutput = recipeOutput;
     }
@@ -115,6 +118,8 @@ public abstract class GiantTable extends SlimefunItem implements InventoryBlock,
         for (int i : BORDER_OUT) {
             preset.addItem(i, ChestMenuUtils.getOutputSlotTexture(), ChestMenuUtils.getEmptyClickHandler());
         }
+
+        preset.addItem(21, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
 
         for (int i : getOutputSlots()) {
             preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
@@ -153,6 +158,7 @@ public abstract class GiantTable extends SlimefunItem implements InventoryBlock,
      *
      * @return The {@link ItemStack} to use as the progress bar
      */
+    public abstract ItemStack getProgressBar();
 
     /**
      * This method returns the max amount of electricity this machine can hold.
@@ -194,7 +200,7 @@ public abstract class GiantTable extends SlimefunItem implements InventoryBlock,
      *
      * @return This method will return the current instance of  AContainer, so that can be chained.
      */
-    public final GiantTable setCapacity(int capacity) {
+    public final DeconstructorGUI setCapacity(int capacity) {
         Validate.isTrue(capacity > 0, "The capacity must be greater than zero!");
 
         if (getState() == ItemState.UNREGISTERED) {
@@ -213,7 +219,7 @@ public abstract class GiantTable extends SlimefunItem implements InventoryBlock,
      *
      * @return This method will return the current instance of {@link AContainer}, so that can be chained.
      */
-    public final GiantTable setProcessingSpeed(int speed) {
+    public final DeconstructorGUI setProcessingSpeed(int speed) {
         Validate.isTrue(speed > 0, "The speed must be greater than zero!");
 
         this.processingSpeed = speed;
@@ -228,7 +234,7 @@ public abstract class GiantTable extends SlimefunItem implements InventoryBlock,
      *
      * @return This method will return the current instance of {@link AContainer}, so that can be chained.
      */
-    public final GiantTable setEnergyConsumption(int energyConsumption) {
+    public final DeconstructorGUI setEnergyConsumption(int energyConsumption) {
         Validate.isTrue(energyConsumption > 0, "The energy consumption must be greater than zero!");
         Validate.isTrue(energyCapacity > 0, "You must specify the capacity before you can set the consumption amount.");
         Validate.isTrue(energyConsumption <= energyCapacity, "The energy consumption cannot be higher than the capacity (" + energyCapacity + ')');
@@ -306,12 +312,12 @@ public abstract class GiantTable extends SlimefunItem implements InventoryBlock,
 
     @Override
     public int[] getInputSlots() {
-        return new int[] {0, 1,2,3,4,5,9,10,11,12,13,14,18,19,20,21,22,23,27,28,29,30,31,32,36,37,38,39,40,41,45,46,47,48,49,50,54,55,56,57,58,59  };
+        return new int[] {0, 9, 18, 27, 36};
     }
 
     @Override
     public int[] getOutputSlots() {
-        return new int[] {52 };
+        return new int[] {13, 14, 15, 16,22,23,24,25,31,32,33,34 };
     }
 
     @Override
@@ -338,7 +344,7 @@ public abstract class GiantTable extends SlimefunItem implements InventoryBlock,
 
             @Override
             public void tick(Block b, SlimefunItem sf, Config data) {
-                GiantTable.this.tick(b);
+                DeconstructorGUI.this.tick(b);
             }
 
             @Override
