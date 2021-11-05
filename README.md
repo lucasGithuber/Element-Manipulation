@@ -1,6 +1,12 @@
 # Element Manipulation
-This is a slimefun 4 addon that gives the player the capacity to turn items into periodic 
-table elements, then turn these elements into other items
-Examples:
-water in the deconstructor, gives Hydrogen, Oxygen
-use these to make other materials
+This addon gives the players the capacity to create periodic table elements from items, and items from periodic table elements
+This addon is still in a beta, it only has 3 recipes, that are:
+Hydrogen from water (deconstructor)
+Oxygen from water (deconstructor)
+water from these two elements(junction table)
+
+## For the server owners
+
+I will add a way to config how many energy the machines uses, and a way to configure elements that
+element collector can colect
+(element collector is coming soon)
