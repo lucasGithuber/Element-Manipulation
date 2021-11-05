@@ -1,6 +1,6 @@
 # Element Manipulation
-This addon gives the players the capacity to create periodic table elements from items, and items from periodic table elements
-This addon is still in a beta, it only has 3 recipes, that are:
+this addon gives the players the capacity to create elements from items, and items from elements
+this addon is still in a beta, it only has 3 recipes, that are:
 Hydrogen from water (deconstructor)
 Oxygen from water (deconstructor)
 water from these two elements(junction table)
