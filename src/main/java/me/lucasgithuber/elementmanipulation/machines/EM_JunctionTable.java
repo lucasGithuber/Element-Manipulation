@@ -24,10 +24,10 @@ public class EM_JunctionTable extends JunctionGUI implements RecipeDisplayItem {
 
     public EM_JunctionTable(ItemGroup c) {
 
-        super(c, Items.EM_Junction_table, RecipeType.ANCIENT_ALTAR, new ItemStack[]{
-                Items.EM_Hydrogen, SlimefunItems.ELECTRO_MAGNET, Items.EM_Oxygen,
-                SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.ANCIENT_ALTAR, SlimefunItems.BLISTERING_INGOT_3,
-                SlimefunItems.ANCIENT_PEDESTAL, SlimefunItems.HEATED_PRESSURE_CHAMBER, SlimefunItems.ANCIENT_PEDESTAL
+        super(c, Items.EM_Junction_table, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+                new ItemStack(Material.NETHER_STAR), new ItemStack(Material.GLASS), new ItemStack(Material.NETHER_STAR),
+                SlimefunItems.REINFORCED_PLATE, SlimefunItems.CRAFTING_MOTOR, SlimefunItems.REINFORCED_PLATE,
+                new ItemStack(Material.BLACK_CONCRETE), SlimefunItems.LARGE_CAPACITOR, new ItemStack(Material.BLACK_CONCRETE)
         });
         this.setProcessingSpeed(1).setCapacity(1000000).setEnergyConsumption(2048);
 
@@ -39,10 +39,39 @@ public class EM_JunctionTable extends JunctionGUI implements RecipeDisplayItem {
     Configuration cfg = em.getConfig();
     public void registerDefaultRecipes() {
 // adding recipes
-        registerRecipe(4, new ItemStack[] {new CustomItemStack(Items.EM_Hydrogen, 2), new CustomItemStack(Items.EM_Oxygen), new ItemStack(Material.BUCKET)},
-                new ItemStack[] {new ItemStack(Material.WATER_BUCKET)
+        registerRecipe(4, new ItemStack[]{new CustomItemStack(Items.EM_Hydrogen, 2), new CustomItemStack(Items.EM_Oxygen), new ItemStack(Material.BUCKET)},
+                new ItemStack[]{new ItemStack(Material.WATER_BUCKET)
                 });
+
+        registerRecipe(4, new ItemStack[]{new CustomItemStack(Items.EM_Carbon, 20), new CustomItemStack(Items.EM_Hydrogen, 5)},
+                new ItemStack[]{new ItemStack(Material.CARROT)
+                });
+
+        registerRecipe(4, new ItemStack[]{new CustomItemStack(Items.EM_Carbon, 7),
+                        new CustomItemStack(Items.EM_Hydrogen, 8), new CustomItemStack(Items.EM_Nitrogen, 4),
+                        new CustomItemStack(Items.EM_Oxygen, 2)
+                },
+                new ItemStack[]{new ItemStack(Material.COCOA_BEANS)});
+
+        registerRecipe(4, new ItemStack[]{new CustomItemStack(Items.EM_Carbon, 19),
+                        new CustomItemStack(Items.EM_Hydrogen, 14), new CustomItemStack(Items.EM_Sulfur, 1),
+                        new CustomItemStack(Items.EM_Oxygen, 5)
+                },
+                new ItemStack[]{new ItemStack(Material.NETHER_WART)});
+
+        registerRecipe(4, new ItemStack[]{new CustomItemStack(Items.EM_Carbon, 6),
+                        new CustomItemStack(Items.EM_Hydrogen, 10), new CustomItemStack(Items.EM_Nitrogen, 1),
+                        new CustomItemStack(Items.EM_Oxygen, 5)
+                },
+                new ItemStack[]{new ItemStack(Material.NETHER_WART)});
+
+        registerRecipe(4, new ItemStack[]{new CustomItemStack(Items.EM_Hydrogen, 3),
+                new CustomItemStack(Items.EM_Oxygen, 2)
+
+                },
+                new ItemStack[]{new ItemStack(Material.PUMPKIN_SEEDS)});
         }
+
     @Override
     public List<ItemStack> getDisplayRecipes() {
         List<ItemStack> displayRecipes = new ArrayList<>(recipes.size() * 2);

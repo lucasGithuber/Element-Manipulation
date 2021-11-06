@@ -53,7 +53,7 @@ public class Items {
     }
 
     public static final SlimefunItemStack EM_Nitrogen = new SlimefunItemStack("EM_NITROGEN", new ItemStack(Material.LIME_DYE), BukkitComponentSerializer.legacy().serialize
-            (MM.parse("<gradient:#38CA08:#25FF09>Carbon</gradient>")), ChatColor.of(Color.BLUE)+"DRIP", "&anon-metal");
+            (MM.parse("<gradient:#38CA08:#25FF09>Nitrogen</gradient>")), ChatColor.of(Color.BLUE)+"DRIP", "&anon-metal");
 
     static {
         ItemMeta meta = EM_Nitrogen.getItemMeta();
@@ -150,6 +150,18 @@ public class Items {
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         EM_Francium.setItemMeta(meta);
         EM_Francium.addUnsafeEnchantment(Enchantment.WATER_WORKER, 3);
+    }
+
+    //halogens
+
+    public static final SlimefunItemStack EM_Fluorine = new SlimefunItemStack("EM_FLUORINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
+            (MM.parse("<gradient:#EEFF00:#97FFE5>Fluorine</gradient>")), "", "&bHalogen");
+
+    static {
+        ItemMeta meta = EM_Fluorine.getItemMeta();
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        EM_Fluorine.setItemMeta(meta);
+        EM_Fluorine.addUnsafeEnchantment(Enchantment.WATER_WORKER, 3);
     }
 //machines
 

@@ -1,4 +1,4 @@
-package me.lucasgithuber.elementmanipulation.elements.nonmetals;
+package me.lucasgithuber.elementmanipulation.elements.halogens;
 
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
@@ -13,10 +13,10 @@ import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
 
-public class EM_Selenium extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
-    public EM_Selenium(ItemGroup c) {
+public class EM_Fluorine extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
+    public EM_Fluorine(ItemGroup c) {
 
-        super(c, Items.EM_Selenium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
+        super(c, Items.EM_Fluorine, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
                 null, null, null,
                 null,null,null
                 ,null,null,null
