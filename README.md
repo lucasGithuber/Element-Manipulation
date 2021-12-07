@@ -10,3 +10,7 @@ water from these two elements(junction table)
 I will add a way to config how many energy the machines uses, and a way to configure elements that
 element collector can colect
 (element collector is coming soon)
+
+## Full release prediction
+Middle of 2022
+im doing my best ok 
