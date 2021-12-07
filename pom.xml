@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>me.lucasgithuber</groupId>
+    <groupId>me.lucasgithuber2</groupId>
     <artifactId>ElementManipulation</artifactId>
     <version>1.0.0 UNRELEASED VERSION</version>
 
@@ -62,7 +62,7 @@
                         <!-- This is the relocation, make sure to replace the package name, REQUIRED -->
                         <relocation>
                             <pattern>io.github.mooy1.infinitylib</pattern>
-                            <shadedPattern>me.lucasgithuber.elementmanipulation.infinitylib</shadedPattern>
+                            <shadedPattern>me.lucasgithuber2.elementmanipulation.infinitylib</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>

@@ -2,13 +2,13 @@
 name: ElementManipulation
 
 ## CHANGE this to your username.
-author: lucasGithuber
+author: lucasGithuber2
 
 ## CHANGE this to a meaninful but short description of your plugin.
 description: A slimefun addon that adds the capacity to the player to manipulate elements and create new materials
 
 ## CHANGE this to the path of the class that extends JavaPlugin.
-main: me.lucasgithuber.elementmanipulation.ElementManipulation
+main: me.lucasgithuber2.elementmanipulation.ElementManipulation
 
 ## You can change this to link to your website or repository. You can also remove this line if you want to.
 website: https://github.com/lucasGithuber/Element-Manipulation
