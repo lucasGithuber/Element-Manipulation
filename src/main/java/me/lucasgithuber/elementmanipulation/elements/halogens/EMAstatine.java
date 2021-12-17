@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 public class EMAstatine extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
     public EMAstatine(ItemGroup c) {
 
-        super(c, Items.EM_Astatine, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
+        super(c, Items.EMAstatine, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
                 null, null, null,
                 null,null,null
                 ,null,null,null

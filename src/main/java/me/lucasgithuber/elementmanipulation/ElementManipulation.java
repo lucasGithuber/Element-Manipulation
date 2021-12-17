@@ -3,7 +3,7 @@ package me.lucasgithuber.elementmanipulation;
 
 import io.github.mooy1.infinitylib.core.AbstractAddon;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-
+import me.lucasgithuber.elementmanipulation.items.EMMaterials;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.minimessage.markdown.DiscordFlavor;
 import net.kyori.adventure.text.minimessage.transformation.TransformationType;
@@ -31,6 +31,7 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
         // Setup items and listeners
         Setup.setup(this);
         Items.setup(this);
+        EMMaterials.setup(this);
 
 
     }

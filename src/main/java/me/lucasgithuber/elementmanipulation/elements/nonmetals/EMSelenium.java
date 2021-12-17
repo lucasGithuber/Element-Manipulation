@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 public class EMSelenium extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
     public EMSelenium(ItemGroup c) {
 
-        super(c, Items.EM_Selenium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
+        super(c, Items.EMSelenium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
                 null, null, null,
                 null,null,null
                 ,null,null,null

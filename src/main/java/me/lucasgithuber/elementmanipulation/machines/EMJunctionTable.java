@@ -1,16 +1,5 @@
 package me.lucasgithuber.elementmanipulation.machines;
 
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
-
-import me.lucasgithuber.elementmanipulation.utils.JunctionGroup;
-import me.lucasgithuber.elementmanipulation.Items;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-
 import io.github.mooy1.infinitylib.machines.MachineLayout;
 import io.github.mooy1.infinitylib.machines.MachineRecipeType;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
@@ -20,8 +9,18 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import me.lucasgithuber.elementmanipulation.Items;
+import me.lucasgithuber.elementmanipulation.utils.JunctionGroup;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public final class EMJunctionTable extends io.github.mooy1.infinitylib.machines.CraftingBlock implements EnergyNetComponent {
@@ -36,7 +35,7 @@ public final class EMJunctionTable extends io.github.mooy1.infinitylib.machines.
     };
     private static final int RECIPE_SLOT = 7;
     public static final MachineRecipeType TYPE = new MachineRecipeType("em_junction_table",
-            new CustomItemStack(Items.EM_JUNCTIONTABLE, Items.EM_JUNCTIONTABLE.getDisplayName(),
+            new CustomItemStack(Items.EMJunctionTable, Items.EMJunctionTable.getDisplayName(),
                     "", "&cUse the junctions category to see the correct recipe!"));
 
     private final int energy;
@@ -46,16 +45,14 @@ public final class EMJunctionTable extends io.github.mooy1.infinitylib.machines.
         addRecipesFrom(TYPE);
         layout(new MachineLayout()
                 .inputSlots(INPUT_SLOTS)
-                .outputSlots(new int[]{43})
+                .outputSlots(new int[]{
+                        34,43
+                })
                 .statusSlot(16)
                 .inputBorder(new int[0])
-                .outputBorder(new int[]{
-                        33, 34, 35,
-                        42, 44,
-                        51, 52, 53
-                }).background(new int[]{
-                        6, 8, 15, 17, 24, 25, 26
-                })
+                .outputBorder(new int[]{24,33,42,51,52,53,25,26,35,44
+
+                }).background(new int[]{6,8,15,17})
         );
         this.energy = energy;
     }
@@ -63,7 +60,7 @@ public final class EMJunctionTable extends io.github.mooy1.infinitylib.machines.
     @Override
     protected void setup(BlockMenuPreset preset) {
         super.setup(preset);
-        preset.addItem(RECIPE_SLOT, new CustomItemStack(Material.BOOK, "&6Recipes"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(7, new CustomItemStack(Material.KNOWLEDGE_BOOK, ChatColor.GREEN+"Recipes"), ChestMenuUtils.getEmptyClickHandler());
     }
 
     @Override

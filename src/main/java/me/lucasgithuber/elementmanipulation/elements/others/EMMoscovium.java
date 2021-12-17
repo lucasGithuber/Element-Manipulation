@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 public class EMMoscovium extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
     public EMMoscovium(ItemGroup c) {
 
-        super(c, Items.EM_Moscovium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
+        super(c, Items.EMMoscovium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
                 null, null, null,
                 null,null,null
                 ,null,null,null

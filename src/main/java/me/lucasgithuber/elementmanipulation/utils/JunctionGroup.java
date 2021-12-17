@@ -1,32 +1,7 @@
 package me.lucasgithuber.elementmanipulation.utils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
-
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
-
-import lombok.AllArgsConstructor;
-
-import me.lucasgithuber.elementmanipulation.Items;
-import me.lucasgithuber.elementmanipulation.machines.EMJunctionTable;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Sound;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
-
 import io.github.mooy1.infinitylib.common.Scheduler;
 import io.github.mooy1.infinitylib.common.StackUtils;
-import io.github.mooy1.infinitylib.machines.MenuBlock;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.items.groups.FlexItemGroup;
@@ -39,23 +14,38 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.Pair;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import lombok.AllArgsConstructor;
+import me.lucasgithuber.elementmanipulation.Items;
+import me.lucasgithuber.elementmanipulation.machines.EMJunctionTable;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.Sound;
+import org.bukkit.entity.Item;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.*;
 
 /**
  * A custom category for displaying 6x6 recipes and their sub-recipes
  * this guy is a god XD
  * @author Mooy1
  */
-public final class JunctionGroup extends FlexItemGroup {
+public class JunctionGroup extends FlexItemGroup {
 
     private static final int[] JUNCTION_RECIPE_SLOTS = {
-            1, 2, 3, 4, 5, 6,
-            10, 11, 12, 13, 14, 15,
-            19, 20, 21, 22, 23, 24,
-            28, 29, 30, 31, 32, 33,
-            37, 38, 39, 40, 41, 42,
-            46, 47, 48, 49, 50, 51
+            3, 4, 5, 6, 7, 8,
+            12, 13, 14,15,16,17,
+            21, 22, 23,24,25,26,
+            30, 31, 32,33,34,35,
+            39, 40, 41,42,43,44,
+            48, 49, 50,51,52,53
     };
     private static final int[] NORMAL_RECIPE_SLOTS = {
             12, 13, 14,
@@ -69,25 +59,24 @@ public final class JunctionGroup extends FlexItemGroup {
             36, 37, 38, 39, 40, 41, 42, 43, 44
     };
     private static final int[] JUNCTION_OUTPUT_BORDER = {
-            25, 26, 34, 43, 44
+            18, 19,
     };
-    private static final int[] JUNCTION_BACKGROUND = {
-            9, 18, 27, 36, 53
-    };
-    private static final int JUNCTION_OUTPUT = 35;
+
+    private static final int[] JUNCTION_BACKGROUND = {2,11,20,29,38,47};
+    private static final int JUNCTION_OUTPUT = 27;
     private static final int BACK = 0;
-    private static final int NEXT = 52;
+    private static final int NEXT = 46;
     private static final int PREV = 45;
-    private static final int JUNCTION_TABLE = 8;
+    private static final int JUNCTION_TABLE = 10;
     private static final int[] WORKBENCH_BORDER = {
-            7, 16, 17
+            1, 9
     };
-    private static final ItemStack MOVE = new CustomItemStack(Material.NETHER_STAR,
-            "&bCreate the recipe from items in your inventory: ",
+    private static final ItemStack CRAFT = new CustomItemStack(Material.SMITHING_TABLE,
+            ChatColor.GREEN + "Create the recipe from items in your inventory: ",
             "&aLeft-Click to move enough for 1 recipe",
             "&aRight-Click to move enough to as many as possible"
     );
-    private static final ItemStack INFO = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE, "&3Info");
+    private static final ItemStack INFO = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE, "&aInfo");
     private static final SlimefunGuideImplementation GUIDE = Slimefun.getRegistry().getSlimefunGuide(SlimefunGuideMode.SURVIVAL_MODE);
     private static final Map<UUID, String> HISTORY = new HashMap<>();
     private static final LinkedHashMap<String, Pair<SlimefunItemStack, ItemStack[]>> ITEMS = new LinkedHashMap<>();
@@ -109,7 +98,7 @@ public final class JunctionGroup extends FlexItemGroup {
 
     @Override
     public void open(Player player, PlayerProfile playerProfile, SlimefunGuideMode slimefunGuideMode) {
-        open(player, new BackEntry(null, playerProfile, Slimefun.getRegistry().getSlimefunGuide(slimefunGuideMode)), true);
+        open(player, new BackEntry(null, playerProfile, Slimefun.getRegistry().getSlimefunGuide(slimefunGuideMode)), false);
         playerProfile.getGuideHistory().add(this, 1);
     }
 
@@ -135,8 +124,7 @@ public final class JunctionGroup extends FlexItemGroup {
                 entry.bench.open(player1);
                 return false;
             });
-        }
-        else {
+        } else {
             menu.addMenuClickHandler(1, (player1, i, itemStack, clickAction) -> {
                 entry.profile.getGuideHistory().goBack(entry.impl);
                 return false;
@@ -145,12 +133,12 @@ public final class JunctionGroup extends FlexItemGroup {
 
         menu.addItem(0, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         menu.setEmptySlotsClickable(false);
-        for (int i = 2 ; i < 9 ; i++) {
+        for (int i = 2; i < 9; i++) {
             menu.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
         menu.addItem(45, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         menu.addItem(46, ChestMenuUtils.getPreviousButton(player, 1, 1), ChestMenuUtils.getEmptyClickHandler());
-        for (int i = 47 ; i < 52 ; i++) {
+        for (int i = 47; i < 52; i++) {
             menu.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
         menu.addItem(52, ChestMenuUtils.getNextButton(player, 1, 1), ChestMenuUtils.getEmptyClickHandler());
@@ -182,11 +170,10 @@ public final class JunctionGroup extends FlexItemGroup {
                         "&7Cost: &b" + research.getCost() + " Level(s)"
                 );
                 menu.addItem(i, resItem, (p, slot, item1, action) -> {
-                    research.unlockFromGuide(GUIDE, p, entry.profile, sfItem, Categories.EMJUNCTION_CATEGORY, 0);
+                    research.unlockFromGuide(GUIDE, p, entry.profile, sfItem, Categories.EMJunctionCategory, 0);
                     return false;
                 });
-            }
-            else {
+            } else {
                 menu.addItem(i, item.getFirstValue(), (p, slot, item1, action) -> {
                     openJunctionRecipe(p, item.getFirstValue().getItemId(), entry);
                     return false;
@@ -219,7 +206,7 @@ public final class JunctionGroup extends FlexItemGroup {
             return false;
         });
 
-        for (int i = 0 ; i < JUNCTION_RECIPE_SLOTS.length ; i++) {
+        for (int i = 0; i < JUNCTION_RECIPE_SLOTS.length; i++) {
             ItemStack recipeItem = pair.getSecondValue()[i];
             if (recipeItem != null) {
                 menu.addItem(JUNCTION_RECIPE_SLOTS[i], recipeItem, (p, slot, item, action) -> {
@@ -227,8 +214,7 @@ public final class JunctionGroup extends FlexItemGroup {
                     if (slimefunItem != null && !slimefunItem.isDisabled()) {
                         if (slimefunItem.getRecipeType() == EMJunctionTable.TYPE) {
                             openJunctionRecipe(p, slimefunItem.getId(), entry);
-                        }
-                        else {
+                        } else {
                             LinkedList<SlimefunItem> list = new LinkedList<>();
                             list.add(slimefunItem);
                             openSlimefunRecipe(p, entry, id, list);
@@ -240,8 +226,8 @@ public final class JunctionGroup extends FlexItemGroup {
         }
 
         if (entry.bench == null) {
-            menu.addItem(JUNCTION_TABLE, Items.EM_JUNCTIONTABLE, (p, slot, item, action) -> {
-                SlimefunItem slimefunItem = Items.EM_JUNCTIONTABLE.getItem();
+            menu.addItem(JUNCTION_TABLE, Items.EMJunctionTable, (p, slot, item, action) -> {
+                SlimefunItem slimefunItem = Items.EMJunctionTable.getItem();
                 if (slimefunItem != null) {
                     LinkedList<SlimefunItem> list = new LinkedList<>();
                     list.add(slimefunItem);
@@ -249,9 +235,8 @@ public final class JunctionGroup extends FlexItemGroup {
                 }
                 return false;
             });
-        }
-        else {
-            menu.addItem(JUNCTION_TABLE, MOVE, (p, slot, item, action) -> {
+        } else {
+            menu.addItem(JUNCTION_TABLE, CRAFT, (p, slot, item, action) -> {
                 moveRecipe(p, entry.bench, pair, action.isRightClicked());
                 return false;
             });
@@ -276,8 +261,11 @@ public final class JunctionGroup extends FlexItemGroup {
         for (int slot : JUNCTION_BACKGROUND) {
             menu.addItem(slot, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
+        for (int slot : JUNCTION_BACKGROUND) {
+            menu.addItem(slot, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
+        }
         for (int slot : JUNCTION_OUTPUT_BORDER) {
-            menu.addItem(slot, MenuBlock.OUTPUT_BORDER, ChestMenuUtils.getEmptyClickHandler());
+            menu.addItem(slot, JunctionGroup.OUTPUT_BORDER, ChestMenuUtils.getEmptyClickHandler());
         }
         menu.addItem(JUNCTION_OUTPUT, pair.getFirstValue(), ChestMenuUtils.getEmptyClickHandler());
         for (int slot : WORKBENCH_BORDER) {
@@ -296,8 +284,8 @@ public final class JunctionGroup extends FlexItemGroup {
         ItemStack[] recipe = pair.getSecondValue();
         PlayerInventory inv = player.getInventory();
 
-        for (int i = 0 ; i < (max ? 64 : 1) ; i++) {
-            for (int slot = 0 ; slot < recipe.length ; slot++) { //each item in recipe
+        for (int i = 0; i < (max ? 64 : 1); i++) {
+            for (int slot = 0; slot < recipe.length; slot++) { //each item in recipe
                 ItemStack recipeItem = recipe[slot];
 
                 if (recipeItem == null) {
@@ -346,15 +334,14 @@ public final class JunctionGroup extends FlexItemGroup {
         menu.addItem(0, ChestMenuUtils.getBackButton(player, ""), (p, slot, item, action) -> {
             if (length == 1) {
                 openJunctionRecipe(player, backID, entry);
-            }
-            else {
+            } else {
                 slimefunHistory.removeLast();
                 openSlimefunRecipe(player, entry, backID, slimefunHistory);
             }
             return false;
         });
 
-        for (int i = 0 ; i < NORMAL_RECIPE_SLOTS.length ; i++) {
+        for (int i = 0; i < NORMAL_RECIPE_SLOTS.length; i++) {
             ItemStack recipeItem = slimefunItem.getRecipe()[i];
 
             if (recipeItem != null) {
@@ -391,5 +378,9 @@ public final class JunctionGroup extends FlexItemGroup {
         private final SlimefunGuideImplementation impl;
 
     }
-
+    public String id;
+    public String getVIID(ItemStack vanillaItem){
+        return id;
+    }
+    public static ItemStack OUTPUT_BORDER = new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, "&6Output");
 }

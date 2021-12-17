@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 public class EMGallium extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
     public EMGallium(ItemGroup c) {
 
-        super(c, Items.EM_Gallium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
+        super(c, Items.EMGallium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
                 null, null, null,
                 null,null,null
                 ,null,null,null

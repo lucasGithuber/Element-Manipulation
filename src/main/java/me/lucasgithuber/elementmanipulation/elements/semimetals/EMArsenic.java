@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 public class EMArsenic extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
     public EMArsenic(ItemGroup c) {
 
-        super(c, Items.EM_Arsenic, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
+        super(c, Items.EMArsenic, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{
                 null, null, null,
                 null,null,null
                 ,null,null,null

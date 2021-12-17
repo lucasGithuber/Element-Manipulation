@@ -13,34 +13,34 @@ import org.bukkit.inventory.ItemStack;
 
 @UtilityClass
 public class Categories {
-    public static final ItemGroup EMELEMENTS = new SubGroup(
+    public static final ItemGroup EMElements = new SubGroup(
             "em_elements",
             new CustomItemStack(new ItemStack(Material.PRISMARINE_SHARD), BukkitComponentSerializer.legacy().serialize
                     (ElementManipulation.MM.parse("<gradient:#ff0000:#f4ff00>Elements</gradient>")))
     );
-    public static final ItemGroup EMMACHINES = new SubGroup(
+    public static final ItemGroup EMMachines = new SubGroup(
             "em_machines",
             new CustomItemStack(new ItemStack(Material.BLAST_FURNACE), BukkitComponentSerializer.legacy().serialize
                     (ElementManipulation.MM.parse("<gradient:#A3A3A3:#818181>Machines</gradient>"))));
 
-    public static final ItemGroup EMJUNCTION_CATEGORY = new SubGroup(
-            "em_junctions",
+    public static final ItemGroup EMJunctionCategory = new JunctionGroup(
+            ElementManipulation.createKey("junction_category"),
             new CustomItemStack(Material.SMITHING_TABLE, BukkitComponentSerializer.legacy().serialize
-                    (ElementManipulation.MM.parse("<gradient:#A3A3A3:#FFFFFF>Junctions</gradient>"))));
+                    (ElementManipulation.MM.parse("<gradient:#A3A3A3:#FFFFFF>Junctions</gradient>"))),3);
 
-    public static final ItemGroup EMMAIN = new MultiGroup(
+    public static final ItemGroup EMMain = new MultiGroup(
             "em_manipulation",
             new CustomItemStack(Material.NETHERITE_BLOCK, BukkitComponentSerializer.legacy().serialize
                     (ElementManipulation.MM.parse("<gradient:#5e4fa2:#f79459>Elements Manipulation</gradient>"))),
-            EMELEMENTS, EMMACHINES, EMJUNCTION_CATEGORY
+            EMElements, EMMachines, EMJunctionCategory
     );
-    public static final ItemGroup EMJUNCTION_CHEAT = new SubGroup("junction_cheat",
+    public static final ItemGroup EMJunctionCheat = new SubGroup("junction_cheat",
             new CustomItemStack(Material.SMITHING_TABLE, "&bJunctions &c- INCORRECT RECIPES"));
 
     public static void setup(ElementManipulation elm){
-        EMJUNCTION_CATEGORY.register(elm);
-        EMMAIN.register(elm);
-        EMJUNCTION_CHEAT.register(elm);
+        EMJunctionCategory.register(elm);
+        EMMain.register(elm);
+        EMJunctionCheat.register(elm);
     }
 
 }
