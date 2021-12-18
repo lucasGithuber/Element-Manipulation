@@ -33,6 +33,8 @@ Middle of 2022
 im doing my best ok 
 
 # Changelog ✔
+## v1.0.1
+- Fixed minor errors
 ## v1.0.0 
 - First release
 - Added everything
