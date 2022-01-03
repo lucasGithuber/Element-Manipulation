@@ -174,6 +174,8 @@ public class Items {
             (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Copper</gradient>")), "&8Not slimefun copper", "&7transition-metals");
     public static final SlimefunItemStack EMAu = new SlimefunItemStack("EM_GOLD", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
             (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Gold</gradient>")), "", "&7transition-metals");
+    public static final SlimefunItemStack EMScandium = new SlimefunItemStack("EM_SCANDIUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
+            (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Scandium</gradient>")), "", "&7transition-metals");
 //machines
 
 
