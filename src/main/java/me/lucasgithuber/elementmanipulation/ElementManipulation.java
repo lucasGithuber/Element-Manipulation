@@ -22,7 +22,7 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
             .build();
 
     public ElementManipulation() {
-        super("lucasGithuber", "Element-Manipulation", "master", "auto-update");
+        super("lucasGithuber", "Element-Manipulation", "master", "options.auto-update");
     }
     @Override
     public void enable() {
