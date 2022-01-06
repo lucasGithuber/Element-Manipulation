@@ -15,6 +15,9 @@ public final class EMMaterials {
     private static EMRedstone emRedstone;
     @Getter
     private static EMLapis emLapis;
+    @Getter
+    private static EMEmerald emEmerald;
+
     public static final SlimefunItemStack EMWaterBucket = new SlimefunItemStack(
             "EM_WATERBUCKET",
             Material.WATER_BUCKET,
@@ -33,7 +36,7 @@ public final class EMMaterials {
             "EM_COCOA",
             Material.COCOA_BEANS,
             "&fCocoa beans",
-            "&fNormal carrot",
+            "&fNormal cocoa",
             "&fUsable in vanilla workbench"
     );
     public static final SlimefunItemStack EMNetherWart = new SlimefunItemStack(
@@ -127,13 +130,85 @@ public final class EMMaterials {
             "EM_LAPIS",
             Material.LAPIS_LAZULI,
             "&fLapis lazuli",
-            "&fNormal honey",
+            "&fNormal lapis lazuli",
+            "&fUsable in vanilla workbench"
+    );
+    public static final SlimefunItemStack EMMelonSeeds = new SlimefunItemStack(
+            "EM_MELON_SEEDS",
+            Material.MELON_SLICE,
+            "&fMelon seeds",
+            "&fNormal melon seeds",
+            "&fUsable in vanilla workbench"
+    );
+    public static final SlimefunItemStack EMPoisonPotato = new SlimefunItemStack(
+            "EM_POISON_POTATO",
+            Material.POISONOUS_POTATO,
+            "&fPoisonous potato",
+            "&fNormal poisonous potato",
+            "&fUsable in vanilla workbench"
+    );
+    public static final SlimefunItemStack EMSugar = new SlimefunItemStack(
+            "EM_SUGAR",
+            Material.SUGAR,
+            "&fSugar",
+            "&fNormal sugar",
+            "&fUsable in vanilla workbench"
+    );
+    public static final SlimefunItemStack EMClay = new SlimefunItemStack(
+            "EM_CLAY",
+            Material.CLAY_BALL,
+            "&fClay ball",
+            "&fNormal clay",
+            "&fUsable in vanilla workbench"
+    );
+    public static final SlimefunItemStack EMCoal = new SlimefunItemStack(
+            "EM_COAL",
+            Material.COAL,
+            "&fCoal",
+            "&fNormal coal",
+            "&fUsable in vanilla workbench"
+    );
+    public static final SlimefunItemStack EMDiamond = new SlimefunItemStack(
+            "EM_DIAMOND",
+            Material.DIAMOND,
+            "&fDiamond",
+            "&fNormal diamond",
+            "&fUsable in vanilla workbench"
+    );
+    public static final SlimefunItemStack EMEmerald = new SlimefunItemStack(
+            "EM_EMERALD",
+            Material.EMERALD,
+            "&fEmerald",
+            "&fNormal emerald",
+            "&fUsable in vanilla workbench"
+    );
+    public static final SlimefunItemStack EMFlint = new SlimefunItemStack(
+            "EM_FLINT",
+            Material.FLINT,
+            "&fFlint",
+            "&fNormal flint",
+            "&fUsable in vanilla workbench"
+    );
+    public static final SlimefunItemStack EMGhastTear= new SlimefunItemStack(
+            "EM_TEAR",
+            Material.GHAST_TEAR,
+            "&fGhast tear",
+            "&fNormal tear",
+            "&fUsable in vanilla workbench"
+    );
+    public static final SlimefunItemStack EMQuartz = new SlimefunItemStack(
+            "EM_QUARTZ",
+            Material.QUARTZ,
+            "&fNether quartz",
+            "&fNormal nether quartz",
             "&fUsable in vanilla workbench"
     );
 
+
+
     public static void setup(ElementManipulation em){
 
-        new EMCarrot(Categories.EMJunctionCheat, EMCarrot,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMCarrot,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
                 EMCarbon,null,     null,     null,    null,  EMCarbon,
                 EMCarbon,null,EMHydrogen,EMHydrogen,null,      EMCarbon,
@@ -141,7 +216,7 @@ public final class EMMaterials {
                 EMCarbon,null,     null,     null,    null,      EMCarbon,
                 EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
         }).setUseableInWorkbench(true).register(em);
-        new EMCocoa(Categories.EMJunctionCheat, EMCocoa,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMCocoa,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
                 EMCarbon, null,    null,    null,    null,    EMCarbon,
                 EMNitrogen,    null,    EMOxygen, EMOxygen,     null,    EMNitrogen,
@@ -149,7 +224,7 @@ public final class EMMaterials {
                 EMHydrogen, null,  null,    null,    null,              EMHydrogen,
                 EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,
         }).setUseableInWorkbench(true).register(em);
-        new EMWart(Categories.EMJunctionCheat, EMNetherWart,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMNetherWart,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
                 EMCarbon,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen, EMCarbon,
                 EMCarbon,EMHydrogen,EMOxygen,  EMOxygen,  EMHydrogen, EMCarbon,
@@ -157,7 +232,7 @@ public final class EMMaterials {
                 EMCarbon,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen, EMCarbon,
                 EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
         }).setUseableInWorkbench(true).register(em);
-        new EMPotato(Categories.EMJunctionCheat, EMPotato,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMPotato,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,
                 EMHydrogen,null,null,null,null,EMHydrogen,
                 EMHydrogen,null,EMOxygen,EMOxygen,null,EMHydrogen,
@@ -165,7 +240,7 @@ public final class EMMaterials {
                 EMCarbon,null,null,null,null,EMCarbon,
                 EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
         }).setUseableInWorkbench(true).register(em);
-        new EMPumpkinSeeds(Categories.EMJunctionCheat, EMPumpkinSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMPumpkinSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 null,null,null,null,null,null,
                 null,null,      EMHydrogen,null,null,null,
                 null,EMHydrogen,EMHydrogen,null,null,null,
@@ -173,7 +248,7 @@ public final class EMMaterials {
                 null,null,null,           EMOxygen,null,null,
                 null,null,null,null,null,null
         }).setUseableInWorkbench(true).register(em);
-        EMRedstone.setAmount(64);
+
         emRedstone = new EMRedstone(Categories.EMJunctionCheat, EMRedstone,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
                 null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
@@ -181,8 +256,8 @@ public final class EMMaterials {
                 null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
                 null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
                 null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
-        }, EMRedstone);
-        new EMBerries(Categories.EMJunctionCheat,EMSweetBerries,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        }, new SlimefunItemStack(EMRedstone, 64));
+        new EMItem(Categories.EMJunctionCheat,EMSweetBerries,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,
                 EMHydrogen,EMHydrogen,null,null,            EMHydrogen,EMHydrogen,
                 EMHydrogen,null,EMOxygen,EMOxygen,null,                       EMHydrogen,
@@ -190,7 +265,7 @@ public final class EMMaterials {
                 EMCarbon,EMCarbon,null,null,   EMCarbon,EMCarbon,
                 EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
         }).setUseableInWorkbench(true).register(em);
-        new EMSeeds(Categories.EMJunctionCheat, EMWheatSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMWheatSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 null,null,null,null,null,null,
                 null,null,EMCarbon,null,null,null,
                 null,EMCarbon,EMCarbon,null,null,null,
@@ -198,7 +273,7 @@ public final class EMMaterials {
                 null,null,null,EMOxygen,null,null,
                 null,null,null,null,null,null,
         }).setUseableInWorkbench(true).register(em);
-        new EMApple(Categories.EMJunctionCheat, EMApple,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMApple,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 null,null,      null,      EMOxygen,null,null,
                 null,EMHydrogen,EMHydrogen,EMOxygen,EMCarbon,null,
                 null,EMHydrogen,EMOxygen,  EMOxygen,EMCarbon,null,
@@ -206,7 +281,7 @@ public final class EMMaterials {
                 null,EMHydrogen,EMOxygen,     EMCarbon,EMCarbon,null,
                 null,null,      EMOxygen,      null,null,null,
         }).setUseableInWorkbench(true).register(em);
-        new EMBeetroot(Categories.EMJunctionCheat, EMBeetrootSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMBeetrootSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 EMCarbon,null,null,null,null,EMCarbon,
                 EMCarbon,EMHydrogen,null,null,EMHydrogen,EMCarbon,
                 EMCarbon,EMHydrogen,EMOxygen,EMOxygen,EMHydrogen,EMCarbon,
@@ -214,7 +289,7 @@ public final class EMMaterials {
                 EMCarbon,EMHydrogen,null,null,EMHydrogen,EMCarbon,
                 EMCarbon,null,null,null,null,EMCarbon,
         }).setUseableInWorkbench(true).register(em);
-        new EMBone(Categories.EMJunctionCheat, EMBone,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMBone,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 null,EMOxygen,EMCalcium, EMCalcium,EMOxygen,null,
                 null,EMOxygen,EMCalcium, EMCalcium,EMOxygen,null,
                 null,EMOxygen,EMCalcium, EMCalcium,EMOxygen,null,
@@ -222,7 +297,7 @@ public final class EMMaterials {
                 null,EMOxygen,EMCalcium, EMCalcium,EMOxygen,null,
                 null,EMOxygen,EMCalcium, EMCalcium,EMOxygen,null,null,
         }).setUseableInWorkbench(true).register(em);
-        new EMGold(Categories.EMJunctionCheat, EMGold,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMGold,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 null,null,EMAu,EMAu,null,null,
                 null,null,EMAu,EMAu,null,null,
                 null,null,EMAu,EMAu,null,null,
@@ -230,7 +305,7 @@ public final class EMMaterials {
                 null,null,EMAu,EMAu,null,null,
                 null,null,EMAu,EMAu,null,null,
         }).setUseableInWorkbench(true).register(em);
-        new EMHoney(Categories.EMJunctionCheat, EMHoneyBottle,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMHoneyBottle,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 EMCarbon,null,EMHydrogen,EMHydrogen,null,EMOxygen,
                 EMCarbon,null,EMHydrogen,EMHydrogen,null,EMOxygen,
                 EMCarbon,null,EMHydrogen,EMHydrogen,null,EMOxygen,
@@ -238,7 +313,7 @@ public final class EMMaterials {
                 EMCarbon,null,EMHydrogen,EMHydrogen,null,EMOxygen,
                 EMCarbon,null,EMHydrogen,EMHydrogen,null,EMOxygen,
         }).setUseableInWorkbench(true).register(em);
-        new EMInk(Categories.EMJunctionCheat, EMInkSac,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+        new EMItem(Categories.EMJunctionCheat, EMInkSac,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 null,null,null,null,null,null,
                 null,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,null,
                 null,EMHydrogen,EMCarbon,EMCarbon,EMHydrogen,null,
@@ -246,7 +321,7 @@ public final class EMMaterials {
                 null,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,null,
                 null,null,null,null,null,null,
         }).setUseableInWorkbench(true).register(em);
-        EMLapisLazuli.setAmount(64);
+
         emLapis = new EMLapis(Categories.EMJunctionCheat, EMLapisLazuli,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
                 EMSodium,EMSodium,EMOxygen,EMOxygen,EMCalcium,EMCalcium,
                 EMSodium,EMSilicon,EMSulfur,EMSulfur,EMSilicon,EMCalcium,
@@ -254,8 +329,97 @@ public final class EMMaterials {
                 EMSodium,EMAluminum,new ItemStack(Material.BLUE_DYE),new ItemStack(Material.BLUE_DYE),EMAluminum,EMCalcium,
                 EMSodium,EMSilicon,EMSulfur,EMSulfur,EMSilicon,EMCalcium,
                 EMSodium,EMSodium,EMOxygen,EMOxygen,EMCalcium,EMCalcium,
-        }, EMLapisLazuli);
+        }, new SlimefunItemStack(EMLapisLazuli, 64));
+        new EMItem(Categories.EMJunctionCheat, EMMelonSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                null,null,EMHydrogen,EMHydrogen,null,null,
+                null,EMHydrogen,EMCarbon,EMCarbon,EMHydrogen,null,
+                EMHydrogen,EMCarbon,EMOxygen,EMOxygen,EMCarbon,EMHydrogen,
+                EMHydrogen,EMCarbon,EMOxygen,EMOxygen,EMCarbon,EMHydrogen,
+                null,EMHydrogen,EMCarbon,EMCarbon,EMHydrogen,null,
+                null,null,EMHydrogen,EMHydrogen,null,null
+        }).setUseableInWorkbench(true).register(em);
+        new EMItem(Categories.EMJunctionCheat, EMPoisonPotato,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,
+                EMHydrogen,EMSilver,null,null,EMCarbon,EMHydrogen,
+                EMHydrogen,null,EMOxygen,EMOxygen,null,EMHydrogen,
+                EMCarbon,null,EMOxygen,EMOxygen,null,EMCarbon,
+                EMCarbon,EMCarbon,null,null,EMNitrogen,EMCarbon,
+                EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
+        }).setUseableInWorkbench(true).register(em);
+        new EMItem(Categories.EMJunctionCheat, EMSugar,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,
+                EMHydrogen,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMHydrogen,
+                EMHydrogen,EMCarbon,EMOxygen,EMOxygen,EMCarbon,EMHydrogen,
+                EMHydrogen,EMCarbon,EMOxygen,EMOxygen,EMCarbon,EMHydrogen,
+                EMHydrogen,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMHydrogen,
+                EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen,EMHydrogen
+        }).setUseableInWorkbench(true).register(em);
+        new EMItem(Categories.EMJunctionCheat, EMClay,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                null,null,null,null,null,null,
+                null,null,null,null,null,null,
+                null,null,EMSilicon,EMOxygen,null,null,
+                null,null,EMOxygen,null,null,null,
+                null,null,null,null,null,null,
+                null,null,null,null,null,null
+        }).setUseableInWorkbench(true).register(em);
+        new EMItem(Categories.EMJunctionCheat, EMCoal,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
+                EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
+                EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
+                EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
+                EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,
+                EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon,EMCarbon
+        }).setUseableInWorkbench(true).register(em);
+        emEmerald = new EMEmerald(Categories.EMJunctionCheat, EMEmerald,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                EMBerilium,EMBerilium,EMSilicon,EMSilicon,EMOxygen,EMOxygen,
+                EMBerilium,EMSilicon,EMSilicon,EMSilicon,EMSilicon,EMOxygen,
+                EMSilicon,EMSilicon,EMSilicon,EMSilicon,EMSilicon,EMSilicon,
+                EMSilicon,EMSilicon,EMSilicon,EMSilicon,EMSilicon,EMSilicon,
+                EMAluminum,EMSilicon,EMSilicon,EMSilicon,EMSilicon,EMOxygen,
+                EMAluminum,EMAluminum,EMSilicon,EMSilicon,EMOxygen,EMOxygen,
+        }, new SlimefunItemStack(EMEmerald, 64));
+        new EMItem(Categories.EMJunctionCheat, EMFlint,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                null,null,null,null,null,null,
+                null,null,null,null,null,null,
+                null,null,null,EMOxygen,null,null,
+                null,null,EMOxygen,EMSilicon,null,null,
+                null,null,null,null,null,null,
+                null,null,null,null,null,null
+        }).setUseableInWorkbench(true).register(em);
+        new EMItem(Categories.EMJunctionCheat, EMGhastTear,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                null,null,null,null,null,null,
+                null,null,null,null,null,null,
+                null,null,EMHydrogen,EMHydrogen,null,null,null,
+                null,null,EMHydrogen,EMSodium,null,null,
+                null,null,null,null,null,null,
+                null,null,null,null,null,null
+        }).setUseableInWorkbench(true).register(em);
+        new EMItem(Categories.EMJunctionCheat, EMWaterBucket,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                null,null,null,null,null,null,
+                null,null,null,null,null,null,
+                null,null,EMOxygen,EMHydrogen,null,null,
+                null,null,EMHydrogen,new ItemStack(Material.BUCKET),null,null,
+                null,null,null,null,null,null,
+                null,null,null,null,null,null
+        }).setUseableInWorkbench(true).register(em);
+        new EMItem(Categories.EMJunctionCheat, EMQuartz,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                null,null,null,null,null,null,
+                null,null,null,null,null,null,
+                null,null,EMOxygen,null,null,null,
+                null,null,EMSilicon,EMOxygen,null,null,
+                null,null,null,null,null,null,
+                null,null,null,null,null,null
+        }).setUseableInWorkbench(true).register(em);
+        new EMItem(Categories.EMJunctionCheat, EMDiamond,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+                null,null,null,null,null,null,
+                null,null,null,null,null,null,
+                null,null,null,null,null,null,
+                null,null,null,null,null,null,
+                null,null,null,null,null,null,
+                null,null,null,null,null,null
+        }).setUseableInWorkbench(true).register(em);
         emRedstone.setUseableInWorkbench(true).register(em);
         emLapis.setUseableInWorkbench(true).register(em);
+        emEmerald.setUseableInWorkbench(true).register(em);
     }
 }

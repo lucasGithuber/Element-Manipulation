@@ -25,7 +25,7 @@ public class EMDeconstructor extends DeconstructorGUI implements RecipeDisplayIt
                 SlimefunItems.REINFORCED_PLATE, SlimefunItems.NUCLEAR_REACTOR, SlimefunItems.REINFORCED_PLATE,
                 SlimefunItems.REINFORCED_PLATE, SlimefunItems.LARGE_CAPACITOR, SlimefunItems.REINFORCED_PLATE
         });
-        this.setProcessingSpeed(1).setCapacity(64).setEnergyConsumption(16);
+        this.setProcessingSpeed(1).setCapacity(256).setEnergyConsumption(128);
 
     }
 
@@ -100,7 +100,7 @@ public class EMDeconstructor extends DeconstructorGUI implements RecipeDisplayIt
                 new ItemStack[] {
                         new CustomItemStack(Items.EMCopper, 8),
                 });
-        registerRecipe(4, new ItemStack[] {new ItemStack(Material.LAPIS_LAZULI)},
+        registerRecipe(4, new ItemStack[] {new ItemStack(Material.LAPIS_LAZULI, 64)},
                 new ItemStack[] {
                         new CustomItemStack(Items.EMSodium, 8),
                         new CustomItemStack(Items.EMCalcium, 8),
