@@ -83,7 +83,7 @@ public class Items {
 
 
     public static final SlimefunItemStack EMBromine = new SlimefunItemStack("EM_BROMINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
-            (ElementManipulation.MM.parse("<gradient:#EEFF00:#97FFE5>Bromine</gradient>")), "", "&bHalogen");
+            (ElementManipulation.MM.parse("<gradient:#EEFF00:#97FFE5>Iodine</gradient>")), "", "&bHalogen");
 
 
     public static final SlimefunItemStack EMIodine = new SlimefunItemStack("EM_IODINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
@@ -174,13 +174,11 @@ public class Items {
             (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Copper</gradient>")), "&8Not slimefun copper", "&7transition-metals");
     public static final SlimefunItemStack EMAu = new SlimefunItemStack("EM_GOLD", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
             (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Gold</gradient>")), "", "&7transition-metals");
-    public static final SlimefunItemStack EMSilver = new SlimefunItemStack("EM_SILVER", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
-            (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Silver</gradient>")), "&8Not slimefun silver", "&7transition-metals");
 //machines
 
 
     public static final SlimefunItemStack EMDeconstructor = new SlimefunItemStack("EM_DECONSTRUCTOR", Material.SMITHING_TABLE, BukkitComponentSerializer.legacy().serialize
-            (ElementManipulation.MM.parse("<gradient:#A7A7A7:#E0E4EA>Deconstructor</gradient>")), "&8Used to make items from elements", "&8Machine",
+            (ElementManipulation.MM.parse("<gradient:#000000:#FFFFFF>Deconstructor</gradient>")), "&8Used to make items from elements", "&8Machine",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.power(128, "/s"));
 
@@ -194,16 +192,9 @@ public class Items {
             MachineLore.energy(4096) + "per item"
     );
 
-    public static final SlimefunItemStack EMUltraCompressor = new SlimefunItemStack("EM_ULTRA_COMPRESSOR", Material.PISTON, BukkitComponentSerializer.legacy().serialize
-            (ElementManipulation.MM.parse("<gradient:#A7A7A7:#E0E4EA>Ultra Compressor</gradient>")), "&8Used to heavily compress things", "&8Machine",
-            LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
-            LoreBuilder.power(4096, "/s"));
-
     public static void setup(ElementManipulation em) {
         new EMJunctionTable(Categories.EMMachines, EMJunctionTable, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
-                new ItemStack(Material.NETHER_STAR), new ItemStack(Material.GLASS), new ItemStack(Material.NETHER_STAR),
-                SlimefunItems.REINFORCED_PLATE, SlimefunItems.CRAFTING_MOTOR, SlimefunItems.REINFORCED_PLATE,
-                new ItemStack(Material.BLACK_CONCRETE),SlimefunItems.LARGE_CAPACITOR, new ItemStack(Material.BLACK_CONCRETE),
+                null, null, null, null, SlimefunItems.FISH_JERKY, null, null, null, null
         }, 4096).register(em);
     }
 }
