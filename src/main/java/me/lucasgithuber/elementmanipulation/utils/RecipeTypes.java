@@ -3,6 +3,7 @@ package me.lucasgithuber.elementmanipulation.utils;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
 import me.lucasgithuber.elementmanipulation.Items;
+import me.lucasgithuber.elementmanipulation.elements.Elements;
 import org.bukkit.NamespacedKey;
 
 public class RecipeTypes {

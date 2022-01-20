@@ -22,3 +22,4 @@ api-version: 1.17
 
 ## This is required and marks Slimefun as a plugin dependency.
 depend: [Slimefun]
+softdepend: [LiteXpansion]

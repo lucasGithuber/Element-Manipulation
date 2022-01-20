@@ -6,7 +6,8 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.lucasgithuber.elementmanipulation.Items;
-import me.lucasgithuber.elementmanipulation.utils.DeconstructorGUI;
+import me.lucasgithuber.elementmanipulation.elements.Elements;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class EMUltraCompressor extends DeconstructorGUI implements RecipeDisplayItem {
+public class EMUltraCompressor extends AContainer implements RecipeDisplayItem {
 
     public EMUltraCompressor(ItemGroup c) {
 
@@ -30,8 +31,10 @@ public class EMUltraCompressor extends DeconstructorGUI implements RecipeDisplay
     }
 
     public void registerDefaultRecipes() {
-
+        registerRecipe(15, new CustomItemStack(Elements.EMCarbon, 5),
+                new ItemStack(Material.DIAMOND));
     }
+
     @Override
     public List<ItemStack> getDisplayRecipes() {
         List<ItemStack> displayRecipes = new ArrayList<>(recipes.size() * 2);
@@ -70,4 +73,5 @@ public class EMUltraCompressor extends DeconstructorGUI implements RecipeDisplay
     public int getSpeed() {
         return 1;
     }
-};
+
+}
