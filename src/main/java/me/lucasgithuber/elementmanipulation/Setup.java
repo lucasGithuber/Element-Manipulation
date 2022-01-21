@@ -14,6 +14,6 @@ public class Setup {
 
         new EMDeconstructor(Categories.EMMachines).register(p);
         new EMUltraCompressor(Categories.EMMachines).register(p);
-        new EMJunctionTable(Categories.EMMachines).register(p);
+
     }
 }
