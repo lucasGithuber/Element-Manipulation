@@ -82,7 +82,7 @@ public class Elements {
 
 
         public static final SlimefunItemStack EMBromine = new SlimefunItemStack("EM_BROMINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EEFF00:#97FFE5>Iodine</gradient>")), "", "&bHalogen");
+                (ElementManipulation.MM.parse("<gradient:#EEFF00:#97FFE5>Bromine</gradient>")), "", "&bHalogen");
 
 
         public static final SlimefunItemStack EMIodine = new SlimefunItemStack("EM_IODINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
@@ -98,7 +98,7 @@ public class Elements {
 
         //elements/alkaline-earths
         public static final SlimefunItemStack EMBerilium = new SlimefunItemStack("EM_BERILIUM", new ItemStack(Material.YELLOW_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EDE342:#BBB816>Changeme</gradient>")), "", "&eAlkaline-earth");
+                (ElementManipulation.MM.parse("<gradient:#EDE342:#BBB816>Beryllium</gradient>")), "", "&eAlkaline-earth");
 
         public static final SlimefunItemStack EMMagnesium = new SlimefunItemStack("EM_MAGNESIUM", new ItemStack(Material.YELLOW_DYE), BukkitComponentSerializer.legacy().serialize
                 (ElementManipulation.MM.parse("<gradient:#EDE342:#BBB816>Magnesium</gradient>")), "&8Not slimefun magnesium", "&eAlkaline-earth");
