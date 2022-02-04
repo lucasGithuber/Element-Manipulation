@@ -5,136 +5,335 @@ import me.lucasgithuber.elementmanipulation.ElementManipulation;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import me.lucasgithuber.elementmanipulation.utils.RecipeTypes;
 import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.Plugin;
-
-import static org.bukkit.Bukkit.getServer;
 
 public class Elements {
 
-        private static final Configuration cfg = ElementManipulation.i().getConfig();
         //elements
         //non-metals
-        public static final SlimefunItemStack EMHydrogen = new SlimefunItemStack("EM_HYDROGEN", new ItemStack(Material.LIME_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#38CA08:#25FF09>Hydrogen</gradient>")), "&aFish like it", "&anon-metal");
+        public static final SlimefunItemStack HYDROGEN = new SlimefunItemStack(
+                "EM_HYDROGEN",
+                new ItemStack(Material.LIME_DYE),
+                BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                        "<gradient:#38CA08:#25FF09>Hydrogen</gradient>")),
+                "&8Symbol: H",
+                "&8Atomic number: 1",
+                "&8Atomic mass: 1.008",
+                "&aElement group: non-metals");
+    public static final SlimefunItemStack CARBON = new SlimefunItemStack(
+            "EM_CARBON",
+            new ItemStack(Material.LIME_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#38CA08:#25FF09>Carbon</gradient>")),
+            "&8Symbol: C",
+            "&8Atomic number: 6",
+            "&8Atomic mass: 12.011",
+            "&aElement group: non-metals");
+    public static final SlimefunItemStack NITROGEN = new SlimefunItemStack(
+            "EM_NITROGEN",
+            new ItemStack(Material.LIME_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#38CA08:#25FF09>Nitrogen</gradient>")),
+            "&8Symbol: N",
+            "&8Atomic number: 7",
+            "&8Atomic mass: 14.007",
+            "&aElement group: non-metals");
+    public static final SlimefunItemStack OXYGEN = new SlimefunItemStack(
+            "EM_OXYGEN",
+            new ItemStack(Material.LIME_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#38CA08:#25FF09>Oxygen</gradient>")),
+            "&8Symbol: O",
+            "&8Atomic number: 8",
+            "&8Atomic mass: 15.999",
+            "&aElement group: non-metals");
+    public static final SlimefunItemStack PHOSPHORUS = new SlimefunItemStack(
+            "EM_PHOSPHORUS",
+            new ItemStack(Material.LIME_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#38CA08:#25FF09>Phosphorus</gradient>")),
+            "&8Symbol: P",
+            "&8Atomic number: 15",
+            "&8Atomic mass: 30.974",
+            "&aElement group: non-metals");
+    public static final SlimefunItemStack SULFUR = new SlimefunItemStack(
+            "SULFUR",
+            new ItemStack(Material.LIME_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#38CA08:#25FF09>Sulfur</gradient>")),
+            "&8Symbol: S",
+            "&8Atomic number: 16",
+            "&8Atomic mass: 32.065",
+            "&aElement group: non-metals");
+    public static final SlimefunItemStack SELENIUM = new SlimefunItemStack(
+            "EM_SELENIUM",
+            new ItemStack(Material.LIME_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#38CA08:#25FF09>Selenium</gradient>")),
+            "&8Symbol: S",
+            "&8Atomic number: 34",
+            "&8Atomic mass: 78.96",
+            "&aElement group: non-metals");
 
 
-        public static final SlimefunItemStack EMOxygen = new SlimefunItemStack("EM_OXYGEN", new ItemStack(Material.LIME_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#38CA08:#25FF09>Oxygen</gradient>")), "&aEssential for humans", "&anon-metal");
+    //elements/alkalines
+    public static final SlimefunItemStack LITHIUM = new SlimefunItemStack(
+            "EM_LITHIUM",
+            new ItemStack(Material.ORANGE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#F3A33B:#FF953E>Lithium</gradient>")),
+            "&8Symbol: Li",
+            "&8Atomic number: 3",
+            "&8Atomic mass: 6.941",
+            "&aElement group: alkalines"
+    );
+    public static final SlimefunItemStack SODIUM = new SlimefunItemStack(
+            "EM_SODIUM",
+            new ItemStack(Material.ORANGE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#F3A33B:#FF953E>Sodium</gradient>")),
+            "&8Symbol: Na",
+            "&8Atomic number: 11",
+            "&8Atomic mass: 22.990",
+            "&aElement group: alkalines"
+    );
+    public static final SlimefunItemStack POTASSIUM = new SlimefunItemStack(
+            "EM_POTASSIUM",
+            new ItemStack(Material.ORANGE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#F3A33B:#FF953E>Potassium</gradient>")),
+            "&8Symbol: K",
+            "&8Atomic number: 19",
+            "&8Atomic mass: 39.098",
+            "&aElement group: alkalines"
+    );
+    public static final SlimefunItemStack RUBIDIUM = new SlimefunItemStack(
+            "EM_RUBIDIUM",
+            new ItemStack(Material.ORANGE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#F3A33B:#FF953E>Rubidium</gradient>")),
+            "&8Symbol: Rb",
+            "&8Atomic number: 37",
+            "&8Atomic mass: 85.468",
+            "&aElement group: alkalines"
+    );
+    public static final SlimefunItemStack CAESIUM = new SlimefunItemStack(
+            "EM_CAESIUM",
+            new ItemStack(Material.ORANGE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#F3A33B:#FF953E>Caesium</gradient>")),
+            "&8Symbol: Cs",
+            "&8Atomic number: 55",
+            "&8Atomic mass: 132.905",
+            "&aElement group: alkalines"
+    );
+    public static final SlimefunItemStack FRANCIUM = new SlimefunItemStack(
+            "EM_FRANCIUM",
+            new ItemStack(Material.ORANGE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#F3A33B:#FF953E>Francium</gradient>")),
+            "&8Symbol: Fr",
+            "&8Atomic number: 87",
+            "&8Atomic mass: [223]",
+            "&aElement group: alkalines"
+    );
 
+    //elements/halogens
+    public static final SlimefunItemStack FLUORINE = new SlimefunItemStack(
+            "EM_FLUORINE",
+            new ItemStack(Material.CYAN_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EEFF00:#97FFE5>Fluorine</gradient>")),
+            "&8Symbol: F",
+            "&8Atomic number: 9",
+            "&8Atomic mass: 19.998",
+            "&aElement group: halogens"
+    );
+    public static final SlimefunItemStack CHLORINE = new SlimefunItemStack(
+            "EM_CHANGE",
+            new ItemStack(Material.CYAN_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EEFF00:#97FFE5>Chlorine</gradient>")),
+            "&8Symbol: Cl",
+            "&8Atomic number: 17",
+            "&8Atomic mass: 35.453",
+            "&aElement group: halogens"
+    );
+    public static final SlimefunItemStack BROMINE = new SlimefunItemStack(
+            "EM_BROMINE",
+            new ItemStack(Material.CYAN_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EEFF00:#97FFE5>Bromine</gradient>")),
+            "&8Symbol: Br",
+            "&8Atomic number: 35",
+            "&8Atomic mass: 79.904",
+            "&aElement group: halogens"
+    );
+    public static final SlimefunItemStack IODINE = new SlimefunItemStack(
+            "EM_IODINE",
+            new ItemStack(Material.CYAN_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EEFF00:#97FFE5>Iodine</gradient>")),
+            "&8Symbol: I",
+            "&8Atomic number: 53",
+            "&8Atomic mass: 126.904 47",
+            "&aElement group: halogens"
+    );
+    public static final SlimefunItemStack ASTATINE = new SlimefunItemStack(
+            "EM_ASTATINE",
+            new ItemStack(Material.CYAN_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EEFF00:#97FFE5>Astatine</gradient>")),
+            "&8Symbol: At",
+            "&8Atomic number: 85",
+            "&8Atomic mass: [210]",
+            "&aElement group: halogens"
+    );
+    public static final SlimefunItemStack TENNESSINE = new SlimefunItemStack(
+            "EM_TENNESSINE",
+            new ItemStack(Material.CYAN_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EEFF00:#97FFE5>Tennessine</gradient>")),
+            "&8Symbol: Ts",
+            "&8Atomic number: 117",
+            "&8Atomic mass: [294]",
+            "&aElement group: halogens"
+    );
 
-        public static final SlimefunItemStack EMCarbon = new SlimefunItemStack("EM_CARBON", new ItemStack(Material.LIME_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#38CA08:#25FF09>Carbon</gradient>")), "&8Not slimefun carbon", "&anon-metal");
-
-
-        public static final SlimefunItemStack EMNitrogen = new SlimefunItemStack("EM_NITROGEN", new ItemStack(Material.LIME_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#38CA08:#25FF09>Nitrogen</gradient>")), "&3DRIP", "&anon-metal");
-
-
-        public static final SlimefunItemStack EMPhosphorus = new SlimefunItemStack("EM_PHOSPHORUS", new ItemStack(Material.LIME_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#38CA08:#25FF09>Phosphorus</gradient>")), "", "&anon-metal");
-
-
-        public static final SlimefunItemStack EMSulfur = new SlimefunItemStack("EM_SULFUR", new ItemStack(Material.LIME_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#38CA08:#25FF09>Sulfur</gradient>")), "&8Not slimefun sulfur", "non-metal");
-
-
-        public static final SlimefunItemStack EMSelenium = new SlimefunItemStack("EM_SELENIUM", new ItemStack(Material.LIME_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#38CA08:#25FF09>Selenium</gradient>")), "", "&anon-metal");
-
-
-        //elements/alkalines
-        public static final SlimefunItemStack EMLithium = new SlimefunItemStack("EM_LITHIUM", new ItemStack(Material.ORANGE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#F3A33B:#FF953E>Lithium</gradient>")), "", "&6alkaline");
-
-
-        public static final SlimefunItemStack EMSodium = new SlimefunItemStack("EM_SODIUM", new ItemStack(Material.ORANGE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#F3A33B:#FF953E>Sodium</gradient>")), "", "&6alkaline");
-
-
-        public static final SlimefunItemStack EMPotassium = new SlimefunItemStack("EM_POTASSIUM", new ItemStack(Material.ORANGE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#F3A33B:#FF953E>Potassium</gradient>")), "", "&6alkaline");
-
-
-        public static final SlimefunItemStack EMRubidium = new SlimefunItemStack("EM_RUBIDIUM,", new ItemStack(Material.ORANGE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#F3A33B:#FF953E>Rubidium</gradient>")), "", "&6alkaline");
-
-
-        public static final SlimefunItemStack EMCaesium = new SlimefunItemStack("EM_CAESIUM", new ItemStack(Material.ORANGE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#F3A33B:#FF953E>Caesium</gradient>")), "", "&6alkaline");
-
-
-        public static final SlimefunItemStack EMFrancium = new SlimefunItemStack("EM_FRANCIUM", new ItemStack(Material.ORANGE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#F3A33B:#FF953E>Francium</gradient>")), "", "&6alkaline");
-
-
-        //elements/halogens
-
-        public static final SlimefunItemStack EMFluorine = new SlimefunItemStack("EM_FLUORINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EEFF00:#97FFE5>Fluorine</gradient>")), "", "&bHalogen");
-
-
-        public static final SlimefunItemStack EMChlorine = new SlimefunItemStack("CHLORINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EEFF00:#97FFE5>Chlorine</gradient>")), "", "&bHalogen");
-
-
-        public static final SlimefunItemStack EMBromine = new SlimefunItemStack("EM_BROMINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EEFF00:#97FFE5>Bromine</gradient>")), "", "&bHalogen");
-
-
-        public static final SlimefunItemStack EMIodine = new SlimefunItemStack("EM_IODINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EEFF00:#97FFE5>Iodine</gradient>")), "", "&bHalogen");
-
-
-        public static final SlimefunItemStack EMAstatine = new SlimefunItemStack("EM_ASTATINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EEFF00:#97FFE5>Astatine</gradient>")), "", "&bHalogen");
-
-
-        public static final SlimefunItemStack EMTennessine = new SlimefunItemStack("EM_TENNESSINE", new ItemStack(Material.CYAN_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EEFF00:#97FFE5>Tennessine</gradient>")), "", "&bHalogen");
-
-        //elements/alkaline-earths
-        public static final SlimefunItemStack EMBerilium = new SlimefunItemStack("EM_BERILIUM", new ItemStack(Material.YELLOW_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EDE342:#BBB816>Beryllium</gradient>")), "", "&eAlkaline-earth");
-
-        public static final SlimefunItemStack EMMagnesium = new SlimefunItemStack("EM_MAGNESIUM", new ItemStack(Material.YELLOW_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EDE342:#BBB816>Magnesium</gradient>")), "&8Not slimefun magnesium", "&eAlkaline-earth");
-
-        public static final SlimefunItemStack EMCalcium = new SlimefunItemStack("EM_CALCIUM", new ItemStack(Material.YELLOW_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EDE342:#BBB816>Calcium</gradient>")), "", "&eAlkaline-earth");
-
-        public static final SlimefunItemStack EMStrontium = new SlimefunItemStack("EM_STRONTIUM", new ItemStack(Material.YELLOW_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EDE342:#BBB816>Strontium</gradient>")), "", "&eAlkaline-earth");
-
-        public static final SlimefunItemStack EMRadium = new SlimefunItemStack("EM_RADIUM", new ItemStack(Material.YELLOW_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EDE342:#BBB816>Radium</gradient>")), "", "&eAlkaline-earth");
-
-        public static final SlimefunItemStack EMBarium = new SlimefunItemStack("EM_BARIUM", new ItemStack(Material.YELLOW_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#EDE342:#BBB816>Barium</gradient>")), "", "&eAlkaline-earth");
-        //elements/semi-metals
-        public static final SlimefunItemStack EMBoron = new SlimefunItemStack("EM_BORON", new ItemStack(Material.LIGHT_BLUE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#48A5B6:#1162A9>Boron</gradient>")), "", "&3semi-metal");
-
-        public static final SlimefunItemStack EMSilicon = new SlimefunItemStack("EM_SILICON", new ItemStack(Material.LIGHT_BLUE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#48A5B6:#1162A9>Silicon</gradient>")), "&8Not Slimefun silicon", "&3semi-metal");
-
-        public static final SlimefunItemStack EMGermanium = new SlimefunItemStack("EM_GERMANIUM", new ItemStack(Material.LIGHT_BLUE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#48A5B6:#1162A9>Germanium</gradient>")), "", "&3semi-metal");
-
-        public static final SlimefunItemStack EMArsenic = new SlimefunItemStack("EM_ARSENIC", new ItemStack(Material.LIGHT_BLUE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#48A5B6:#1162A9>Arsenic</gradient>")), "", "&3semi-metal");
-
-        public static final SlimefunItemStack EMAntimony = new SlimefunItemStack("EM_ANTIMONY", new ItemStack(Material.LIGHT_BLUE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#48A5B6:#1162A9>Antimony</gradient>")), "", "&3semi-metal");
-
-        public static final SlimefunItemStack EMTellurium = new SlimefunItemStack("EM_TELLURIUM", new ItemStack(Material.LIGHT_BLUE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#48A5B6:#1162A9>Tellurium</gradient>")), "", "&3semi-metal");
-
-        public static final SlimefunItemStack EMPolonium = new SlimefunItemStack("EM_POLONIUM", new ItemStack(Material.LIGHT_BLUE_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#48A5B6:#1162A9>Polonium</gradient>")), "", "&3semi-metal");
+    //elements/alkaline-earths
+    public static final SlimefunItemStack BERYLLIUM = new SlimefunItemStack(
+            "EM_BERYLLIUM",
+            new ItemStack(Material.YELLOW_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EDE342:#BBB816>Beryllium</gradient>")),
+            "&8Symbol: Be",
+            "&8Atomic number: 4",
+            "&8Atomic mass: 9.012",
+            "&aElement group: Alkaline earth metals"
+    );
+    public static final SlimefunItemStack MAGNESIUM = new SlimefunItemStack(
+            "EM_MAGNESIUM",
+            new ItemStack(Material.YELLOW_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EDE342:#BBB816>Magnesium</gradient>")),
+            "&8Symbol: Mg",
+            "&8Atomic number: 12",
+            "&8Atomic mass: 24.305",
+            "&aElement group: Alkaline earth metals"
+    );
+    public static final SlimefunItemStack CALCIUM = new SlimefunItemStack(
+            "EM_CALCIUM",
+            new ItemStack(Material.YELLOW_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EDE342:#BBB816>Calcium</gradient>")),
+            "&8Symbol: Ca",
+            "&8Atomic number: 20",
+            "&8Atomic mass: 40.078",
+            "&aElement group: Alkaline earth metals"
+    );
+    public static final SlimefunItemStack STRONTIUM = new SlimefunItemStack(
+            "EM_STRONTIUM",
+            new ItemStack(Material.YELLOW_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EDE342:#BBB816>Strontium</gradient>")),
+            "&8Symbol: Sr",
+            "&8Atomic number: 38",
+            "&8Atomic mass: 87.62",
+            "&aElement group: Alkaline earth metals"
+    );
+    public static final SlimefunItemStack BARIUM = new SlimefunItemStack(
+            "EM_BARIUM",
+            new ItemStack(Material.YELLOW_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EDE342:#BBB816>Barium</gradient>")),
+            "&8Symbol: Ba",
+            "&8Atomic number: 56",
+            "&8Atomic mass: 137.327",
+            "&aElement group: Alkaline earth metals"
+    );
+    public static final SlimefunItemStack RADIUM = new SlimefunItemStack(
+            "EM_RADIUM",
+            new ItemStack(Material.YELLOW_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#EDE342:#BBB816>Radium</gradient>")),
+            "&8Symbol: Ra",
+            "&8Atomic number: 88",
+            "&8Atomic mass: [226]",
+            "&aElement group: Alkaline earth metals"
+    );
+    //elements/semi-metals
+    public static final SlimefunItemStack BORON = new SlimefunItemStack(
+            "EM_BORON",
+            new ItemStack(Material.LIGHT_BLUE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#48A5B6:#1162A9>Boron</gradient>")),
+            "&8Symbol: B",
+            "&8Atomic number: 5",
+            "&8Atomic mass: 10.811",
+            "&aElement group: Semi-metals"
+    );
+    public static final SlimefunItemStack SILICON = new SlimefunItemStack(
+            "EM_SILICON",
+            new ItemStack(Material.LIGHT_BLUE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#48A5B6:#1162A9>Silicon</gradient>")),
+            "&8Symbol: Si",
+            "&8Atomic number: 14",
+            "&8Atomic mass: 28.086",
+            "&aElement group: Semi-metals"
+    );
+    public static final SlimefunItemStack GERMANIUM = new SlimefunItemStack(
+            "EM_GERMANIUM",
+            new ItemStack(Material.LIGHT_BLUE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#48A5B6:#1162A9>Germanium</gradient>")),
+            "&8Symbol: Ge",
+            "&8Atomic number: 32",
+            "&8Atomic mass: 72.64",
+            "&aElement group: Semi-metals"
+    );
+    public static final SlimefunItemStack ARSENIC = new SlimefunItemStack(
+            "EM_ARSENIC",
+            new ItemStack(Material.LIGHT_BLUE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#48A5B6:#1162A9>Arsenic</gradient>")),
+            "&8Symbol: As",
+            "&8Atomic number: 33",
+            "&8Atomic mass: 74.922",
+            "&aElement group: Semi-metals"
+    );
+    public static final SlimefunItemStack ANTIMONY = new SlimefunItemStack(
+            "EM_ANTIMONY",
+            new ItemStack(Material.LIGHT_BLUE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#48A5B6:#1162A9>Antimony</gradient>")),
+            "&8Symbol: Sb",
+            "&8Atomic number: 51",
+            "&8Atomic mass: 121.76",
+            "&aElement group: Semi-metals"
+    );
+    public static final SlimefunItemStack TELURIUM = new SlimefunItemStack(
+            "EM_TELURIUM",
+            new ItemStack(Material.LIGHT_BLUE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#48A5B6:#1162A9>Telurium</gradient>")),
+            "&8Symbol: Te",
+            "&8Atomic number: 52",
+            "&8Atomic mass: 127.6",
+            "&aElement group: Semi-metals"
+    );
+    public static final SlimefunItemStack POLONIUM = new SlimefunItemStack(
+            "EM_POLONIUM",
+            new ItemStack(Material.LIGHT_BLUE_DYE),
+            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.parse(
+                    "<gradient:#48A5B6:#1162A9>Polonium</gradient>")),
+            "&8Symbol: Po",
+            "&8Atomic number: 84",
+            "&8Atomic mass: [210]",
+            "&aElement group: Semi-metals"
+    );
         //elements/others
         public static final SlimefunItemStack EMAluminum = new SlimefunItemStack("EM_ALUMINUM", new ItemStack(Material.GRAY_DYE), BukkitComponentSerializer.legacy().serialize
                 (ElementManipulation.MM.parse("<gradient:#8B8B8B:#6E6E6E>Aluminum</gradient>")), "", "&7other-metals");
@@ -145,7 +344,7 @@ public class Elements {
         public static final SlimefunItemStack EMIndium = new SlimefunItemStack("EM_INDIUM", new ItemStack(Material.GRAY_DYE), BukkitComponentSerializer.legacy().serialize
                 (ElementManipulation.MM.parse("<gradient:#8B8B8B:#6E6E6E>Indium</gradient>")), "", "&7other-metals");
 
-        public static final SlimefunItemStack EMThallium = new SlimefunItemStack("EM_THALLIM", new ItemStack(Material.GRAY_DYE), BukkitComponentSerializer.legacy().serialize
+        public static final SlimefunItemStack EMThallium = new SlimefunItemStack("EM_THALLIUM", new ItemStack(Material.GRAY_DYE), BukkitComponentSerializer.legacy().serialize
                 (ElementManipulation.MM.parse("<gradient:#8B8B8B:#6E6E6E>Thallium</gradient>")), "", "&7other-metals");
 
         public static final SlimefunItemStack EMNihonium = new SlimefunItemStack("EM_NIHONIUM", new ItemStack(Material.GRAY_DYE), BukkitComponentSerializer.legacy().serialize
@@ -178,10 +377,6 @@ public class Elements {
         public static final SlimefunItemStack EMSilver = new SlimefunItemStack("EM_SILVER", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
                 (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Silver</gradient>")), "", "&7transition-metals");
 
-
-                public static final SlimefunItemStack EMTitanium = new SlimefunItemStack("EM_TITANIUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
-                        (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Titanium</gradient>")), "", "&7transition-metals");
-
         public static final SlimefunItemStack EMVanadium = new SlimefunItemStack("EM_VANADIUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
                 (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Vanadium</gradient>")), "", "&7transition-metals");
         public static final SlimefunItemStack EMChromium = new SlimefunItemStack("EM_CHROMIUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
@@ -202,8 +397,8 @@ public class Elements {
                 (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Zirconium</gradient>")), "", "&7transition-metals");
         public static final SlimefunItemStack EMNiobium = new SlimefunItemStack("EM_NIOBIUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
                 (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Niobium</gradient>")), "", "&7transition-metals");
-        public static final SlimefunItemStack EMMolybdenum = new SlimefunItemStack("EM_MOLBYDENUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
-                (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Molbydenum</gradient>")), "", "&7transition-metals");
+        public static final SlimefunItemStack EMMolybdenum = new SlimefunItemStack("EM_MOLYBBDENUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
+                (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Molybdenum</gradient>")), "", "&7transition-metals");
         public static final SlimefunItemStack EMTechtenium = new SlimefunItemStack("EM_TECHTENIUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
                 (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Techtenium</gradient>")), "", "&7transition-metals");
         public static final SlimefunItemStack EMRuthenium = new SlimefunItemStack("EM_RUTHENIUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
@@ -224,8 +419,7 @@ public class Elements {
                 (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Rhenium</gradient>")), "", "&7transition-metals");
 
 
-        public static final SlimefunItemStack EMOsmium = new SlimefunItemStack("EM_OSMIUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
-                 (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Osmium</gradient>")), "", "&7transition-metals");
+
 
         public static final SlimefunItemStack EMPlatinum = new SlimefunItemStack("EM_PLATINUM", new ItemStack(Material.MAGENTA_DYE), BukkitComponentSerializer.legacy().serialize
                 (ElementManipulation.MM.parse("<gradient:#f08080:#ffdab9>Platinum</gradient>")), "", "&7transition-metals");
@@ -255,73 +449,73 @@ public class Elements {
 
         public static void setup(ElementManipulation em){
 
-                new EMElement(Categories.EMElements, EMOxygen, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, OXYGEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMHydrogen, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, HYDROGEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMCarbon, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, CARBON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMNitrogen, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, NITROGEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMPhosphorus, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, PHOSPHORUS, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMSelenium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, SELENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMSulfur, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, SULFUR, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
                 //alkalines
-                new EMElement(Categories.EMElements, EMLithium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, LITHIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMSodium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, SODIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMPotassium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, POTASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMRubidium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, RUBIDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMCaesium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, CAESIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMFrancium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, FRANCIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
                 //halogens
-                new EMElement(Categories.EMElements, EMFluorine, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, FLUORINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMChlorine, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, CHLORINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMBromine, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, BROMINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMIodine, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, IODINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMAstatine, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, ASTATINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMTennessine, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, TENNESSINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
                 //alkaline earths
-                new EMElement(Categories.EMElements, EMBerilium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, BERYLLIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMMagnesium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, MAGNESIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMStrontium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, STRONTIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMCalcium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, CALCIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMRadium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, RADIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMBarium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, BARIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
                 //semi-metals
-                new EMElement(Categories.EMElements, EMBoron, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, BORON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMSilicon, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, SILICON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMGermanium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, GERMANIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMArsenic, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, ARSENIC, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMAntimony, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, ANTIMONY, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMTellurium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, TELURIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
-                new EMElement(Categories.EMElements, EMPolonium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                new EMElement(Categories.EMElements, POLONIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
 
                 //others
@@ -405,6 +599,27 @@ public class Elements {
                         {null,null,null,null,null,null,null,null,null}).register(em);
                 new EMElement(Categories.EMElements, EMDubnium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
                         {null,null,null,null,null,null,null,null,null}).register(em);
+                new EMElement(Categories.EMElements, EMSeaborgium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                        {null,null,null,null,null,null,null,null,null}).register(em);
+                new EMElement(Categories.EMElements, EMBohrium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                        {null,null,null,null,null,null,null,null,null}).register(em);
+                new EMElement(Categories.EMElements, EMHassium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                        {null,null,null,null,null,null,null,null,null}).register(em);
+                new EMElement(Categories.EMElements, EMMeitnerium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                        {null,null,null,null,null,null,null,null,null}).register(em);
+                new EMElement(Categories.EMElements, EMDarmstadtium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                        {null,null,null,null,null,null,null,null,null}).register(em);
+                new EMElement(Categories.EMElements, EMRoentgenium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                        {null,null,null,null,null,null,null,null,null}).register(em);
+                new EMElement(Categories.EMElements, EMCopernicium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                        {null,null,null,null,null,null,null,null,null}).register(em);
+                new EMElement(Categories.EMElements, EMZirconium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                        {null,null,null,null,null,null,null,null,null}).register(em);
+                new EMElement(Categories.EMElements, EMTechtenium, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]
+                        {null,null,null,null,null,null,null,null,null}).register(em);
+
+
+
 
 
                 //noble gasses

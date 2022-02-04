@@ -24,7 +24,7 @@ public class Items{
     public static final SlimefunItemStack EMUltraCompressor = new SlimefunItemStack("EM_ULTRA_COMPRESSOR", Material.PISTON, BukkitComponentSerializer.legacy().serialize
             (ElementManipulation.MM.parse("<gradient:#000000:#FFFFFF>Ultra compressor</gradient>")), "&8Used to compress elements", "&8Machine",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
-            LoreBuilder.power(128, "/s"));
+            LoreBuilder.power(4092, "/s"));
 
 
     public static final SlimefunItemStack EMJunctionTable= new SlimefunItemStack(

@@ -1,13 +1,14 @@
 package me.lucasgithuber.elementmanipulation.machines;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.lucasgithuber.elementmanipulation.Items;
 import me.lucasgithuber.elementmanipulation.elements.Elements;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
+import me.lucasgithuber.elementmanipulation.utils.UCGui;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -16,8 +17,10 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 
+import static me.lucasgithuber.elementmanipulation.utils.Categories.EMElements;
 
-public class EMUltraCompressor extends AContainer implements RecipeDisplayItem {
+
+public class EMUltraCompressor extends UCGui implements RecipeDisplayItem {
 
     public EMUltraCompressor(ItemGroup c) {
 
@@ -31,17 +34,31 @@ public class EMUltraCompressor extends AContainer implements RecipeDisplayItem {
     }
 
     public void registerDefaultRecipes() {
-        registerRecipe(15, new CustomItemStack(Elements.EMCarbon, 5),
-                new ItemStack(Material.DIAMOND));
+        registerRecipe(15,
+                new ItemStack[]{
+                        new CustomItemStack(Elements.CARBON, 64),
+                        new CustomItemStack(Elements.CARBON, 64),
+                        new CustomItemStack(Elements.CARBON, 64),
+                        new CustomItemStack(Elements.CARBON, 64),
+
+                },
+                //output
+                new ItemStack[]{new ItemStack(Material.DIAMOND)});
     }
 
     @Override
     public List<ItemStack> getDisplayRecipes() {
-        List<ItemStack> displayRecipes = new ArrayList<>(recipes.size() * 2);
+        List<ItemStack> displayRecipes = new ArrayList<>(recipes.size() * 8);
 
         for (MachineRecipe recipe : recipes) {
             displayRecipes.add(recipe.getInput()[0]);
-            displayRecipes.add(recipe.getOutput()[recipe.getOutput().length - 1]);
+
+            for (ItemStack output : recipe.getOutput()) {
+                displayRecipes.add(output);
+                displayRecipes.add(new ItemStack(Material.AIR));
+            }
+
+            displayRecipes.add(new ItemStack(Material.AIR));
         }
 
         return displayRecipes;

@@ -13,7 +13,6 @@ public class Setup {
         Categories.setup(p);
 
         new EMDeconstructor(Categories.EMMachines).register(p);
-        new EMUltraCompressor(Categories.EMMachines).register(p);
 
     }
 }
