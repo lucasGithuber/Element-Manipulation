@@ -10,7 +10,7 @@ import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponen
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.lucasgithuber.elementmanipulation.Items;
-import me.lucasgithuber.elementmanipulation.utils.JunctionGroup;
+import me.lucasgithuber.elementmanipulation.utils.JunctionGroupTest;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import org.bukkit.ChatColor;
@@ -23,7 +23,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public final class EMJunctionTable extends io.github.mooy1.infinitylib.machines.CraftingBlock implements EnergyNetComponent {
+public final class JunctionTable extends io.github.mooy1.infinitylib.machines.CraftingBlock implements EnergyNetComponent {
 
     public static final int[] INPUT_SLOTS = {
             0, 1, 2, 3, 4, 5,
@@ -40,7 +40,7 @@ public final class EMJunctionTable extends io.github.mooy1.infinitylib.machines.
 
     private final int energy;
 
-    public EMJunctionTable(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy) {
+    public JunctionTable(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe, int energy) {
         super(category, item, type, recipe);
         addRecipesFrom(TYPE);
         layout(new MachineLayout()
@@ -67,7 +67,7 @@ public final class EMJunctionTable extends io.github.mooy1.infinitylib.machines.
     protected void onNewInstance(BlockMenu menu, Block b) {
         super.onNewInstance(menu, b);
         menu.addMenuClickHandler(RECIPE_SLOT, (p, slot, item, action) -> {
-            JunctionGroup.open(p, menu);
+            JunctionGroupTest.open(p, menu);
             return false;
         });
     }

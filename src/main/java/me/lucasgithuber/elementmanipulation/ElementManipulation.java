@@ -7,8 +7,9 @@ import me.lucasgithuber.elementmanipulation.elements.Elements;
 import me.lucasgithuber.elementmanipulation.items.EMMaterials;
 import me.lucasgithuber.elementmanipulation.utils.Metrics;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.kyori.adventure.text.minimessage.markdown.DiscordFlavor;
-import net.kyori.adventure.text.minimessage.transformation.TransformationType;
+
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
 
 
 public final class ElementManipulation extends AbstractAddon implements SlimefunAddon {
@@ -17,14 +18,14 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
 
 
     public static final MiniMessage MM = MiniMessage.builder()
-            .removeDefaultTransformations()
-            .transformation(TransformationType.COLOR)
-            .transformation(TransformationType.DECORATION)
-            .transformation(TransformationType.GRADIENT)
-            .markdown()
-            .markdownFlavor(DiscordFlavor.get())
+            .tags(TagResolver.builder()
+                    .resolver(StandardTags.color())
+                    .resolver(StandardTags.decorations())
+                    .resolver(StandardTags.gradient())
+                    .build()
+            )
             .build();
-
+    MiniMessage mm = MiniMessage.miniMessage();
     public ElementManipulation() {
         super("lucasGithuber", "Element-Manipulation", "master", "options.auto-update");
     }

@@ -16,22 +16,22 @@ public class Categories {
     public static final ItemGroup EMElements = new SubGroup(
             "em_elements",
             new CustomItemStack(new ItemStack(Material.PRISMARINE_SHARD), BukkitComponentSerializer.legacy().serialize
-                    (ElementManipulation.MM.parse("<gradient:#ff0000:#f4ff00>Elements</gradient>")))
+                    (ElementManipulation.MM.deserialize("<gradient:#ff0000:#f4ff00>Elements</gradient>")))
     );
     public static final ItemGroup EMMachines = new SubGroup(
             "em_machines",
             new CustomItemStack(new ItemStack(Material.BLAST_FURNACE), BukkitComponentSerializer.legacy().serialize
-                    (ElementManipulation.MM.parse("<gradient:#A3A3A3:#818181>Machines</gradient>"))));
+                    (ElementManipulation.MM.deserialize("<gradient:#A3A3A3:#818181>Machines</gradient>"))));
 
-    public static final ItemGroup EMJunctionCategory = new JunctionGroup(
+    public static final ItemGroup EMJunctionCategory = new JunctionGroupTest(
             ElementManipulation.createKey("junction_category"),
             new CustomItemStack(Material.SMITHING_TABLE, BukkitComponentSerializer.legacy().serialize
-                    (ElementManipulation.MM.parse("<gradient:#A3A3A3:#FFFFFF>Junctions</gradient>"))),3);
+                    (ElementManipulation.MM.deserialize("<gradient:#A3A3A3:#FFFFFF>Junctions</gradient>"))),3);
 
     public static final ItemGroup EMMain = new MultiGroup(
             "em_manipulation",
             new CustomItemStack(Material.NETHERITE_BLOCK, BukkitComponentSerializer.legacy().serialize
-                    (ElementManipulation.MM.parse("<gradient:#5e4fa2:#f79459>Elements Manipulation</gradient>"))),
+                    (ElementManipulation.MM.deserialize("<gradient:#5e4fa2:#f79459>Elements Manipulation</gradient>"))),
             EMElements, EMMachines, EMJunctionCategory
     );
     public static final ItemGroup EMJunctionCheat = new SubGroup("junction_cheat",

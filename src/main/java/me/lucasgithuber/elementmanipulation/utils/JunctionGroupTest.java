@@ -36,7 +36,7 @@ import java.util.*;
  * this guy is a god XD
  * @author Mooy1
  */
-public class JunctionGroup extends FlexItemGroup {
+public class JunctionGroupTest extends FlexItemGroup {
 
     private static final int[] JUNCTION_RECIPE_SLOTS = {
             3, 4, 5, 6, 7, 8,
@@ -81,7 +81,7 @@ public class JunctionGroup extends FlexItemGroup {
     private static final LinkedHashMap<String, Pair<SlimefunItemStack, ItemStack[]>> ITEMS = new LinkedHashMap<>();
     private static final List<String> IDS = new ArrayList<>();
 
-    JunctionGroup(NamespacedKey key, ItemStack item, int tier) {
+    JunctionGroupTest(NamespacedKey key, ItemStack item, int tier) {
         super(key, item, tier);
         JunctionTable.TYPE.sendRecipesTo((input, output) -> {
             SlimefunItemStack sfStack = (SlimefunItemStack) output;

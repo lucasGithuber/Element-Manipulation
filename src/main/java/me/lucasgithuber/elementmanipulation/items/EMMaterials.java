@@ -4,6 +4,7 @@
     import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
     import lombok.Getter;
     import me.lucasgithuber.elementmanipulation.ElementManipulation;
+    import me.lucasgithuber.elementmanipulation.machines.JunctionTable;
     import me.lucasgithuber.elementmanipulation.utils.Categories;
     import org.bukkit.Material;
     import org.bukkit.inventory.ItemStack;
@@ -208,7 +209,7 @@
 
     public static void setup(ElementManipulation em){
 
-    new EMItem(Categories.EMJunctionCheat, EMCarrot,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMCarrot,  JunctionTable.TYPE, new ItemStack[] {
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
             CARBON,null,     null,     null,    null,  CARBON,
             CARBON,null,HYDROGEN,HYDROGEN,null,      CARBON,
@@ -216,7 +217,7 @@
             CARBON,null,     null,     null,    null,      CARBON,
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMCocoa,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMCocoa,  JunctionTable.TYPE, new ItemStack[] {
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
             CARBON, null,    null,    null,    null,    CARBON,
             NITROGEN,    null,    OXYGEN, OXYGEN,     null,    NITROGEN,
@@ -224,7 +225,7 @@
             HYDROGEN, null,  null,    null,    null,              HYDROGEN,
             HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMNetherWart,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMNetherWart,  JunctionTable.TYPE, new ItemStack[] {
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
             CARBON,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN, CARBON,
             CARBON,HYDROGEN,OXYGEN,  OXYGEN,  HYDROGEN, CARBON,
@@ -232,7 +233,7 @@
             CARBON,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN, CARBON,
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMPotato,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMPotato,  JunctionTable.TYPE, new ItemStack[] {
             HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,
             HYDROGEN,null,null,null,null,HYDROGEN,
             HYDROGEN,null,OXYGEN,OXYGEN,null,HYDROGEN,
@@ -240,7 +241,7 @@
             CARBON,null,null,null,null,CARBON,
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMPumpkinSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMPumpkinSeeds,  JunctionTable.TYPE, new ItemStack[] {
             null,null,null,null,null,null,
             null,null,      HYDROGEN,null,null,null,
             null,HYDROGEN,HYDROGEN,null,null,null,
@@ -249,7 +250,7 @@
             null,null,null,null,null,null
     }).setUseableInWorkbench(true).register(em);
 
-    emRedstone = new EMRedstone(Categories.EMJunctionCheat, EMRedstone,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    emRedstone = new EMRedstone(Categories.EMJunctionCheat, EMRedstone,  JunctionTable.TYPE, new ItemStack[] {
             null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
             null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
             null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
@@ -257,7 +258,7 @@
             null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
             null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
     }, new SlimefunItemStack(EMRedstone, 64));
-    new EMItem(Categories.EMJunctionCheat,EMSweetBerries,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat,EMSweetBerries,  JunctionTable.TYPE, new ItemStack[] {
             HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,
             HYDROGEN,HYDROGEN,null,null,            HYDROGEN,HYDROGEN,
             HYDROGEN,null,OXYGEN,OXYGEN,null,                       HYDROGEN,
@@ -265,7 +266,7 @@
             CARBON,CARBON,null,null,   CARBON,CARBON,
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMWheatSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMWheatSeeds,  JunctionTable.TYPE, new ItemStack[] {
             null,null,null,null,null,null,
             null,null,CARBON,null,null,null,
             null,CARBON,CARBON,null,null,null,
@@ -273,7 +274,7 @@
             null,null,null,OXYGEN,null,null,
             null,null,null,null,null,null,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMApple,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMApple,  JunctionTable.TYPE, new ItemStack[] {
             null,null,      null,      OXYGEN,null,null,
             null,HYDROGEN,HYDROGEN,OXYGEN,CARBON,null,
             null,HYDROGEN,OXYGEN,  OXYGEN,CARBON,null,
@@ -281,7 +282,7 @@
             null,HYDROGEN,OXYGEN,     CARBON,CARBON,null,
             null,null,      OXYGEN,      null,null,null,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMBeetrootSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMBeetrootSeeds,  JunctionTable.TYPE, new ItemStack[] {
             CARBON,null,null,null,null,CARBON,
             CARBON,HYDROGEN,null,null,HYDROGEN,CARBON,
             CARBON,HYDROGEN,OXYGEN,OXYGEN,HYDROGEN,CARBON,
@@ -289,7 +290,7 @@
             CARBON,HYDROGEN,null,null,HYDROGEN,CARBON,
             CARBON,null,null,null,null,CARBON,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMBone,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMBone,  JunctionTable.TYPE, new ItemStack[] {
             null,OXYGEN,CALCIUM, CALCIUM,OXYGEN,null,
             null,OXYGEN,CALCIUM, CALCIUM,OXYGEN,null,
             null,OXYGEN,CALCIUM, CALCIUM,OXYGEN,null,
@@ -297,7 +298,7 @@
             null,OXYGEN,CALCIUM, CALCIUM,OXYGEN,null,
             null,OXYGEN,CALCIUM, CALCIUM,OXYGEN,null,null,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMGold,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMGold,  JunctionTable.TYPE, new ItemStack[] {
             null,null,EMAu,EMAu,null,null,
             null,null,EMAu,EMAu,null,null,
             null,null,EMAu,EMAu,null,null,
@@ -305,7 +306,7 @@
             null,null,EMAu,EMAu,null,null,
             null,null,EMAu,EMAu,null,null,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMHoneyBottle,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMHoneyBottle,  JunctionTable.TYPE, new ItemStack[] {
             CARBON,null,HYDROGEN,HYDROGEN,null,OXYGEN,
             CARBON,null,HYDROGEN,HYDROGEN,null,OXYGEN,
             CARBON,null,HYDROGEN,HYDROGEN,null,OXYGEN,
@@ -313,7 +314,7 @@
             CARBON,null,HYDROGEN,HYDROGEN,null,OXYGEN,
             CARBON,null,HYDROGEN,HYDROGEN,null,OXYGEN,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMInkSac,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMInkSac,  JunctionTable.TYPE, new ItemStack[] {
             null,null,null,null,null,null,
             null,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,null,
             null,HYDROGEN,CARBON,CARBON,HYDROGEN,null,
@@ -322,15 +323,15 @@
             null,null,null,null,null,null,
     }).setUseableInWorkbench(true).register(em);
 
-    emLapis = new EMLapis(Categories.EMJunctionCheat, EMLapisLazuli,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    emLapis = new EMLapis(Categories.EMJunctionCheat, EMLapisLazuli,  JunctionTable.TYPE, new ItemStack[] {
             SODIUM,SODIUM,OXYGEN,OXYGEN,CALCIUM,CALCIUM,
             SODIUM,SILICON,SULFUR,SULFUR,SILICON,CALCIUM,
-            SODIUM,EMAluminum,new ItemStack(Material.BLUE_DYE),new ItemStack(Material.BLUE_DYE),EMAluminum,CALCIUM,
-            SODIUM,EMAluminum,new ItemStack(Material.BLUE_DYE),new ItemStack(Material.BLUE_DYE),EMAluminum,CALCIUM,
+            SODIUM,ALUMINUM,new ItemStack(Material.BLUE_DYE),new ItemStack(Material.BLUE_DYE),ALUMINUM,CALCIUM,
+            SODIUM,ALUMINUM,new ItemStack(Material.BLUE_DYE),new ItemStack(Material.BLUE_DYE),ALUMINUM,CALCIUM,
             SODIUM,SILICON,SULFUR,SULFUR,SILICON,CALCIUM,
             SODIUM,SODIUM,OXYGEN,OXYGEN,CALCIUM,CALCIUM,
     }, new SlimefunItemStack(EMLapisLazuli, 64));
-    new EMItem(Categories.EMJunctionCheat, EMMelonSeeds,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMMelonSeeds,  JunctionTable.TYPE, new ItemStack[] {
             null,null,HYDROGEN,HYDROGEN,null,null,
             null,HYDROGEN,CARBON,CARBON,HYDROGEN,null,
             HYDROGEN,CARBON,OXYGEN,OXYGEN,CARBON,HYDROGEN,
@@ -338,7 +339,7 @@
             null,HYDROGEN,CARBON,CARBON,HYDROGEN,null,
             null,null,HYDROGEN,HYDROGEN,null,null
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMPoisonPotato,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMPoisonPotato,  JunctionTable.TYPE, new ItemStack[] {
             HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,
             HYDROGEN,EMSilver,null,null,CARBON,HYDROGEN,
             HYDROGEN,null,OXYGEN,OXYGEN,null,HYDROGEN,
@@ -346,7 +347,7 @@
             CARBON,CARBON,null,null,NITROGEN,CARBON,
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMSugar,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMSugar,  JunctionTable.TYPE, new ItemStack[] {
             HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,
             HYDROGEN,CARBON,CARBON,CARBON,CARBON,HYDROGEN,
             HYDROGEN,CARBON,OXYGEN,OXYGEN,CARBON,HYDROGEN,
@@ -354,7 +355,7 @@
             HYDROGEN,CARBON,CARBON,CARBON,CARBON,HYDROGEN,
             HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMClay,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMClay,  JunctionTable.TYPE, new ItemStack[] {
             null,null,null,null,null,null,
             null,null,null,null,null,null,
             null,null,SILICON,OXYGEN,null,null,
@@ -362,7 +363,7 @@
             null,null,null,null,null,null,
             null,null,null,null,null,null
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMCoal,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMCoal,  JunctionTable.TYPE, new ItemStack[] {
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
@@ -370,15 +371,15 @@
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON
     }).setUseableInWorkbench(true).register(em);
-    emEmerald = new EMEmerald(Categories.EMJunctionCheat, EMEmerald,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    emEmerald = new EMEmerald(Categories.EMJunctionCheat, EMEmerald,  JunctionTable.TYPE, new ItemStack[] {
             BERYLLIUM,BERYLLIUM,SILICON,SILICON,OXYGEN,OXYGEN,
             BERYLLIUM,SILICON,SILICON,SILICON,SILICON,OXYGEN,
             SILICON,SILICON,SILICON,SILICON,SILICON,SILICON,
             SILICON,SILICON,SILICON,SILICON,SILICON,SILICON,
-            EMAluminum,SILICON,SILICON,SILICON,SILICON,OXYGEN,
-            EMAluminum,EMAluminum,SILICON,SILICON,OXYGEN,OXYGEN,
+            ALUMINUM,SILICON,SILICON,SILICON,SILICON,OXYGEN,
+            ALUMINUM,ALUMINUM,SILICON,SILICON,OXYGEN,OXYGEN,
     }, new SlimefunItemStack(EMEmerald, 64));
-    new EMItem(Categories.EMJunctionCheat, EMFlint,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMFlint,  JunctionTable.TYPE, new ItemStack[] {
             null,null,null,null,null,null,
             null,null,null,null,null,null,
             null,null,null,OXYGEN,null,null,
@@ -386,7 +387,7 @@
             null,null,null,null,null,null,
             null,null,null,null,null,null
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMGhastTear,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMGhastTear,  JunctionTable.TYPE, new ItemStack[] {
             null,null,null,null,null,null,
             null,null,null,null,null,null,
             null,null,HYDROGEN,HYDROGEN,null,null,null,
@@ -394,7 +395,7 @@
             null,null,null,null,null,null,
             null,null,null,null,null,null
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMWaterBucket,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMWaterBucket,  JunctionTable.TYPE, new ItemStack[] {
             null,null,null,null,null,null,
             null,null,null,null,null,null,
             null,null,OXYGEN,HYDROGEN,null,null,
@@ -402,7 +403,7 @@
             null,null,null,null,null,null,
             null,null,null,null,null,null
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMQuartz,  me.lucasgithuber.elementmanipulation.machines.EMJunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, EMQuartz,  JunctionTable.TYPE, new ItemStack[] {
             null,null,null,null,null,null,
             null,null,null,null,null,null,
             null,null,OXYGEN,null,null,null,
