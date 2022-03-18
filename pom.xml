@@ -69,13 +69,16 @@
                             <shadedPattern>me.lucasgithuber.elementmanipulation.infinitylib</shadedPattern>
                         </relocation>
                         <relocation>
-                            <pattern>net.kyori.adventure.text.minimessage</pattern>
-                            <shadedPattern>me.lucasgithuber.elementmanipulation.adventure.text.minimessage</shadedPattern>
+                            <pattern>net.kyori.adventure</pattern>
+                            <shadedPattern>me.lucasgithuber.elementmanipulation.adventure</shadedPattern>
                         </relocation>
                         <relocation>
-                            <pattern>net.kyori.adventure.platform.bukkit</pattern>
-                            <shadedPattern>me.lucasgithuber.elementmanipulation.adventure.platform.bukkit</shadedPattern>
-                        </relocation>
+                            <pattern>net.kyori.examination</pattern>
+                            <shadedPattern>me.lucasgithuber.elementmanipulation.examination</shadedPattern>
+                        </relocation><relocation>
+                        <pattern>net.kyori.platform.bukkit</pattern>
+                        <shadedPattern>me.lucasgithuber.elementmanipulation.platform.bukkit</shadedPattern>
+                    </relocation>
                     </relocations>
                     <filters>
                         <filter>
