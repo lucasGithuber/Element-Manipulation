@@ -79,6 +79,10 @@
                         <pattern>net.kyori.platform.bukkit</pattern>
                         <shadedPattern>me.lucasgithuber.elementmanipulation.platform.bukkit</shadedPattern>
                     </relocation>
+                        <relocation>
+                            <pattern>org.bstats</pattern>
+                            <shadedPattern>me.lucasgithuber.elementmanipulation.bstats</shadedPattern>
+                        </relocation>
                     </relocations>
                     <filters>
                         <filter>
@@ -169,6 +173,12 @@
             <groupId>net.kyori</groupId>
             <artifactId>adventure-platform-bukkit</artifactId>
             <version>4.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>3.0.0</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

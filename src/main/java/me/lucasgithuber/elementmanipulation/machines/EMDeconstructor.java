@@ -90,7 +90,7 @@ public class EMDeconstructor extends DeconstructorGUI implements RecipeDisplayIt
                 });
         registerRecipe(4, new ItemStack[] {new ItemStack(Material.GOLD_INGOT)},
                 new ItemStack[] {
-                        new CustomItemStack(Elements.EMAu, 8),
+                        new CustomItemStack(Elements.GOLD, 8),
                 });
         registerRecipe(4, new ItemStack[] {new ItemStack(Material.INK_SAC)},
                 new ItemStack[] {
@@ -99,7 +99,7 @@ public class EMDeconstructor extends DeconstructorGUI implements RecipeDisplayIt
                 });
         registerRecipe(4, new ItemStack[] {new ItemStack(Material.REDSTONE, 64)},
                 new ItemStack[] {
-                        new CustomItemStack(Elements.EMCopper, 8),
+                        new CustomItemStack(Elements.COPPER, 8),
                 });
         registerRecipe(4, new ItemStack[] {new ItemStack(Material.LAPIS_LAZULI, 64)},
                 new ItemStack[] {

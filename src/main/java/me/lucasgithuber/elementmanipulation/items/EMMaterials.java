@@ -251,12 +251,12 @@
     }).setUseableInWorkbench(true).register(em);
 
     emRedstone = new EMRedstone(Categories.EMJunctionCheat, EMRedstone,  JunctionTable.TYPE, new ItemStack[] {
-            null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
-            null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
-            null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
-            null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
-            null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
-            null,SlimefunItems.PLASTIC_SHEET,EMCopper,EMCopper,SlimefunItems.PLASTIC_SHEET,null,
+            null,SlimefunItems.PLASTIC_SHEET,COPPER,COPPER,SlimefunItems.PLASTIC_SHEET,null,
+            null,SlimefunItems.PLASTIC_SHEET,COPPER,COPPER,SlimefunItems.PLASTIC_SHEET,null,
+            null,SlimefunItems.PLASTIC_SHEET,COPPER,COPPER,SlimefunItems.PLASTIC_SHEET,null,
+            null,SlimefunItems.PLASTIC_SHEET,COPPER,COPPER,SlimefunItems.PLASTIC_SHEET,null,
+            null,SlimefunItems.PLASTIC_SHEET,COPPER,COPPER,SlimefunItems.PLASTIC_SHEET,null,
+            null,SlimefunItems.PLASTIC_SHEET,COPPER,COPPER,SlimefunItems.PLASTIC_SHEET,null,
     }, new SlimefunItemStack(EMRedstone, 64));
     new EMItem(Categories.EMJunctionCheat,EMSweetBerries,  JunctionTable.TYPE, new ItemStack[] {
             HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,
@@ -299,12 +299,12 @@
             null,OXYGEN,CALCIUM, CALCIUM,OXYGEN,null,null,
     }).setUseableInWorkbench(true).register(em);
     new EMItem(Categories.EMJunctionCheat, EMGold,  JunctionTable.TYPE, new ItemStack[] {
-            null,null,EMAu,EMAu,null,null,
-            null,null,EMAu,EMAu,null,null,
-            null,null,EMAu,EMAu,null,null,
-            null,null,EMAu,EMAu,null,null,
-            null,null,EMAu,EMAu,null,null,
-            null,null,EMAu,EMAu,null,null,
+            null,null,GOLD,GOLD,null,null,
+            null,null,GOLD,GOLD,null,null,
+            null,null,GOLD,GOLD,null,null,
+            null,null,GOLD,GOLD,null,null,
+            null,null,GOLD,GOLD,null,null,
+            null,null,GOLD,GOLD,null,null,
     }).setUseableInWorkbench(true).register(em);
     new EMItem(Categories.EMJunctionCheat, EMHoneyBottle,  JunctionTable.TYPE, new ItemStack[] {
             CARBON,null,HYDROGEN,HYDROGEN,null,OXYGEN,
@@ -341,7 +341,7 @@
     }).setUseableInWorkbench(true).register(em);
     new EMItem(Categories.EMJunctionCheat, EMPoisonPotato,  JunctionTable.TYPE, new ItemStack[] {
             HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,HYDROGEN,
-            HYDROGEN,EMSilver,null,null,CARBON,HYDROGEN,
+            HYDROGEN,SILVER,null,null,CARBON,HYDROGEN,
             HYDROGEN,null,OXYGEN,OXYGEN,null,HYDROGEN,
             CARBON,null,OXYGEN,OXYGEN,null,CARBON,
             CARBON,CARBON,null,null,NITROGEN,CARBON,
