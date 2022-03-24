@@ -106,8 +106,8 @@
         "&fNormal bone",
         "&fUsable in vanilla workbench"
     );
-    public static final SlimefunItemStack EMGold = new SlimefunItemStack(
-        "EM_GOLD",
+    public static final SlimefunItemStack GOLD_INGOT = new SlimefunItemStack(
+        "EM_GOLD_INGOT",
         Material.GOLD_INGOT,
         "&fGold ingot",
         "&fNormal gold ingot",
@@ -298,7 +298,7 @@
             null,OXYGEN,CALCIUM, CALCIUM,OXYGEN,null,
             null,OXYGEN,CALCIUM, CALCIUM,OXYGEN,null,null,
     }).setUseableInWorkbench(true).register(em);
-    new EMItem(Categories.EMJunctionCheat, EMGold,  JunctionTable.TYPE, new ItemStack[] {
+    new EMItem(Categories.EMJunctionCheat, GOLD_INGOT,  JunctionTable.TYPE, new ItemStack[] {
             null,null,GOLD,GOLD,null,null,
             null,null,GOLD,GOLD,null,null,
             null,null,GOLD,GOLD,null,null,

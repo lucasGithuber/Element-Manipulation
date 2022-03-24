@@ -8,6 +8,7 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.lucasgithuber.elementmanipulation.machines.JunctionTable;
+import me.lucasgithuber.elementmanipulation.machines.RockAnalyzer;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.Material;
@@ -35,6 +36,15 @@ public class Items{
             "",
             MachineLore.energy(4096) + "per item"
     );
+    public static final SlimefunItemStack ROCK_ANALYZER= new SlimefunItemStack(
+            "EM_ROCK_ANALYZER",
+            Material.LODESTONE,
+            "&7Rock analyzer",
+            "&7Analyzes rocks to get solid elements",
+            "&7like transition-metals",
+            "",
+            MachineLore.energy(512) + "/t"
+    );
 
     public static void setup(ElementManipulation em) {
         new JunctionTable(Categories.EMMachines, EMJunctionTable, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
@@ -42,6 +52,11 @@ public class Items{
                 SlimefunItems.REINFORCED_PLATE,SlimefunItems.CRAFTING_MOTOR,SlimefunItems.REINFORCED_PLATE,
                 new ItemStack(Material.BLACK_CONCRETE),SlimefunItems.LARGE_CAPACITOR,new ItemStack(Material.BLACK_CONCRETE),
         }, 4096).register(em);
+        /*new RockAnalyzer(Categories.EMMachines, ROCK_ANALYZER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+         *       new ItemStack(Material.NETHER_STAR),new ItemStack(Material.SPYGLASS),new ItemStack(Material.NETHER_STAR),
+                SlimefunItems.REINFORCED_PLATE,new ItemStack(Material.GLASS),SlimefunItems.REINFORCED_PLATE,
+                new ItemStack(Material.BLACK_CONCRETE),SlimefunItems.LARGE_CAPACITOR,new ItemStack(Material.BLACK_CONCRETE),
+        }).setCapacity(2048).setEnergyConsumption(512).setProcessingSpeed(1).register(em);*/
     }
 
 }

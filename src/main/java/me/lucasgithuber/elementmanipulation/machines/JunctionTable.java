@@ -10,7 +10,7 @@ import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponen
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.lucasgithuber.elementmanipulation.Items;
-import me.lucasgithuber.elementmanipulation.utils.JunctionGroupTest;
+import me.lucasgithuber.elementmanipulation.utils.JunctionGroup;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import org.bukkit.ChatColor;
@@ -67,7 +67,7 @@ public final class JunctionTable extends io.github.mooy1.infinitylib.machines.Cr
     protected void onNewInstance(BlockMenu menu, Block b) {
         super.onNewInstance(menu, b);
         menu.addMenuClickHandler(RECIPE_SLOT, (p, slot, item, action) -> {
-            JunctionGroupTest.open(p, menu);
+            JunctionGroup.open(p, menu);
             return false;
         });
     }

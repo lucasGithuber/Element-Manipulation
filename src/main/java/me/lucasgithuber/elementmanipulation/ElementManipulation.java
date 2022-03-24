@@ -6,7 +6,6 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.lucasgithuber.elementmanipulation.elements.Elements;
 import me.lucasgithuber.elementmanipulation.items.EMMaterials;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
 import org.bstats.bukkit.Metrics;

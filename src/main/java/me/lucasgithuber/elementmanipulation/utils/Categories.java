@@ -23,7 +23,7 @@ public class Categories {
             new CustomItemStack(new ItemStack(Material.BLAST_FURNACE), BukkitComponentSerializer.legacy().serialize
                     (ElementManipulation.MM.deserialize("<gradient:#A3A3A3:#818181>Machines</gradient>"))));
 
-    public static final ItemGroup EMJunctionCategory = new JunctionGroupTest(
+    public static final ItemGroup EMJunctionCategory = new JunctionGroup(
             ElementManipulation.createKey("junction_category"),
             new CustomItemStack(Material.SMITHING_TABLE, BukkitComponentSerializer.legacy().serialize
                     (ElementManipulation.MM.deserialize("<gradient:#A3A3A3:#FFFFFF>Junctions</gradient>"))),3);

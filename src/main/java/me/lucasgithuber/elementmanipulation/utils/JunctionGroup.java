@@ -264,7 +264,7 @@ public class JunctionGroup extends FlexItemGroup {
             menu.addItem(slot, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
         for (int slot : JUNCTION_OUTPUT_BORDER) {
-            menu.addItem(slot, JunctionGroupTest.OUTPUT_BORDER, ChestMenuUtils.getEmptyClickHandler());
+            menu.addItem(slot, JunctionGroup.OUTPUT_BORDER, ChestMenuUtils.getEmptyClickHandler());
         }
         menu.addItem(JUNCTION_OUTPUT, pair.getFirstValue(), ChestMenuUtils.getEmptyClickHandler());
         for (int slot : WORKBENCH_BORDER) {
