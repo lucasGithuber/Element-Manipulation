@@ -64,8 +64,8 @@ public abstract class DeconstructorGUI extends SlimefunItem implements Inventory
     private int processingSpeed = -1;
 
     @ParametersAreNonnullByDefault
-    protected DeconstructorGUI(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
-        super(itemGroup, item, recipeType, recipe);
+    protected DeconstructorGUI(ItemGroup category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+        super(category, item, recipeType, recipe);
 
         processor.setProgressBar(getProgressBar());
         createPreset(this, getInventoryTitle(), this::constructMenu);

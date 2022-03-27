@@ -1,6 +1,7 @@
 package me.lucasgithuber.elementmanipulation.machines;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
@@ -17,17 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class EMDeconstructor extends DeconstructorGUI implements RecipeDisplayItem {
+public class Deconstructor extends DeconstructorGUI implements RecipeDisplayItem {
 
-    public EMDeconstructor(ItemGroup c) {
-
-        super(c, Items.EMDeconstructor, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
-                SlimefunItems.POWER_CRYSTAL, SlimefunItems.ELECTRIC_ORE_GRINDER_3, SlimefunItems.POWER_CRYSTAL,
-                SlimefunItems.REINFORCED_PLATE, SlimefunItems.NUCLEAR_REACTOR, SlimefunItems.REINFORCED_PLATE,
-                SlimefunItems.REINFORCED_PLATE, SlimefunItems.LARGE_CAPACITOR, SlimefunItems.REINFORCED_PLATE
-        });
-        this.setProcessingSpeed(1).setCapacity(256).setEnergyConsumption(128);
-
+    public Deconstructor(ItemGroup category, SlimefunItemStack item, RecipeType type, ItemStack[] recipe) {
+        super(category, item, type, recipe);
     }
 
     public void registerDefaultRecipes() {

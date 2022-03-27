@@ -7,16 +7,12 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import me.lucasgithuber.elementmanipulation.ElementManipulation;
-import me.lucasgithuber.elementmanipulation.Items;
 import me.lucasgithuber.elementmanipulation.elements.Elements;
 import me.lucasgithuber.elementmanipulation.utils.RockAnalyzerGui;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 
@@ -36,11 +32,9 @@ public class RockAnalyzer extends RockAnalyzerGui implements RecipeDisplayItem {
     public List<ItemStack> getDisplayRecipes() {
         List<ItemStack> displayRecipes = new ArrayList<>(recipes.size() * 4);
 
-        for (MachineRecipe recipe : recipes) {
-            displayRecipes.add(recipe.getInput()[0]);
-            displayRecipes.add(recipe.getOutput()[0]);
-        }
 
+            displayRecipes.add(new CustomItemStack(Material.STONE, "&7Any stone variants"));
+            displayRecipes.add((new CustomItemStack(Material.FILLED_MAP, "&7Elements acording to the stone type you get", "&7Stone types are decided randomly")));
         return displayRecipes;
     }
     @Override
@@ -52,20 +46,64 @@ public class RockAnalyzer extends RockAnalyzerGui implements RecipeDisplayItem {
             if (takeCharge(b.getLocation())) {
 
                 if (!currentOperation.isFinished()) {
-                    processor.updateProgressBar(inv, 22, currentOperation);
+                    processor.updateProgressBar(inv, 21, currentOperation);
                     currentOperation.addProgress(1);
                 } else {
-                    inv.replaceExistingItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "));
+                    inv.replaceExistingItem(21, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "));
 
                     for (ItemStack output : currentOperation.getResults()) {
                         if (inv.hasViewer()) {
-                            switch (ThreadLocalRandom.current().nextInt(2)) {
+                            switch (ThreadLocalRandom.current().nextInt(10)) {
+                                //iron ores
                                 case 0:
-                                inv.pushItem(output.clone(), getOutputSlots());
-                                inv.pushItem(new CustomItemStack(Elements.CARBON.clone(), 1), getOutputSlots());
+                                    inv.pushItem(output.clone(), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.IRON.clone(), 2), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 3), getOutputSlots());
                                 case 1:
-                                inv.pushItem(output.clone(), getOutputSlots());
-                                inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 1), getOutputSlots());
+                                    inv.pushItem(output.clone(), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.IRON.clone(), 3), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 4), getOutputSlots());
+                                case 2:
+                                    inv.pushItem(output.clone(), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.MAGNESIUM.clone(), 1), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 1), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.IRON.clone(), 2), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 3), getOutputSlots());
+                                case 3:
+                                    inv.pushItem(output.clone(), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.IRON.clone(), 2), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 3), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.HYDROGEN.clone(), 2), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 1), getOutputSlots());
+                                case 4:
+                                    inv.pushItem(output.clone(), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.IRON.clone(), 2), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 3), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.HYDROGEN.clone(), 8), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 4), getOutputSlots());
+                                case 5:
+                                    inv.pushItem(output.clone(), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.IRON.clone(), 2), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 3), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.HYDROGEN.clone(), 6), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 3), getOutputSlots());
+                                case 6:
+                                    inv.pushItem(output.clone(), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.IRON.clone(), 1), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.CARBON.clone(), 1), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 3), getOutputSlots());
+                                case 7:
+                                    inv.pushItem(output.clone(), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.IRON.clone(), 1), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.SILICON.clone(), 2), getOutputSlots());
+                                case 8:
+                                    inv.pushItem(output.clone(), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.IRON.clone(), 1), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.SILICON.clone(), 1), getOutputSlots());
+                                case 9:
+                                    inv.pushItem(output.clone(), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.IRON.clone(), 1), getOutputSlots());
+                                    inv.pushItem(new CustomItemStack(Elements.OXYGEN.clone(), 3), getOutputSlots());
                             }
                         }
                         else{

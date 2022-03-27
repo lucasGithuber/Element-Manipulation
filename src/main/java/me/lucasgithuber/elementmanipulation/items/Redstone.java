@@ -8,8 +8,8 @@ import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nullable;
 
-public class EMRedstone extends SlimefunItem {
-    public EMRedstone(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, @Nullable ItemStack recipeOutput) {
+public class Redstone extends SlimefunItem {
+    public Redstone(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, @Nullable ItemStack recipeOutput) {
         super(itemGroup, item, recipeType, recipe, recipeOutput);
         this.setUseableInWorkbench(true);
     }

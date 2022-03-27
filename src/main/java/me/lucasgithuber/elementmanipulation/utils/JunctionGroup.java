@@ -169,7 +169,7 @@ public class JunctionGroup extends FlexItemGroup {
                         "&7Cost: &b" + research.getCost() + " Level(s)"
                 );
                 menu.addItem(i, resItem, (p, slot, item1, action) -> {
-                    research.unlockFromGuide(GUIDE, p, entry.profile, sfItem, Categories.EMJunctionCategory, 0);
+                    research.unlockFromGuide(GUIDE, p, entry.profile, sfItem, Categories.JUNCTION_CATEGORY, 0);
                     return false;
                 });
             } else {

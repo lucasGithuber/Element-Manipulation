@@ -5,6 +5,7 @@ import io.github.mooy1.infinitylib.core.AbstractAddon;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.lucasgithuber.elementmanipulation.elements.Elements;
 import me.lucasgithuber.elementmanipulation.items.EMMaterials;
+import me.lucasgithuber.elementmanipulation.utils.Categories;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
@@ -31,8 +32,8 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
     @Override
     public void enable() {
         i = this;
-        // Setup items
-        Setup.setup(this);
+        // Setup
+        Categories.setup(this);
         Elements.setup(this);
         EMMaterials.setup(this);
         Items.setup(this);

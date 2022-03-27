@@ -102,19 +102,19 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
     }
 
     public int[] getBorder() {
-        return new int[] { 0, 2, 4, 8, 9, 13, 17, 18, 26, 27, 31, 35, 36, 38, 40, 44};
+        return new int[] { 0,1,2,3,12, 30, 36,37,38,39};
     }
 
     public int[] getInputBorder() {
-        return new int[] { 1, 3, 10, 11, 12, 19, 21, 28, 29, 30, 37, 39 };
+        return new int[] { 9, 10, 11, 18, 20, 27, 28, 29 };
     }
 
     public int[] getOutputBorder() {
-        return new int[] { 5, 6, 7, 14, 16, 23, 24, 25, 32, 34, 41, 42, 43};
+        return new int[] {4,5,6,7,8,13,17,22,26,31,35,40,41,42,43,44};
     }
 
     public int getProgressBarSlot() {
-        return 22;
+        return 21;
     }
 
     protected void constructMenu(BlockMenuPreset preset) {
@@ -123,11 +123,11 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
         }
 
         for (int i : getInputBorder()) {
-            preset.addItem(i, new CustomItemStack(Material.PINK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(i, new CustomItemStack(Material.LIGHT_BLUE_STAINED_GLASS_PANE, "&bInput"), ChestMenuUtils.getEmptyClickHandler());
         }
 
         for (int i : getOutputBorder()) {
-            preset.addItem(i, new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(i, new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, "&aOutput"), ChestMenuUtils.getEmptyClickHandler());
         }
 
         preset.addItem(getProgressBarSlot(), new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
@@ -252,12 +252,12 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
 
     @Override
     public int[] getInputSlots() {
-        return new int[] { 20 };
+        return new int[] { 19 };
     }
 
     @Override
     public int[] getOutputSlots() {
-        return new int[] { 15, 33 };
+        return new int[] { 14,15,16,23,24,25,32,33,34 };
     }
 
     @Override
@@ -302,10 +302,10 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
             if (takeCharge(b.getLocation())) {
 
                 if (!currentOperation.isFinished()) {
-                    processor.updateProgressBar(inv, 22, currentOperation);
+                    processor.updateProgressBar(inv, 21, currentOperation);
                     currentOperation.addProgress(1);
                 } else {
-                    inv.replaceExistingItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "));
+                    inv.replaceExistingItem(21, new CustomItemStack(Material.SPYGLASS, "&7Analyzing"));
 
                     for (ItemStack output : currentOperation.getResults()) {
                         inv.pushItem(output.clone(), getOutputSlots());

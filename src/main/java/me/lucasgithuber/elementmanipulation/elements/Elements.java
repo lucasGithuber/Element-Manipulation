@@ -6,8 +6,6 @@ import me.lucasgithuber.elementmanipulation.utils.Categories;
 import me.lucasgithuber.elementmanipulation.utils.RecipeTypes;
 import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.Material;
-import org.bukkit.configuration.Configuration;
-import org.bukkit.event.block.LeavesDecayEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class Elements {
@@ -873,104 +871,104 @@ public static final SlimefunItemStack OGANESSON = new SlimefunItemStack(
 
 public static void setup(ElementManipulation em){
 
-            new EMElement(Categories.EMElements, OXYGEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, HYDROGEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, CARBON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, NITROGEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, PHOSPHORUS, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, SELENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, SULFUR, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, OXYGEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, HYDROGEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, CARBON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, NITROGEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, PHOSPHORUS, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, SELENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, SULFUR, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
             //alkalines
-            new EMElement(Categories.EMElements, LITHIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, SODIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, POTASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, RUBIDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, CAESIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, FRANCIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, LITHIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, SODIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, POTASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, RUBIDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, CAESIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, FRANCIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
             //halogens
-            new EMElement(Categories.EMElements, FLUORINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, CHLORINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, BROMINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, IODINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, ASTATINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, TENNESSINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, FLUORINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, CHLORINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, BROMINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, IODINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, ASTATINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, TENNESSINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
             //alkaline earths
-            new EMElement(Categories.EMElements, BERYLLIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, MAGNESIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, STRONTIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, CALCIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, RADIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, BARIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, BERYLLIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, MAGNESIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, STRONTIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, CALCIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, RADIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, BARIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
             //semi-metals
-            new EMElement(Categories.EMElements, BORON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, SILICON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, GERMANIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, ARSENIC, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, ANTIMONY, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, TELURIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, POLONIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, BORON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, SILICON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, GERMANIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, ARSENIC, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, ANTIMONY, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, TELURIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, POLONIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
 
             //others
 
-            new EMElement(Categories.EMElements, ALUMINUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, GALLIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, INDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, THALLIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, NIHONIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, TIN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, LEAD, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, FLEROVIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, BISMUTH, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, MOSCOVIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, LIVERMORIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, ALUMINUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, GALLIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, INDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, THALLIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, NIHONIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, TIN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, LEAD, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, FLEROVIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, BISMUTH, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, MOSCOVIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, LIVERMORIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
 
             //transition-metals
 
-            new EMElement(Categories.EMElements, SILVER, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, COPPER, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, GOLD, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, SCANDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, VANADIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, RHODIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, CHROMIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, MANGANESE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, IRON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, COBALT, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, NICKEL, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, ZINC, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, YTTRIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, NIOBIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, MOLYBDENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, PALADIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, RHUTENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, CADMIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, HAFNIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, TANTALUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, TUNGSTEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, RHENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, SILVER, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, COPPER, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, GOLD, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, SCANDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, VANADIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, RHODIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, CHROMIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, MANGANESE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, IRON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, COBALT, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, NICKEL, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, ZINC, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, YTTRIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, NIOBIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, MOLYBDENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, PALADIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, RHUTENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, CADMIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, HAFNIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, TANTALUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, TUNGSTEN, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, RHENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
 
 
-            new EMElement(Categories.EMElements, PLATINIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, MERCURY, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, RHUTERFORDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, DUBNIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, SEABORGIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, BOHRIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, HASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, MEITNERIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, DARMSTADTIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, ROENTGENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, COPERNICIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, ZIRCONIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, TECHTENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, PLATINIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, MERCURY, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, RHUTERFORDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, DUBNIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, SEABORGIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, BOHRIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, HASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, MEITNERIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, DARMSTADTIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, ROENTGENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, COPERNICIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, ZIRCONIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, TECHTENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
             //noble gasses
-            new EMElement(Categories.EMElements, HELIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, NEON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, ARGON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, KRYPTON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, XENON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, RADON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
-            new EMElement(Categories.EMElements, OGANESSON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, HELIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, NEON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, ARGON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, KRYPTON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, XENON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, RADON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
+            new EMElement(Categories.ELEMENTS, OGANESSON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]  {null,null,null,null,null,null,null,null,null}).register(em);
 
 }
 }

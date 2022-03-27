@@ -7,6 +7,7 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
+import me.lucasgithuber.elementmanipulation.machines.Deconstructor;
 import me.lucasgithuber.elementmanipulation.machines.JunctionTable;
 import me.lucasgithuber.elementmanipulation.machines.RockAnalyzer;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
@@ -47,16 +48,21 @@ public class Items{
     );
 
     public static void setup(ElementManipulation em) {
-        new JunctionTable(Categories.EMMachines, EMJunctionTable, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+        new Deconstructor(Categories.MACHINES, EMDeconstructor, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+                SlimefunItems.POWER_CRYSTAL, SlimefunItems.ELECTRIC_ORE_GRINDER_3, SlimefunItems.POWER_CRYSTAL,
+                SlimefunItems.REINFORCED_PLATE, SlimefunItems.NUCLEAR_REACTOR, SlimefunItems.REINFORCED_PLATE,
+                SlimefunItems.REINFORCED_PLATE, SlimefunItems.LARGE_CAPACITOR, SlimefunItems.REINFORCED_PLATE
+        }).setProcessingSpeed(1).setCapacity(256).setEnergyConsumption(128);
+        new JunctionTable(Categories.MACHINES, EMJunctionTable, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 new ItemStack(Material.NETHER_STAR),new ItemStack(Material.GLASS),new ItemStack(Material.NETHER_STAR),
                 SlimefunItems.REINFORCED_PLATE,SlimefunItems.CRAFTING_MOTOR,SlimefunItems.REINFORCED_PLATE,
                 new ItemStack(Material.BLACK_CONCRETE),SlimefunItems.LARGE_CAPACITOR,new ItemStack(Material.BLACK_CONCRETE),
         }, 4096).register(em);
-        /*new RockAnalyzer(Categories.EMMachines, ROCK_ANALYZER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
-         *       new ItemStack(Material.NETHER_STAR),new ItemStack(Material.SPYGLASS),new ItemStack(Material.NETHER_STAR),
+        new RockAnalyzer(Categories.MACHINES, ROCK_ANALYZER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+                new ItemStack(Material.NETHER_STAR),new ItemStack(Material.SPYGLASS),new ItemStack(Material.NETHER_STAR),
                 SlimefunItems.REINFORCED_PLATE,new ItemStack(Material.GLASS),SlimefunItems.REINFORCED_PLATE,
                 new ItemStack(Material.BLACK_CONCRETE),SlimefunItems.LARGE_CAPACITOR,new ItemStack(Material.BLACK_CONCRETE),
-        }).setCapacity(2048).setEnergyConsumption(512).setProcessingSpeed(1).register(em);*/
+        }).setCapacity(2048).setEnergyConsumption(512).setProcessingSpeed(1).register(em);
     }
 
 }

@@ -1,7 +1,6 @@
 package me.lucasgithuber.elementmanipulation.machines;
 
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
@@ -17,12 +16,10 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 
-import static me.lucasgithuber.elementmanipulation.utils.Categories.EMElements;
 
+public class UltraCompressor extends UCGui implements RecipeDisplayItem {
 
-public class EMUltraCompressor extends UCGui implements RecipeDisplayItem {
-
-    public EMUltraCompressor(ItemGroup c) {
+    public UltraCompressor(ItemGroup c) {
 
         super(c, Items.EMUltraCompressor, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 SlimefunItems.ELECTRIC_PRESS_2, SlimefunItems.ELECTRIC_PRESS_2, SlimefunItems.ELECTRIC_PRESS_2,
