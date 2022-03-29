@@ -1,4 +1,4 @@
-package me.lucasgithuber.elementmanipulation.utils;
+package me.lucasgithuber.elementmanipulation.category;
 
 import io.github.mooy1.infinitylib.common.Scheduler;
 import io.github.mooy1.infinitylib.common.StackUtils;
@@ -15,8 +15,9 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import lombok.AllArgsConstructor;
-import me.lucasgithuber.elementmanipulation.Items;
+import me.lucasgithuber.elementmanipulation.machines.Machines;
 import me.lucasgithuber.elementmanipulation.machines.JunctionTable;
+import me.lucasgithuber.elementmanipulation.utils.Categories;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import org.bukkit.ChatColor;
@@ -81,7 +82,7 @@ public class JunctionGroup extends FlexItemGroup {
     private static final LinkedHashMap<String, Pair<SlimefunItemStack, ItemStack[]>> ITEMS = new LinkedHashMap<>();
     private static final List<String> IDS = new ArrayList<>();
 
-    JunctionGroup(NamespacedKey key, ItemStack item, int tier) {
+    public JunctionGroup(NamespacedKey key, ItemStack item, int tier) {
         super(key, item, tier);
         JunctionTable.TYPE.sendRecipesTo((input, output) -> {
             SlimefunItemStack sfStack = (SlimefunItemStack) output;
@@ -225,8 +226,8 @@ public class JunctionGroup extends FlexItemGroup {
         }
 
         if (entry.bench == null) {
-            menu.addItem(JUNCTION_TABLE, Items.EMJunctionTable, (p, slot, item, action) -> {
-                SlimefunItem slimefunItem = Items.EMJunctionTable.getItem();
+            menu.addItem(JUNCTION_TABLE, Machines.EMJunctionTable, (p, slot, item, action) -> {
+                SlimefunItem slimefunItem = Machines.EMJunctionTable.getItem();
                 if (slimefunItem != null) {
                     LinkedList<SlimefunItem> list = new LinkedList<>();
                     list.add(slimefunItem);

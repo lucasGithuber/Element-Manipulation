@@ -1,48 +1,40 @@
-package me.lucasgithuber.elementmanipulation.utils;
+package me.lucasgithuber.elementmanipulation.gui;
 
+import io.github.bakedlibs.dough.inventory.InvUtils;
+import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemState;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
-
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineProcessHolder;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler;
 import io.github.thebusybiscuit.slimefun4.core.machines.MachineProcessor;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
-
 import io.github.thebusybiscuit.slimefun4.implementation.handlers.SimpleBlockBreakHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
-
-import io.github.thebusybiscuit.slimefun4.libraries.dough.inventory.InvUtils;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.utils.itemstack.ItemStackWrapper;
-
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
-
-import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
+import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.AdvancedMenuClickHandler;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ClickAction;
-
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.interfaces.InventoryBlock;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
-
+import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-
 import org.apache.commons.lang.Validate;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
@@ -52,17 +44,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
+/**
+ *
+ * THIS IS A MODIFIED VERSION OF ACONTAINER TO FIT THE MACHINES
+ *
+ *
+ */
+public abstract class UCGui extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
 
-    public final List<MachineRecipe> recipes = new ArrayList<>();
-    public final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
+    private static final int[] BORDER = {4, 5, 6, 7, 8, 13, 31, 40, 41, 42, 43, 44};
+    private static final int[] BORDER_IN = {0, 1, 2, 3, 9, 12, 18, 21, 27, 30, 36, 37, 38, 39};
+    private static final int[] BORDER_OUT = { 14, 15, 16, 17, 23, 26, 32, 33, 34, 35};
+
+    protected final List<MachineRecipe> recipes = new ArrayList<>();
+    private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
 
     private int energyConsumedPerTick = -1;
     private int energyCapacity = -1;
     private int processingSpeed = -1;
 
     @ParametersAreNonnullByDefault
-    protected RockAnalyzerGui(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    protected UCGui(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
         processor.setProgressBar(getProgressBar());
@@ -91,7 +93,7 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
     }
 
     @ParametersAreNonnullByDefault
-    protected RockAnalyzerGui(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, ItemStack recipeOutput) {
+    protected UCGui(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, ItemStack recipeOutput) {
         this(itemGroup, item, recipeType, recipe);
         this.recipeOutput = recipeOutput;
     }
@@ -101,39 +103,23 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
         return processor;
     }
 
-    public int[] getBorder() {
-        return new int[] { 0,1,2,3,12, 30, 36,37,38,39};
-    }
-
-    public int[] getInputBorder() {
-        return new int[] { 9, 10, 11, 18, 20, 27, 28, 29 };
-    }
-
-    public int[] getOutputBorder() {
-        return new int[] {4,5,6,7,8,13,17,22,26,31,35,40,41,42,43,44};
-    }
-
-    public int getProgressBarSlot() {
-        return 21;
-    }
-
     protected void constructMenu(BlockMenuPreset preset) {
-        for (int i : getBorder()) {
+        for (int i : BORDER) {
             preset.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
 
-        for (int i : getInputBorder()) {
-            preset.addItem(i, new CustomItemStack(Material.LIGHT_BLUE_STAINED_GLASS_PANE, "&bInput"), ChestMenuUtils.getEmptyClickHandler());
+        for (int i : BORDER_IN) {
+            preset.addItem(i, ChestMenuUtils.getInputSlotTexture(), ChestMenuUtils.getEmptyClickHandler());
         }
 
-        for (int i : getOutputBorder()) {
-            preset.addItem(i, new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, "&aOutput"), ChestMenuUtils.getEmptyClickHandler());
+        for (int i : BORDER_OUT) {
+            preset.addItem(i, ChestMenuUtils.getOutputSlotTexture(), ChestMenuUtils.getEmptyClickHandler());
         }
 
-        preset.addItem(getProgressBarSlot(), new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
 
         for (int i : getOutputSlots()) {
-            preset.addMenuClickHandler(i, new ChestMenu.AdvancedMenuClickHandler() {
+            preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
 
                 @Override
                 public boolean onClick(Player p, int slot, ItemStack cursor, ClickAction action) {
@@ -148,27 +134,70 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
         }
     }
 
+    /**
+     * This method returns the title that is used for the {@link Inventory} of an
+     * AContainer that has been opened by a Player.
+     *
+     * Override this method to set the title.
+     *
+     * @return The title of the {@link Inventory} of this  AContainer
+     */
     @Nonnull
     public String getInventoryTitle() {
         return getItemName();
     }
 
+    /**
+     * This method returns the {@link ItemStack} that this AContainer will
+     * use as a progress bar.
+     *
+     * Override this method to set the progress bar.
+     *
+     * @return The {@link ItemStack} to use as the progress bar
+     */
     public abstract ItemStack getProgressBar();
 
+    /**
+     * This method returns the max amount of electricity this machine can hold.
+     *
+     * @return The max amount of electricity this Block can store.
+     */
     @Override
     public int getCapacity() {
         return energyCapacity;
     }
 
+    /**
+     * This method returns the amount of energy that is consumed per operation.
+     *
+     * @return The rate of energy consumption
+     */
     public int getEnergyConsumption() {
         return energyConsumedPerTick;
     }
 
+    /**
+     * This method returns the speed at which this machine will operate.
+     * This can be implemented on an instantiation-level to create different tiers
+     * of machines.
+     *
+     * @return The speed of this machine
+     */
     public int getSpeed() {
         return processingSpeed;
     }
 
-    public final RockAnalyzerGui setCapacity(int capacity) {
+    /**
+     * This sets the energy capacity for this machine.
+     * This method <strong>must</strong> be called before registering the item
+     * and only before registering.
+     *
+     * @param capacity
+     *            The amount of energy this machine can store
+     *
+     * @return This method will return the current instance of  AContainer, so that can be chained.
+     */
+    public final UCGui setCapacity(int capacity) {
         Validate.isTrue(capacity > 0, "The capacity must be greater than zero!");
 
         if (getState() == ItemState.UNREGISTERED) {
@@ -179,14 +208,30 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
         }
     }
 
-    public final RockAnalyzerGui setProcessingSpeed(int speed) {
+    /**
+     * This sets the speed of this machine.
+     *
+     * @param speed
+     *            The speed multiplier for this machine, must be above zero
+     *
+     * @return This method will return the current instance of {@link AContainer}, so that can be chained.
+     */
+    public final UCGui setProcessingSpeed(int speed) {
         Validate.isTrue(speed > 0, "The speed must be greater than zero!");
 
         this.processingSpeed = speed;
         return this;
     }
 
-    public final RockAnalyzerGui setEnergyConsumption(int energyConsumption) {
+    /**
+     * This method sets the energy consumed by this machine per tick.
+     *
+     * @param energyConsumption
+     *            The energy consumed per tick
+     *
+     * @return This method will return the current instance of {@link AContainer}, so that can be chained.
+     */
+    public final UCGui setEnergyConsumption(int energyConsumption) {
         Validate.isTrue(energyConsumption > 0, "The energy consumption must be greater than zero!");
         Validate.isTrue(energyCapacity > 0, "You must specify the capacity before you can set the consumption amount.");
         Validate.isTrue(energyConsumption <= energyCapacity, "The energy consumption cannot be higher than the capacity (" + energyCapacity + ')');
@@ -221,6 +266,18 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
         }
     }
 
+    /**
+     * This method returns an internal identifier that is used to identify this {@link AContainer}
+     * and its recipes.
+     *
+     * When adding recipes to an {@link AContainer} we will use this identifier to
+     * identify all instances of the same {@link AContainer}.
+     * This way we can add the recipes to all instances of the same machine.
+     *
+     * <strong>This method will be deprecated and replaced in the future</strong>
+     *
+     * @return The identifier of this machine
+     */
     @Nonnull
     public abstract String getMachineIdentifier();
 
@@ -252,12 +309,12 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
 
     @Override
     public int[] getInputSlots() {
-        return new int[] { 19 };
+        return new int[] {10, 11, 19, 20, 28, 29};
     }
 
     @Override
     public int[] getOutputSlots() {
-        return new int[] { 14,15,16,23,24,25,32,33,34 };
+        return new int[] {24,25};
     }
 
     @Override
@@ -273,7 +330,9 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
     public void registerRecipe(int seconds, ItemStack[] input, ItemStack[] output) {
         registerRecipe(new MachineRecipe(seconds, input, output));
     }
-
+    public void registerRecipe(int seconds, SlimefunItemStack[] input, ItemStack[] output) {
+        registerRecipe(new MachineRecipe(seconds, input, output));
+    }
     public void registerRecipe(int seconds, ItemStack input, ItemStack output) {
         registerRecipe(new MachineRecipe(seconds, new ItemStack[] { input }, new ItemStack[] { output }));
     }
@@ -284,7 +343,7 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
 
             @Override
             public void tick(Block b, SlimefunItem sf, Config data) {
-                RockAnalyzerGui.this.tick(b);
+                UCGui.this.tick(b);
             }
 
             @Override
@@ -294,7 +353,7 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
         });
     }
 
-    public void tick(Block b) {
+    protected void tick(Block b) {
         BlockMenu inv = BlockStorage.getInventory(b);
         CraftingOperation currentOperation = processor.getOperation(b);
 
@@ -302,10 +361,10 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
             if (takeCharge(b.getLocation())) {
 
                 if (!currentOperation.isFinished()) {
-                    processor.updateProgressBar(inv, 21, currentOperation);
+                    processor.updateProgressBar(inv, 22, currentOperation);
                     currentOperation.addProgress(1);
                 } else {
-                    inv.replaceExistingItem(21, new CustomItemStack(Material.SPYGLASS, "&7Analyzing"));
+                    inv.replaceExistingItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "));
 
                     for (ItemStack output : currentOperation.getResults()) {
                         inv.pushItem(output.clone(), getOutputSlots());
@@ -323,6 +382,13 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
         }
     }
 
+    /**
+     * This method will remove charge from a location if it is chargeable.
+     *
+     * @param l
+     *            location to try to remove charge from
+     * @return Whether charge was taken if its chargeable
+     */
     protected boolean takeCharge(@Nonnull Location l) {
         Validate.notNull(l, "Can't attempt to take charge from a null location!");
 
@@ -334,10 +400,8 @@ public abstract class RockAnalyzerGui extends SlimefunItem implements InventoryB
             }
 
             setCharge(l, charge - getEnergyConsumption());
-            return true;
-        } else {
-            return true;
         }
+        return true;
     }
 
     protected MachineRecipe findNextRecipe(BlockMenu inv) {

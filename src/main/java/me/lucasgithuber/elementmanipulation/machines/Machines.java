@@ -1,4 +1,4 @@
-package me.lucasgithuber.elementmanipulation;
+package me.lucasgithuber.elementmanipulation.machines;
 
 import io.github.mooy1.infinitylib.machines.MachineLore;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
@@ -7,15 +7,13 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
-import me.lucasgithuber.elementmanipulation.machines.Deconstructor;
-import me.lucasgithuber.elementmanipulation.machines.JunctionTable;
-import me.lucasgithuber.elementmanipulation.machines.RockAnalyzer;
+import me.lucasgithuber.elementmanipulation.ElementManipulation;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-public class Items{
+public class Machines{
     //machines
 
     public static final SlimefunItemStack EMDeconstructor = new SlimefunItemStack("EM_DECONSTRUCTOR", Material.SMITHING_TABLE, BukkitComponentSerializer.legacy().serialize
@@ -52,7 +50,7 @@ public class Items{
                 SlimefunItems.POWER_CRYSTAL, SlimefunItems.ELECTRIC_ORE_GRINDER_3, SlimefunItems.POWER_CRYSTAL,
                 SlimefunItems.REINFORCED_PLATE, SlimefunItems.NUCLEAR_REACTOR, SlimefunItems.REINFORCED_PLATE,
                 SlimefunItems.REINFORCED_PLATE, SlimefunItems.LARGE_CAPACITOR, SlimefunItems.REINFORCED_PLATE
-        }).setProcessingSpeed(1).setCapacity(256).setEnergyConsumption(128);
+        }).setProcessingSpeed(1).setCapacity(256).setEnergyConsumption(128).register(em);
         new JunctionTable(Categories.MACHINES, EMJunctionTable, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 new ItemStack(Material.NETHER_STAR),new ItemStack(Material.GLASS),new ItemStack(Material.NETHER_STAR),
                 SlimefunItems.REINFORCED_PLATE,SlimefunItems.CRAFTING_MOTOR,SlimefunItems.REINFORCED_PLATE,
@@ -63,6 +61,12 @@ public class Items{
                 SlimefunItems.REINFORCED_PLATE,new ItemStack(Material.GLASS),SlimefunItems.REINFORCED_PLATE,
                 new ItemStack(Material.BLACK_CONCRETE),SlimefunItems.LARGE_CAPACITOR,new ItemStack(Material.BLACK_CONCRETE),
         }).setCapacity(2048).setEnergyConsumption(512).setProcessingSpeed(1).register(em);
+        new UltraCompressor(Categories.MACHINES, Machines.EMUltraCompressor, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+                SlimefunItems.ELECTRIC_PRESS_2, SlimefunItems.ELECTRIC_PRESS_2, SlimefunItems.ELECTRIC_PRESS_2,
+                SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.GLASS), SlimefunItems.REINFORCED_PLATE,
+                SlimefunItems.REINFORCED_PLATE, SlimefunItems.LARGE_CAPACITOR, SlimefunItems.REINFORCED_PLATE
+        }).setProcessingSpeed(1).setCapacity(64).setEnergyConsumption(16);
+
     }
 
 }

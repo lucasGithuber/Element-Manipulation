@@ -8,7 +8,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.lucasgithuber.elementmanipulation.elements.Elements;
-import me.lucasgithuber.elementmanipulation.utils.RockAnalyzerGui;
+import me.lucasgithuber.elementmanipulation.gui.RockAnalyzerGui;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
@@ -31,10 +31,10 @@ public class RockAnalyzer extends RockAnalyzerGui implements RecipeDisplayItem {
     @Override
     public List<ItemStack> getDisplayRecipes() {
         List<ItemStack> displayRecipes = new ArrayList<>(recipes.size() * 4);
-
-
             displayRecipes.add(new CustomItemStack(Material.STONE, "&7Any stone variants"));
-            displayRecipes.add((new CustomItemStack(Material.FILLED_MAP, "&7Elements acording to the stone type you get", "&7Stone types are decided randomly")));
+            displayRecipes.add(new CustomItemStack(Material.PAPER, "&7Elements according to the stone type you get", "&7Stone types are decided randomly"));
+            displayRecipes.add(new CustomItemStack(Material.YELLOW_STAINED_GLASS_PANE, "&eBonus results"));
+            displayRecipes.add(new CustomItemStack(SlimefunItems.STONE_CHUNK, 4));
         return displayRecipes;
     }
     @Override
@@ -126,6 +126,20 @@ public class RockAnalyzer extends RockAnalyzerGui implements RecipeDisplayItem {
     @Override
     protected void registerDefaultRecipes() {
         registerRecipe(4, new ItemStack[]{new ItemStack(Material.COBBLESTONE)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.STONE)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.GRANITE)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.DIORITE)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.ANDESITE)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.COBBLED_DEEPSLATE)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.DEEPSLATE)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.TUFF)},
                 new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
     }
 

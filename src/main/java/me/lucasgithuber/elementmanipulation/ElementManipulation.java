@@ -5,6 +5,7 @@ import io.github.mooy1.infinitylib.core.AbstractAddon;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.lucasgithuber.elementmanipulation.elements.Elements;
 import me.lucasgithuber.elementmanipulation.items.EMMaterials;
+import me.lucasgithuber.elementmanipulation.machines.Machines;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
@@ -14,9 +15,6 @@ import org.bstats.bukkit.Metrics;
 
 public final class ElementManipulation extends AbstractAddon implements SlimefunAddon {
     private static ElementManipulation i;
-    
-
-
     public static final MiniMessage MM = MiniMessage.builder()
             .tags(TagResolver.builder()
                     .resolver(StandardTags.color())
@@ -25,7 +23,6 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
                     .build()
             )
             .build();
-    MiniMessage mm = MiniMessage.miniMessage();
     public ElementManipulation() {
         super("lucasGithuber", "Element-Manipulation", "master", "options.auto-update");
     }
@@ -36,7 +33,7 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
         Categories.setup(this);
         Elements.setup(this);
         EMMaterials.setup(this);
-        Items.setup(this);
+        Machines.setup(this);
         new Metrics(this, 13718);
     }
 
@@ -49,5 +46,4 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
     public static ElementManipulation i() {
         return i;
     }
-
 }

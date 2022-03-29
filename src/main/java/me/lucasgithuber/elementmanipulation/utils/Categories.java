@@ -6,6 +6,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import lombok.experimental.UtilityClass;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
+import me.lucasgithuber.elementmanipulation.category.JunctionGroup;
 import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -23,6 +24,12 @@ public class Categories {
             new CustomItemStack(new ItemStack(Material.PRISMARINE_SHARD), BukkitComponentSerializer.legacy().serialize
                     (ElementManipulation.MM.deserialize("<gradient:#ff0000:#f4ff00>Misc</gradient>")))
     );
+    //TODO make this after UnlockDimensionsEvent
+   /*public static final ItemGroup DIMENSIONS = new SubGroup(
+            "em_dimensions",
+            new CustomItemStack(new ItemStack(Material.PRISMARINE_SHARD), BukkitComponentSerializer.legacy().serialize
+                    (ElementManipulation.MM.deserialize("<gradient:#ff0000:#f4ff00>Dimensions</gradient>")))
+    );*/
     public static final ItemGroup MACHINES = new SubGroup(
             "em_machines",
             new CustomItemStack(new ItemStack(Material.BLAST_FURNACE), BukkitComponentSerializer.legacy().serialize
@@ -42,10 +49,10 @@ public class Categories {
     public static final ItemGroup JUNCTION_CHEAT = new SubGroup("junction_cheat",
             new CustomItemStack(Material.SMITHING_TABLE, "&bJunctions &c- INCORRECT RECIPES"));
 
-    public static void setup(ElementManipulation elm){
-        JUNCTION_CATEGORY.register(elm);
-        MAIN.register(elm);
-        JUNCTION_CHEAT.register(elm);
+    public static void setup(ElementManipulation em){
+        JUNCTION_CATEGORY.register(em);
+        MAIN.register(em);
+        JUNCTION_CHEAT.register(em);
     }
 
 }

@@ -9,8 +9,7 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
-import me.lucasgithuber.elementmanipulation.Items;
-import me.lucasgithuber.elementmanipulation.utils.JunctionGroup;
+import me.lucasgithuber.elementmanipulation.category.JunctionGroup;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import org.bukkit.ChatColor;
@@ -35,7 +34,7 @@ public final class JunctionTable extends io.github.mooy1.infinitylib.machines.Cr
     };
     private static final int RECIPE_SLOT = 7;
     public static final MachineRecipeType TYPE = new MachineRecipeType("em_junction_table",
-            new CustomItemStack(Items.EMJunctionTable, Items.EMJunctionTable.getDisplayName(),
+            new CustomItemStack(Machines.EMJunctionTable, Machines.EMJunctionTable.getDisplayName(),
                     "", "&cUse the junctions category to see the correct recipe!"));
 
     private final int energy;

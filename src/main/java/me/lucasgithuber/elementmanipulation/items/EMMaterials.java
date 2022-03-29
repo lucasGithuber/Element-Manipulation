@@ -8,16 +8,17 @@
     import me.lucasgithuber.elementmanipulation.utils.Categories;
     import org.bukkit.Material;
     import org.bukkit.inventory.ItemStack;
+    import org.bukkit.material.Redstone;
 
     import static me.lucasgithuber.elementmanipulation.elements.Elements.*;
 
     public final class EMMaterials {
     @Getter
-    private static Redstone emRedstone;
+    private static MultiOutputItem emRedstone;
     @Getter
-    private static EMLapis emLapis;
+    private static MultiOutputItem emLapis;
     @Getter
-    private static EMEmerald emEmerald;
+    private static MultiOutputItem emEmerald;
 
     public static final SlimefunItemStack EMWaterBucket = new SlimefunItemStack(
         "EM_WATERBUCKET",
@@ -250,7 +251,7 @@
             null,null,null,null,null,null
     }).setUseableInWorkbench(true).register(em);
 
-    emRedstone = new Redstone(Categories.JUNCTION_CHEAT, EMRedstone,  JunctionTable.TYPE, new ItemStack[] {
+    emRedstone = new MultiOutputItem(Categories.JUNCTION_CHEAT, EMRedstone,  JunctionTable.TYPE, new ItemStack[] {
             null,SlimefunItems.PLASTIC_SHEET,COPPER,COPPER,SlimefunItems.PLASTIC_SHEET,null,
             null,SlimefunItems.PLASTIC_SHEET,COPPER,COPPER,SlimefunItems.PLASTIC_SHEET,null,
             null,SlimefunItems.PLASTIC_SHEET,COPPER,COPPER,SlimefunItems.PLASTIC_SHEET,null,
@@ -323,7 +324,7 @@
             null,null,null,null,null,null,
     }).setUseableInWorkbench(true).register(em);
 
-    emLapis = new EMLapis(Categories.JUNCTION_CHEAT, EMLapisLazuli,  JunctionTable.TYPE, new ItemStack[] {
+    emLapis = new MultiOutputItem(Categories.JUNCTION_CHEAT, EMLapisLazuli,  JunctionTable.TYPE, new ItemStack[] {
             SODIUM,SODIUM,OXYGEN,OXYGEN,CALCIUM,CALCIUM,
             SODIUM,SILICON,SULFUR,SULFUR,SILICON,CALCIUM,
             SODIUM,ALUMINUM,new ItemStack(Material.BLUE_DYE),new ItemStack(Material.BLUE_DYE),ALUMINUM,CALCIUM,
@@ -371,7 +372,7 @@
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON,
             CARBON,CARBON,CARBON,CARBON,CARBON,CARBON
     }).setUseableInWorkbench(true).register(em);
-    emEmerald = new EMEmerald(Categories.JUNCTION_CHEAT, EMEmerald,  JunctionTable.TYPE, new ItemStack[] {
+    emEmerald = new MultiOutputItem(Categories.JUNCTION_CHEAT, EMEmerald,  JunctionTable.TYPE, new ItemStack[] {
             BERYLLIUM,BERYLLIUM,SILICON,SILICON,OXYGEN,OXYGEN,
             BERYLLIUM,SILICON,SILICON,SILICON,SILICON,OXYGEN,
             SILICON,SILICON,SILICON,SILICON,SILICON,SILICON,
