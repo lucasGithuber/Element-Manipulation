@@ -1,8 +1,5 @@
 package me.lucasgithuber.elementmanipulation.events;
 
-import io.github.thebusybiscuit.slimefun4.core.attributes.MachineProcessHolder;
-import me.lucasgithuber.elementmanipulation.machines.Deconstructor;
-import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;

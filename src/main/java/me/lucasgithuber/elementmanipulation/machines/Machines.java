@@ -8,6 +8,7 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
+import me.lucasgithuber.elementmanipulation.misc.MiscItems;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.Material;
@@ -35,6 +36,23 @@ public class Machines{
             "",
             MachineLore.energy(4096) + "per item"
     );
+    public static final SlimefunItemStack DRUGS_TABLE = new SlimefunItemStack(
+            "EM_DRUGS_TABLE",
+            Material.TINTED_GLASS,
+            "&aDrugs table",
+            "&7Used to create drugs]",
+            "",
+            MachineLore.energy(4096) + "per item"
+    );
+    public static final SlimefunItemStack PORTAL_TABLE= new SlimefunItemStack(
+            "EM_PORTAL_TABLE",
+            Material.SMITHING_TABLE,
+            BukkitComponentSerializer.legacy().serialize
+            (ElementManipulation.MM.deserialize("<rainbow>Portal table</rainbow>")),
+            "&7Used to craft Portal corners",
+            "",
+            MachineLore.energy(8192) + "per item"
+    );
     public static final SlimefunItemStack ROCK_ANALYZER= new SlimefunItemStack(
             "EM_ROCK_ANALYZER",
             Material.LODESTONE,
@@ -44,6 +62,7 @@ public class Machines{
             "",
             MachineLore.energy(512) + "/t"
     );
+
 
     public static void setup(ElementManipulation em) {
         new Deconstructor(Categories.MACHINES, EMDeconstructor, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
@@ -66,7 +85,16 @@ public class Machines{
                 SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.GLASS), SlimefunItems.REINFORCED_PLATE,
                 SlimefunItems.REINFORCED_PLATE, SlimefunItems.LARGE_CAPACITOR, SlimefunItems.REINFORCED_PLATE
         }).setProcessingSpeed(1).setCapacity(64).setEnergyConsumption(16);
-
+        /*new DrugsTable(Categories.MACHINES, DRUGS_TABLE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+                new ItemStack(Material.NETHER_STAR), MiscItems.CLEAR_GLASS_3,new ItemStack(Material.NETHER_STAR),
+                SlimefunItems.REINFORCED_PLATE,SlimefunItems.CRAFTING_MOTOR,SlimefunItems.REINFORCED_PLATE,
+                new ItemStack(Material.BLACK_CONCRETE),SlimefunItems.LARGE_CAPACITOR,new ItemStack(Material.BLACK_CONCRETE),
+        }, 4096).register(em);*/
+        /*new PortalTable(Categories.MACHINES, PORTAL_TABLE, new ItemStack[] {
+          *      null , null , null,
+                null, new ItemStack(Material.DARK_OAK_FENCE), null,
+                new ItemStack(Material.ENCHANTING_TABLE), new ItemStack(Material.DISPENSER), new ItemStack(Material.ENCHANTING_TABLE)
+        }, BlockFace.SELF).register(em);*/
     }
 
 }

@@ -141,6 +141,14 @@ public class RockAnalyzer extends RockAnalyzerGui implements RecipeDisplayItem {
                 new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
         registerRecipe(4, new ItemStack[]{new ItemStack(Material.TUFF)},
                 new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.CALCITE)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.DRIPSTONE_BLOCK)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.POINTED_DRIPSTONE)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
+        registerRecipe(4, new ItemStack[]{new ItemStack(Material.BASALT)},
+                new ItemStack[]{new CustomItemStack(SlimefunItems.STONE_CHUNK, 4)});
     }
 
     @Nonnull

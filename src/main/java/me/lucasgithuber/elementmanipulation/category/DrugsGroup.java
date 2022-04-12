@@ -15,15 +15,12 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import lombok.AllArgsConstructor;
-import me.lucasgithuber.elementmanipulation.machines.JunctionTable;
+import me.lucasgithuber.elementmanipulation.machines.DrugsTable;
 import me.lucasgithuber.elementmanipulation.machines.Machines;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Sound;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
@@ -37,15 +34,15 @@ import java.util.*;
  * this guy is a god XD
  * @author Mooy1
  */
-public class JunctionGroup extends FlexItemGroup {
+public class DrugsGroup extends FlexItemGroup {
 
-    private static final int[] JUNCTION_RECIPE_SLOTS = {
-            3, 4, 5, 6, 7, 8,
-            12, 13, 14,15,16,17,
-            21, 22, 23,24,25,26,
-            30, 31, 32,33,34,35,
-            39, 40, 41,42,43,44,
-            48, 49, 50,51,52,53
+    private static final int[] DRUGS_RECIPE_SLOTS = {
+            2,3,4,5,6,7,
+            11,12,13,14,15,16,
+            20,21,22,23,24,25,
+            29,30,31,32,33,34,
+            35,36,37,38,39,40,
+            47,48,49,50,51,52
     };
     private static final int[] NORMAL_RECIPE_SLOTS = {
             12, 13, 14,
@@ -58,20 +55,23 @@ public class JunctionGroup extends FlexItemGroup {
             1, 2, 3, 4, 5, 6, 7, 8,
             36, 37, 38, 39, 40, 41, 42, 43, 44
     };
-    private static final int[] JUNCTION_OUTPUT_BORDER = {
-            18, 19,
+    private static final int[] DRUGS_OUTPUT_BORDER = {
+            36
+    };
+    private static final int[] DRUGS_INPUT_BORDER = {
+            1, 10, 19, 28,37,46, 17,26,35,44
     };
 
-    private static final int[] JUNCTION_BACKGROUND = {2,11,20,29,38,47};
-    private static final int JUNCTION_OUTPUT = 27;
-    private static final int BACK = 0;
-    private static final int NEXT = 46;
-    private static final int PREV = 45;
-    private static final int JUNCTION_TABLE = 10;
-    private static final int[] WORKBENCH_BORDER = {
-            1, 9
+    private static final int[] DRUGS_BACKGROUND = {
+            9,18
     };
-    private static final ItemStack CRAFT = new CustomItemStack(Material.SMITHING_TABLE,
+    private static final int DRUGS_OUTPUT = 45;
+    private static final int BACK = 0;
+    private static final int NEXT = 8;
+    private static final int PREV = 53;
+    private static final int DRUGS_TABLE = 27;
+
+    private static final ItemStack CRAFT = new CustomItemStack(Material.TINTED_GLASS,
             ChatColor.GREEN + "Create the recipe from items in your inventory: ",
             "&aLeft-Click to move enough for 1 recipe",
             "&aRight-Click to move enough to as many as possible"
@@ -82,9 +82,9 @@ public class JunctionGroup extends FlexItemGroup {
     private static final LinkedHashMap<String, Pair<SlimefunItemStack, ItemStack[]>> ITEMS = new LinkedHashMap<>();
     private static final List<String> IDS = new ArrayList<>();
 
-    public JunctionGroup(NamespacedKey key, ItemStack item, int tier) {
+    public DrugsGroup(NamespacedKey key, ItemStack item, int tier) {
         super(key, item, tier);
-        JunctionTable.TYPE.sendRecipesTo((input, output) -> {
+        DrugsTable.TYPE.sendRecipesTo((input, output) -> {
             SlimefunItemStack sfStack = (SlimefunItemStack) output;
             IDS.add(sfStack.getItemId());
             ITEMS.put(sfStack.getItemId(), new Pair<>(sfStack, input));
@@ -112,12 +112,12 @@ public class JunctionGroup extends FlexItemGroup {
             String id = HISTORY.get(player.getUniqueId());
 
             if (id != null) {
-                openJunctionRecipe(player, id, entry);
+                openDrugsRecipe(player, id, entry);
                 return;
             }
         }
 
-        ChestMenu menu = new ChestMenu("&bJunctions ");
+        ChestMenu menu = new ChestMenu("&bDrugss ");
 
         if (entry.bench != null) {
             menu.addMenuClickHandler(1, (player1, i, itemStack, clickAction) -> {
@@ -170,12 +170,12 @@ public class JunctionGroup extends FlexItemGroup {
                         "&7Cost: &b" + research.getCost() + " Level(s)"
                 );
                 menu.addItem(i, resItem, (p, slot, item1, action) -> {
-                    research.unlockFromGuide(GUIDE, p, entry.profile, sfItem, Categories.JUNCTION_CATEGORY, 0);
+                    research.unlockFromGuide(GUIDE, p, entry.profile, sfItem, Categories.DRUGS_CATEGORY, 0);
                     return false;
                 });
             } else {
                 menu.addItem(i, item.getFirstValue(), (p, slot, item1, action) -> {
-                    openJunctionRecipe(p, item.getFirstValue().getItemId(), entry);
+                    openDrugsRecipe(p, item.getFirstValue().getItemId(), entry);
                     return false;
                 });
             }
@@ -191,7 +191,7 @@ public class JunctionGroup extends FlexItemGroup {
     }
 
     @ParametersAreNonnullByDefault
-    private static void openJunctionRecipe(Player player, String id, BackEntry entry) {
+    private static void openDrugsRecipe(Player player, String id, BackEntry entry) {
         Pair<SlimefunItemStack, ItemStack[]> pair = ITEMS.get(id);
 
         if (pair == null) {
@@ -206,14 +206,14 @@ public class JunctionGroup extends FlexItemGroup {
             return false;
         });
 
-        for (int i = 0; i < JUNCTION_RECIPE_SLOTS.length; i++) {
+        for (int i = 0; i < DRUGS_RECIPE_SLOTS.length; i++) {
             ItemStack recipeItem = pair.getSecondValue()[i];
             if (recipeItem != null) {
-                menu.addItem(JUNCTION_RECIPE_SLOTS[i], recipeItem, (p, slot, item, action) -> {
+                menu.addItem(DRUGS_RECIPE_SLOTS[i], recipeItem, (p, slot, item, action) -> {
                     SlimefunItem slimefunItem = SlimefunItem.getByItem(recipeItem);
                     if (slimefunItem != null && !slimefunItem.isDisabled()) {
-                        if (slimefunItem.getRecipeType() == JunctionTable.TYPE) {
-                            openJunctionRecipe(p, slimefunItem.getId(), entry);
+                        if (slimefunItem.getRecipeType() == DrugsTable.TYPE) {
+                            openDrugsRecipe(p, slimefunItem.getId(), entry);
                         } else {
                             LinkedList<SlimefunItem> list = new LinkedList<>();
                             list.add(slimefunItem);
@@ -226,8 +226,8 @@ public class JunctionGroup extends FlexItemGroup {
         }
 
         if (entry.bench == null) {
-            menu.addItem(JUNCTION_TABLE, Machines.EMJunctionTable, (p, slot, item, action) -> {
-                SlimefunItem slimefunItem = Machines.EMJunctionTable.getItem();
+            menu.addItem(DRUGS_TABLE, Machines.DRUGS_TABLE, (p, slot, item, action) -> {
+                SlimefunItem slimefunItem = Machines.DRUGS_TABLE.getItem();
                 if (slimefunItem != null) {
                     LinkedList<SlimefunItem> list = new LinkedList<>();
                     list.add(slimefunItem);
@@ -236,7 +236,7 @@ public class JunctionGroup extends FlexItemGroup {
                 return false;
             });
         } else {
-            menu.addItem(JUNCTION_TABLE, CRAFT, (p, slot, item, action) -> {
+            menu.addItem(DRUGS_TABLE, CRAFT, (p, slot, item, action) -> {
                 moveRecipe(p, entry.bench, pair, action.isRightClicked());
                 return false;
             });
@@ -246,31 +246,31 @@ public class JunctionGroup extends FlexItemGroup {
 
         menu.addItem(PREV, ChestMenuUtils.getPreviousButton(player, page + 1, IDS.size()), (player1, i, itemStack, clickAction) -> {
             if (page > 0) {
-                openJunctionRecipe(player1, IDS.get(page - 1), entry);
+                openDrugsRecipe(player1, IDS.get(page - 1), entry);
             }
             return false;
         });
 
         menu.addItem(NEXT, ChestMenuUtils.getNextButton(player, page + 1, IDS.size()), (player1, i, itemStack, clickAction) -> {
             if (page < IDS.size() - 1) {
-                openJunctionRecipe(player1, IDS.get(page + 1), entry);
+                openDrugsRecipe(player1, IDS.get(page + 1), entry);
             }
             return false;
         });
 
-        for (int slot : JUNCTION_BACKGROUND) {
+        for (int slot : DRUGS_BACKGROUND) {
             menu.addItem(slot, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
-        for (int slot : JUNCTION_BACKGROUND) {
+        for (int slot : DRUGS_BACKGROUND) {
             menu.addItem(slot, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
         }
-        for (int slot : JUNCTION_OUTPUT_BORDER) {
+        for (int slot : DRUGS_OUTPUT_BORDER) {
             menu.addItem(slot, DrugsGroup.OUTPUT_BORDER, ChestMenuUtils.getEmptyClickHandler());
         }
-        menu.addItem(JUNCTION_OUTPUT, pair.getFirstValue(), ChestMenuUtils.getEmptyClickHandler());
-        for (int slot : WORKBENCH_BORDER) {
-            menu.addItem(slot, INFO, ChestMenuUtils.getEmptyClickHandler());
+        for (int slot : DRUGS_INPUT_BORDER) {
+            menu.addItem(slot, DrugsGroup.INPUT_BORDER, ChestMenuUtils.getEmptyClickHandler());
         }
+        menu.addItem(DRUGS_OUTPUT, pair.getFirstValue(), ChestMenuUtils.getEmptyClickHandler());
 
         player.playSound(player.getLocation(), Sound.ITEM_BOOK_PAGE_TURN, 1, 1);
 
@@ -300,11 +300,11 @@ public class JunctionGroup extends FlexItemGroup {
                         ItemStack output = item.clone();
                         output.setAmount(1);
 
-                        if (menu.fits(output, JunctionTable.INPUT_SLOTS[slot])) {//not null and fits
+                        if (menu.fits(output, DrugsTable.INPUT_SLOTS[slot])) {//not null and fits
                             //remove item
                             ItemUtils.consumeItem(item, 1, false);
                             //push item
-                            menu.pushItem(output, JunctionTable.INPUT_SLOTS[slot]);
+                            menu.pushItem(output, DrugsTable.INPUT_SLOTS[slot]);
                             break;
                         }
                     }
@@ -333,7 +333,7 @@ public class JunctionGroup extends FlexItemGroup {
 
         menu.addItem(0, ChestMenuUtils.getBackButton(player, ""), (p, slot, item, action) -> {
             if (length == 1) {
-                openJunctionRecipe(player, backID, entry);
+                openDrugsRecipe(player, backID, entry);
             } else {
                 slimefunHistory.removeLast();
                 openSlimefunRecipe(player, entry, backID, slimefunHistory);
@@ -382,5 +382,6 @@ public class JunctionGroup extends FlexItemGroup {
     public String getVIID(ItemStack vanillaItem){
         return id;
     }
-    public static ItemStack OUTPUT_BORDER = new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, "&6Output");
+    public static ItemStack OUTPUT_BORDER = new CustomItemStack(Material.ORANGE_STAINED_GLASS_PANE, "&6Output");
+    public static ItemStack INPUT_BORDER = new CustomItemStack(Material.LIGHT_BLUE_STAINED_GLASS_PANE, "&bInput");
 }

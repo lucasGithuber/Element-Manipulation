@@ -99,13 +99,19 @@ public class Deconstructor extends DeconstructorGUI implements RecipeDisplayItem
                         new CustomItemStack(Elements.CALCIUM, 8),
                         new CustomItemStack(Elements.SILICON, 4),
                 });
-        registerRecipe(4, new ItemStack[] {new ItemStack(Material.MELON_SEEDS, 64)},
+        registerRecipe(4, new ItemStack[] {new ItemStack(Material.EMERALD, 64)},
+                new ItemStack[] {
+                        new CustomItemStack(Elements.BERYLLIUM, 2),
+                        new CustomItemStack(Elements.ALUMINUM, 2),
+                        new CustomItemStack(Elements.SILICON, 12),
+                });
+        registerRecipe(4, new ItemStack[] {new ItemStack(Material.MELON_SEEDS)},
                 new ItemStack[] {
                         new CustomItemStack(Elements.HYDROGEN, 6),
                         new CustomItemStack(Elements.CARBON, 4),
                         new CustomItemStack(Elements.OXYGEN, 2),
                 });
-        registerRecipe(4, new ItemStack[] {new ItemStack(Material.POISONOUS_POTATO, 64)},
+        registerRecipe(4, new ItemStack[] {new ItemStack(Material.POISONOUS_POTATO)},
                 new ItemStack[] {
                         new CustomItemStack(Elements.HYDROGEN, 5),
                         new CustomItemStack(Elements.CARBON, 5),
