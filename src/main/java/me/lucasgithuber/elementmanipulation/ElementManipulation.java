@@ -6,7 +6,6 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.lucasgithuber.elementmanipulation.elements.Elements;
 import me.lucasgithuber.elementmanipulation.items.Materials;
 import me.lucasgithuber.elementmanipulation.machines.Machines;
-import me.lucasgithuber.elementmanipulation.drugs.Drugs;
 import me.lucasgithuber.elementmanipulation.misc.MiscItems;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import net.kyori.adventure.text.minimessage.MiniMessage;

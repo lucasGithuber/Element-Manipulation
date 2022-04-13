@@ -10,7 +10,14 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class Elements {
-
+    public static final String NON_METALS =  "&aElement group: non-metals";
+    public static final String ALKALINES = "&aElement group: alkalines";
+    public static final String HALOGENS = "&aElement group: halogens";
+    public static final String ALKALINE_EARTH = "&aElement group: alkaline earth metals";
+    public static final String SEMI_METALS = "&aElement group: semi metals";
+    public static final String OTHER_METALS = "&aElement group: other metals";
+    public static final String TRANSITION_METALS = "&aElement group: other metals";
+    public static final String NOBLE_GASSES = "&aElement group: other metals";
     //elements
     //non-metals
     public static final SlimefunItemStack HYDROGEN = new SlimefunItemStack(
@@ -21,7 +28,7 @@ public class Elements {
             "&8Symbol: H",
             "&8Atomic number: 1",
             "&8Atomic mass: 1.008",
-            "&aElement group: non-metals");
+            NON_METALS);
     public static final SlimefunItemStack CARBON = new SlimefunItemStack(
             "EM_CARBON",
             new ItemStack(Material.LIME_DYE),
@@ -30,7 +37,7 @@ public class Elements {
             "&8Symbol: C",
             "&8Atomic number: 6",
             "&8Atomic mass: 12.011",
-            "&aElement group: non-metals");
+            NON_METALS);
     public static final SlimefunItemStack NITROGEN = new SlimefunItemStack(
             "EM_NITROGEN",
             new ItemStack(Material.LIME_DYE),
@@ -39,7 +46,7 @@ public class Elements {
             "&8Symbol: N",
             "&8Atomic number: 7",
             "&8Atomic mass: 14.007",
-            "&aElement group: non-metals",
+            NON_METALS,
             "&aRight click to \"un-breathe\" &7(Main hand only)"
     );
     public static final SlimefunItemStack OXYGEN = new SlimefunItemStack(
@@ -50,7 +57,7 @@ public class Elements {
             "&8Symbol: O",
             "&8Atomic number: 8",
             "&8Atomic mass: 15.999",
-            "&aElement group: non-metals",
+            NON_METALS,
             "&aRight-click to breathe &7(Main hand only)");
     public static final SlimefunItemStack PHOSPHORUS = new SlimefunItemStack(
             "EM_PHOSPHORUS",
@@ -60,7 +67,7 @@ public class Elements {
             "&8Symbol: P",
             "&8Atomic number: 15",
             "&8Atomic mass: 30.974",
-            "&aElement group: non-metals");
+            NON_METALS);
     public static final SlimefunItemStack SULFUR = new SlimefunItemStack(
             "SULFUR",
             new ItemStack(Material.LIME_DYE),
@@ -69,7 +76,7 @@ public class Elements {
             "&8Symbol: S",
             "&8Atomic number: 16",
             "&8Atomic mass: 32.065",
-            "&aElement group: non-metals");
+            NON_METALS);
     public static final SlimefunItemStack SELENIUM = new SlimefunItemStack(
             "EM_SELENIUM",
             new ItemStack(Material.LIME_DYE),
@@ -78,7 +85,7 @@ public class Elements {
             "&8Symbol: S",
             "&8Atomic number: 34",
             "&8Atomic mass: 78.96",
-            "&aElement group: non-metals");
+            NON_METALS);
 
 
     //elements/alkalines
@@ -90,7 +97,7 @@ public class Elements {
             "&8Symbol: Li",
             "&8Atomic number: 3",
             "&8Atomic mass: 6.941",
-            "&aElement group: alkalines"
+            ALKALINES
     );
     public static final SlimefunItemStack SODIUM = new SlimefunItemStack(
             "EM_SODIUM",
@@ -100,7 +107,7 @@ public class Elements {
             "&8Symbol: Na",
             "&8Atomic number: 11",
             "&8Atomic mass: 22.990",
-            "&aElement group: alkalines"
+            ALKALINES
     );
     public static final SlimefunItemStack POTASSIUM = new SlimefunItemStack(
             "EM_POTASSIUM",
@@ -110,7 +117,7 @@ public class Elements {
             "&8Symbol: K",
             "&8Atomic number: 19",
             "&8Atomic mass: 39.098",
-            "&aElement group: alkalines"
+            ALKALINES
     );
     public static final SlimefunItemStack RUBIDIUM = new SlimefunItemStack(
             "EM_RUBIDIUM",
@@ -120,7 +127,7 @@ public class Elements {
             "&8Symbol: Rb",
             "&8Atomic number: 37",
             "&8Atomic mass: 85.468",
-            "&aElement group: alkalines"
+            ALKALINES
     );
     public static final SlimefunItemStack CAESIUM = new SlimefunItemStack(
             "EM_CAESIUM",
@@ -130,7 +137,7 @@ public class Elements {
             "&8Symbol: Cs",
             "&8Atomic number: 55",
             "&8Atomic mass: 132.905",
-            "&aElement group: alkalines"
+            ALKALINES
     );
     public static final SlimefunItemStack FRANCIUM = new SlimefunItemStack(
             "EM_FRANCIUM",
@@ -140,7 +147,7 @@ public class Elements {
             "&8Symbol: Fr",
             "&8Atomic number: 87",
             "&8Atomic mass: [223]",
-            "&aElement group: alkalines"
+            ALKALINES
     );
 
     //elements/halogens
@@ -152,7 +159,7 @@ public class Elements {
             "&8Symbol: F",
             "&8Atomic number: 9",
             "&8Atomic mass: 19.998",
-            "&aElement group: halogens"
+            HALOGENS
     );
     public static final SlimefunItemStack CHLORINE = new SlimefunItemStack(
             "EM_CHANGE",
@@ -162,7 +169,7 @@ public class Elements {
             "&8Symbol: Cl",
             "&8Atomic number: 17",
             "&8Atomic mass: 35.453",
-            "&aElement group: halogens"
+            HALOGENS
     );
     public static final SlimefunItemStack BROMINE = new SlimefunItemStack(
             "EM_BROMINE",
@@ -172,7 +179,7 @@ public class Elements {
             "&8Symbol: Br",
             "&8Atomic number: 35",
             "&8Atomic mass: 79.904",
-            "&aElement group: halogens"
+            HALOGENS
     );
     public static final SlimefunItemStack IODINE = new SlimefunItemStack(
             "EM_IODINE",
@@ -182,7 +189,7 @@ public class Elements {
             "&8Symbol: I",
             "&8Atomic number: 53",
             "&8Atomic mass: 126.904 47",
-            "&aElement group: halogens"
+            HALOGENS
     );
     public static final SlimefunItemStack ASTATINE = new SlimefunItemStack(
             "EM_ASTATINE",
@@ -192,7 +199,7 @@ public class Elements {
             "&8Symbol: At",
             "&8Atomic number: 85",
             "&8Atomic mass: [210]",
-            "&aElement group: halogens"
+            HALOGENS
     );
     public static final SlimefunItemStack TENNESSINE = new SlimefunItemStack(
             "EM_TENNESSINE",
@@ -202,7 +209,7 @@ public class Elements {
             "&8Symbol: Ts",
             "&8Atomic number: 117",
             "&8Atomic mass: [294]",
-            "&aElement group: halogens"
+            HALOGENS
     );
 
     //elements/alkaline-earths
@@ -214,7 +221,7 @@ public class Elements {
             "&8Symbol: Be",
             "&8Atomic number: 4",
             "&8Atomic mass: 9.012",
-            "&aElement group: Alkaline earth metals"
+            ALKALINE_EARTH
     );
     public static final SlimefunItemStack MAGNESIUM = new SlimefunItemStack(
             "EM_MAGNESIUM",
@@ -224,7 +231,7 @@ public class Elements {
             "&8Symbol: Mg",
             "&8Atomic number: 12",
             "&8Atomic mass: 24.305",
-            "&aElement group: Alkaline earth metals"
+            ALKALINE_EARTH
     );
     public static final SlimefunItemStack CALCIUM = new SlimefunItemStack(
             "EM_CALCIUM",
@@ -234,7 +241,7 @@ public class Elements {
             "&8Symbol: Ca",
             "&8Atomic number: 20",
             "&8Atomic mass: 40.078",
-            "&aElement group: Alkaline earth metals"
+            ALKALINE_EARTH
     );
     public static final SlimefunItemStack STRONTIUM = new SlimefunItemStack(
             "EM_STRONTIUM",
@@ -244,7 +251,7 @@ public class Elements {
             "&8Symbol: Sr",
             "&8Atomic number: 38",
             "&8Atomic mass: 87.62",
-            "&aElement group: Alkaline earth metals"
+            ALKALINE_EARTH
     );
     public static final SlimefunItemStack BARIUM = new SlimefunItemStack(
             "EM_BARIUM",
@@ -254,7 +261,7 @@ public class Elements {
             "&8Symbol: Ba",
             "&8Atomic number: 56",
             "&8Atomic mass: 137.327",
-            "&aElement group: Alkaline earth metals"
+            ALKALINE_EARTH
     );
     public static final SlimefunItemStack RADIUM = new SlimefunItemStack(
             "EM_RADIUM",
@@ -264,7 +271,7 @@ public class Elements {
             "&8Symbol: Ra",
             "&8Atomic number: 88",
             "&8Atomic mass: [226]",
-            "&aElement group: Alkaline earth metals"
+            ALKALINE_EARTH
     );
     //elements/semi-metals
     public static final SlimefunItemStack BORON = new SlimefunItemStack(
@@ -275,7 +282,7 @@ public class Elements {
             "&8Symbol: B",
             "&8Atomic number: 5",
             "&8Atomic mass: 10.811",
-            "&aElement group: Semi-metals"
+            SEMI_METALS
     );
     public static final SlimefunItemStack SILICON = new SlimefunItemStack(
             "EM_SILICON",
@@ -285,7 +292,7 @@ public class Elements {
             "&8Symbol: Si",
             "&8Atomic number: 14",
             "&8Atomic mass: 28.086",
-            "&aElement group: Semi-metals"
+            SEMI_METALS
     );
     public static final SlimefunItemStack GERMANIUM = new SlimefunItemStack(
             "EM_GERMANIUM",
@@ -295,7 +302,7 @@ public class Elements {
             "&8Symbol: Ge",
             "&8Atomic number: 32",
             "&8Atomic mass: 72.64",
-            "&aElement group: Semi-metals"
+            SEMI_METALS
     );
     public static final SlimefunItemStack ARSENIC = new SlimefunItemStack(
             "EM_ARSENIC",
@@ -305,7 +312,7 @@ public class Elements {
             "&8Symbol: As",
             "&8Atomic number: 33",
             "&8Atomic mass: 74.922",
-            "&aElement group: Semi-metals"
+            SEMI_METALS
     );
     public static final SlimefunItemStack ANTIMONY = new SlimefunItemStack(
             "EM_ANTIMONY",
@@ -315,17 +322,17 @@ public class Elements {
             "&8Symbol: Sb",
             "&8Atomic number: 51",
             "&8Atomic mass: 121.76",
-            "&aElement group: Semi-metals"
+            SEMI_METALS
     );
-    public static final SlimefunItemStack TELURIUM = new SlimefunItemStack(
-            "EM_TELURIUM",
+    public static final SlimefunItemStack TELLURIUM = new SlimefunItemStack(
+            "EM_TELLURIUM",
             new ItemStack(Material.LIGHT_BLUE_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
-                    "<gradient:#8B8B8B:#6E6E6E>Telurium</gradient>")),
+                    "<gradient:#8B8B8B:#6E6E6E>Tellurium</gradient>")),
             "&8Symbol: Te",
             "&8Atomic number: 52",
             "&8Atomic mass: 127.6",
-            "&aElement group: Semi-metals"
+            SEMI_METALS
     );
     public static final SlimefunItemStack POLONIUM = new SlimefunItemStack(
             "EM_POLONIUM",
@@ -335,7 +342,7 @@ public class Elements {
             "&8Symbol: Po",
             "&8Atomic number: 84",
             "&8Atomic mass: [210]",
-            "&aElement group: Semi-metals"
+            SEMI_METALS
     );
     //elements/others
     public static final SlimefunItemStack ALUMINUM = new SlimefunItemStack(
@@ -346,7 +353,7 @@ public class Elements {
             "&8Symbol: Al",
             "&8Atomic number: 13",
             "&8Atomic mass: 26.982",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
     public static final SlimefunItemStack GALLIUM = new SlimefunItemStack(
             "EM_GALLIUM",
@@ -356,7 +363,7 @@ public class Elements {
             "&8Symbol: Ga",
             "&8Atomic number: 31",
             "&8Atomic mass: 69.723",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
     public static final SlimefunItemStack INDIUM = new SlimefunItemStack(
             "EM_INDIUM",
@@ -366,7 +373,7 @@ public class Elements {
             "&8Symbol: Indium",
             "&8Atomic number: 49",
             "&8Atomic mass: 114.818",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
     public static final SlimefunItemStack THALLIUM = new SlimefunItemStack(
             "EM_THALLIUM",
@@ -376,17 +383,17 @@ public class Elements {
             "&8Symbol: Tl",
             "&8Atomic number: 81",
             "&8Atomic mass: 204.383",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
     public static final SlimefunItemStack NIHONIUM = new SlimefunItemStack(
-            "EM_NIHONIIUM",
+            "EM_NIHONIUM",
             new ItemStack(Material.GRAY_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Nihonium</gradient>")),
             "&8Symbol: Nh",
             "&8Atomic number: 113",
             "&8Atomic mass: [286]",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
     public static final SlimefunItemStack TIN = new SlimefunItemStack(
             "EM_TIN",
@@ -396,7 +403,7 @@ public class Elements {
             "&8Symbol: Sn",
             "&8Atomic number: 50",
             "&8Atomic mass: 118.71",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
     public static final SlimefunItemStack LEAD = new SlimefunItemStack(
             "EM_LEAD",
@@ -406,7 +413,7 @@ public class Elements {
             "&8Symbol: Pb",
             "&8Atomic number: 82",
             "&8Atomic mass: 207.2",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
     public static final SlimefunItemStack FLEROVIUM = new SlimefunItemStack(
             "EM_FLEROVIUM",
@@ -416,7 +423,7 @@ public class Elements {
             "&8Symbol: Fl",
             "&8Atomic number: 114",
             "&8Atomic mass: [289]",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
     public static final SlimefunItemStack BISMUTH = new SlimefunItemStack(
             "EM_BISMUTH",
@@ -426,7 +433,7 @@ public class Elements {
             "&8Symbol: Bi",
             "&8Atomic number: 83",
             "&8Atomic mass: 208.98",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
     public static final SlimefunItemStack MOSCOVIUM = new SlimefunItemStack(
             "EM_MOSCOVIUM",
@@ -436,7 +443,7 @@ public class Elements {
             "&8Symbol: Mc",
             "&8Atomic number: 115",
             "&8Atomic mass: [288]",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
     public static final SlimefunItemStack LIVERMORIUM = new SlimefunItemStack(
             "EM_LIVERMORIUM",
@@ -446,7 +453,7 @@ public class Elements {
             "&8Symbol: Lv",
             "&8Atomic number: 116",
             "&8Atomic mass: [293]]",
-            "&aElement group: Other-metals"
+            OTHER_METALS
     );
 
     //elements/transition metals
@@ -458,7 +465,7 @@ public class Elements {
             "&8Symbol: Sc",
             "&8Atomic number: 21",
             "&8Atomic mass: 44.956",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack VANADIUM = new SlimefunItemStack(
             "EM_VANADIUM",
@@ -468,7 +475,7 @@ public class Elements {
             "&8Symbol: V",
             "&8Atomic number: 23",
             "&8Atomic mass: 50.942",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack CHROMIUM = new SlimefunItemStack(
             "EM_CHROMIUM",
@@ -478,7 +485,7 @@ public class Elements {
             "&8Symbol: Cr",
             "&8Atomic number: 24",
             "&8Atomic mass: 51.996",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack MANGANESE = new SlimefunItemStack(
             "EM_MANGANESE",
@@ -488,7 +495,7 @@ public class Elements {
             "&8Symbol: Mn",
             "&8Atomic number: 25",
             "&8Atomic mass: 54.938",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack IRON = new SlimefunItemStack(
             "EM_IRON",
@@ -498,7 +505,7 @@ public class Elements {
             "&8Symbol: Fe",
             "&8Atomic number: 26",
             "&8Atomic mass: 55.845",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack COBALT = new SlimefunItemStack(
             "EM_COBALT",
@@ -508,7 +515,7 @@ public class Elements {
             "&8Symbol: Co",
             "&8Atomic number: 27",
             "&8Atomic mass: 58.933",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack NICKEL = new SlimefunItemStack(
             "EM_NICKEL",
@@ -518,7 +525,7 @@ public class Elements {
             "&8Symbol: Ni",
             "&8Atomic number: 28",
             "&8Atomic mass: 58.693",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack COPPER = new SlimefunItemStack(
             "EM_COPPER",
@@ -528,7 +535,7 @@ public class Elements {
             "&8Symbol: Cu",
             "&8Atomic number: 29",
             "&8Atomic mass: 63.546",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack ZINC = new SlimefunItemStack(
             "EM_ZINC",
@@ -538,7 +545,7 @@ public class Elements {
             "&8Symbol: Zn",
             "&8Atomic number: 30",
             "&8Atomic mass: 65.409",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack YTTRIUM = new SlimefunItemStack(
             "EM_YTTRIUM",
@@ -548,7 +555,7 @@ public class Elements {
             "&8Symbol: Y",
             "&8Atomic number: 39",
             "&8Atomic mass: 88.906",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack ZIRCONIUM = new SlimefunItemStack(
             "EM_ZIRCONIUM",
@@ -558,7 +565,7 @@ public class Elements {
             "&8Symbol: Zr",
             "&8Atomic number: 40",
             "&8Atomic mass: 91.224",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack NIOBIUM = new SlimefunItemStack(
             "EM_NIOBIUM",
@@ -568,37 +575,37 @@ public class Elements {
             "&8Symbol: Nb",
             "&8Atomic number: 41",
             "&8Atomic mass: 92.906",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
-    public static final SlimefunItemStack MOLYBDENIUM = new SlimefunItemStack(
-            "EM_MOLYBDENIUM",
+    public static final SlimefunItemStack MOLYBDENUM = new SlimefunItemStack(
+            "EM_MOLYBDENUM",
             new ItemStack(Material.MAGENTA_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
-                    "<gradient:#f08080:#ffdab9>Molybdenium</gradient>")),
+                    "<gradient:#f08080:#ffdab9>Molybdenum</gradient>")),
             "&8Symbol: Mo",
             "&8Atomic number: 42",
             "&8Atomic mass: 95.94",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
-    public static final SlimefunItemStack TECHTENIUM = new SlimefunItemStack(
-            "EM_TECHTENIUM",
+    public static final SlimefunItemStack TECHNETIUM = new SlimefunItemStack(
+            "EM_TECHNETIUM",
             new ItemStack(Material.MAGENTA_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
-                    "<gradient:#f08080:#ffdab9>Techtenium</gradient>")),
+                    "<gradient:#f08080:#ffdab9>Technetium</gradient>")),
             "&8Symbol: Tc",
             "&8Atomic number: 43",
             "&8Atomic mass: [98]",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
-    public static final SlimefunItemStack RHUTENIUM = new SlimefunItemStack(
-            "EM_RHUTENIUM",
+    public static final SlimefunItemStack RUTHENIUM = new SlimefunItemStack(
+            "EM_RUTHENIUM",
             new ItemStack(Material.MAGENTA_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
-                    "<gradient:#f08080:#ffdab9>Rhutenium</gradient>")),
+                    "<gradient:#f08080:#ffdab9>Ruthenium</gradient>")),
             "&8Symbol: Ru",
             "&8Atomic number: 44",
             "&8Atomic mass: 101.07",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack RHODIUM = new SlimefunItemStack(
             "EM_RHODIUM",
@@ -608,17 +615,17 @@ public class Elements {
             "&8Symbol: Rh",
             "&8Atomic number: 45",
             "&8Atomic mass: 102.905 50",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
-    public static final SlimefunItemStack PALADIUM = new SlimefunItemStack(
-            "EM_PALADIUM",
+    public static final SlimefunItemStack PALLADIUM = new SlimefunItemStack(
+            "EM_PALLADIUM",
             new ItemStack(Material.MAGENTA_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
-                    "<gradient:#f08080:#ffdab9>Paladium</gradient>")),
+                    "<gradient:#f08080:#ffdab9>Palladium</gradient>")),
             "&8Symbol: Pd",
             "&8Atomic number: 46",
             "&8Atomic mass: 106.42",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack SILVER = new SlimefunItemStack(
             "EM_SILVER",
@@ -628,7 +635,7 @@ public class Elements {
             "&8Symbol: Ag",
             "&8Atomic number: 47",
             "&8Atomic mass: 107.868",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack CADMIUM = new SlimefunItemStack(
             "EM_CADMIUM",
@@ -638,7 +645,7 @@ public class Elements {
             "&8Symbol: Cd",
             "&8Atomic number: 48",
             "&8Atomic mass: 112.411",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack HAFNIUM = new SlimefunItemStack(
             "EM_HAFNIUM",
@@ -648,7 +655,7 @@ public class Elements {
             "&8Symbol: Hf",
             "&8Atomic number: 72",
             "&8Atomic mass: 178.49",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack TANTALUM = new SlimefunItemStack(
             "EM_TANTALUM",
@@ -658,7 +665,7 @@ public class Elements {
             "&8Symbol: Ta",
             "&8Atomic number: 73",
             "&8Atomic mass: 180.948",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack TUNGSTEN = new SlimefunItemStack(
             "EM_TUNGSTEN",
@@ -668,7 +675,7 @@ public class Elements {
             "&8Symbol: W",
             "&8Atomic number: 74",
             "&8Atomic mass: 183.84",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack RHENIUM = new SlimefunItemStack(
             "EM_RHENIUM",
@@ -678,10 +685,10 @@ public class Elements {
             "&8Symbol: Re",
             "&8Atomic number: 75",
             "&8Atomic mass: 186.207",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
 
-    public static final SlimefunItemStack PLATINIUM = new SlimefunItemStack(
+    public static final SlimefunItemStack PLATINUM = new SlimefunItemStack(
             "EM_PLATINUM",
             new ItemStack(Material.MAGENTA_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
@@ -689,7 +696,7 @@ public class Elements {
             "&8Symbol: Pt",
             "&8Atomic number: 78",
             "&8Atomic mass: 195.084",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack GOLD = new SlimefunItemStack(
             "EM_GOLD",
@@ -699,7 +706,7 @@ public class Elements {
             "&8Symbol: Au",
             "&8Atomic number: 79",
             "&8Atomic mass: 196.967",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack MERCURY = new SlimefunItemStack(
             "EM_MERCURY",
@@ -709,17 +716,17 @@ public class Elements {
             "&8Symbol: Hg",
             "&8Atomic number: 80",
             "&8Atomic mass: 200.59",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
-    public static final SlimefunItemStack RHUTERFORDIUM = new SlimefunItemStack(
-            "EM_RHUTERFORDIUM",
+    public static final SlimefunItemStack RUTHERFORDIUM = new SlimefunItemStack(
+            "EM_RUTHERFORDIUM",
             new ItemStack(Material.MAGENTA_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
-                    "<gradient:#f08080:#ffdab9>Rhuterfordium</gradient>")),
+            "<gradient:#f08080:#ffdab9>Rutherfordium</gradient>")),
             "&8Symbol: Rf",
             "&8Atomic number: 104",
             "&8Atomic mass: 261",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack DUBNIUM = new SlimefunItemStack(
             "EM_DUBNIUM",
@@ -729,7 +736,7 @@ public class Elements {
             "&8Symbol: Db",
             "&8Atomic number: 105",
             "&8Atomic mass: [262]",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack SEABORGIUM = new SlimefunItemStack(
             "EM_SEABORGIUM",
@@ -739,7 +746,7 @@ public class Elements {
             "&8Symbol: Sb",
             "&8Atomic number: 106",
             "&8Atomic mass: [266]",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack BOHRIUM = new SlimefunItemStack(
             "EM_BOHRIUM",
@@ -749,7 +756,7 @@ public class Elements {
             "&8Symbol: Bh",
             "&8Atomic number: 107",
             "&8Atomic mass: [264]",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack HASSIUM = new SlimefunItemStack(
             "EM_HASSIUM",
@@ -759,7 +766,7 @@ public class Elements {
             "&8Symbol: Hs",
             "&8Atomic number: 108",
             "&8Atomic mass: [277]",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack MEITNERIUM = new SlimefunItemStack(
             "EM_MEITNERIUM",
@@ -769,7 +776,7 @@ public class Elements {
             "&8Symbol: Mt",
             "&8Atomic number: 109",
             "&8Atomic mass: [268]",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack DARMSTADTIUM = new SlimefunItemStack(
             "EM_DARMSTADTIUM",
@@ -779,7 +786,7 @@ public class Elements {
             "&8Symbol: Ds",
             "&8Atomic number: 110",
             "&8Atomic mass: [271]",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack ROENTGENIUM = new SlimefunItemStack(
             "EM_ROENTGENIUM",
@@ -789,7 +796,7 @@ public class Elements {
             "&8Symbol: Rg",
             "&8Atomic number: 111",
             "&8Atomic mass: [272]",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     public static final SlimefunItemStack COPERNICIUM = new SlimefunItemStack(
             "EM_COPERNICIUM",
@@ -799,7 +806,7 @@ public class Elements {
             "&8Symbol: Cn",
             "&8Atomic number: 112",
             "&8Atomic mass: [277]",
-            "&aElement group: Transition-metals"
+            TRANSITION_METALS
     );
     //elements/noble-gasses
     public static final SlimefunItemStack HELIUM = new SlimefunItemStack(
@@ -810,7 +817,7 @@ public class Elements {
             "&8Symbol: He",
             "&8Atomic number: 2",
             "&8Atomic mass: 4.008",
-            "&aElement group: Noble-gasses",
+            NOBLE_GASSES,
             "&aRight-click to levitate &7(Main hand only)"
     );
     public static final SlimefunItemStack NEON = new SlimefunItemStack(
@@ -821,7 +828,7 @@ public class Elements {
             "&8Symbol: Ne",
             "&8Atomic number: 10",
             "&8Atomic mass: 20.18",
-            "&aElement group: Noble-gasses",
+            NOBLE_GASSES,
             "&aRight-click in a sign to make it glow &7(Main hand only)"
     );
     public static final SlimefunItemStack ARGON = new SlimefunItemStack(
@@ -832,7 +839,7 @@ public class Elements {
             "&8Symbol: Ar",
             "&8Atomic number: 18",
             "&8Atomic mass: 39.948",
-            "&aElement group: Noble-gasses"
+            NOBLE_GASSES
     );
     public static final SlimefunItemStack KRYPTON = new SlimefunItemStack(
             "EM_KRYPTON",
@@ -842,7 +849,7 @@ public class Elements {
             "&8Symbol:  Kr",
             "&8Atomic number: 36",
             "&8Atomic mass: 83.798",
-            "&aElement group: Noble-gasses"
+            NOBLE_GASSES
     );
     public static final SlimefunItemStack XENON = new SlimefunItemStack(
             "EM_XENON",
@@ -852,7 +859,7 @@ public class Elements {
             "&8Symbol: Xe",
             "&8Atomic number: 54",
             "&8Atomic mass: 131.293",
-            "&aElement group: Noble-gasses"
+            NOBLE_GASSES
     );
     public static final SlimefunItemStack RADON = new SlimefunItemStack(
             "EM_RADON",
@@ -862,7 +869,7 @@ public class Elements {
             "&8Symbol: Rn",
             "&8Atomic number: 86",
             "&8Atomic mass: [220]",
-            "&aElement group: Noble-gasses",
+            NOBLE_GASSES,
             "&aDo not breathe &7(Main hand only)"
     );
     public static final SlimefunItemStack OGANESSON = new SlimefunItemStack(
@@ -873,7 +880,7 @@ public class Elements {
             "&8Symbol: Og",
             "&8Atomic number: 110",
             "&8Atomic mass: [294]",
-            "&aElement group: Noble-gasses"
+            NOBLE_GASSES
     );
 
     public static void setup(ElementManipulation em) {
@@ -912,7 +919,7 @@ public class Elements {
         new ChemicalElements(Categories.ELEMENTS, GERMANIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, ARSENIC, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, ANTIMONY, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new ChemicalElements(Categories.ELEMENTS, TELURIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new ChemicalElements(Categories.ELEMENTS, TELLURIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, POLONIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
 
         //others
@@ -945,9 +952,9 @@ public class Elements {
         new ChemicalElements(Categories.ELEMENTS, ZINC, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, YTTRIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, NIOBIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new ChemicalElements(Categories.ELEMENTS, MOLYBDENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new ChemicalElements(Categories.ELEMENTS, PALADIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new ChemicalElements(Categories.ELEMENTS, RHUTENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new ChemicalElements(Categories.ELEMENTS, MOLYBDENUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new ChemicalElements(Categories.ELEMENTS, PALLADIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new ChemicalElements(Categories.ELEMENTS, RUTHENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, CADMIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, HAFNIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, TANTALUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
@@ -955,9 +962,9 @@ public class Elements {
         new ChemicalElements(Categories.ELEMENTS, RHENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
 
 
-        new ChemicalElements(Categories.ELEMENTS, PLATINIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new ChemicalElements(Categories.ELEMENTS, PLATINUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, MERCURY, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new ChemicalElements(Categories.ELEMENTS, RHUTERFORDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new ChemicalElements(Categories.ELEMENTS, RUTHERFORDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, DUBNIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, SEABORGIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, BOHRIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
@@ -967,7 +974,7 @@ public class Elements {
         new ChemicalElements(Categories.ELEMENTS, ROENTGENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, COPERNICIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, ZIRCONIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new ChemicalElements(Categories.ELEMENTS, TECHTENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new ChemicalElements(Categories.ELEMENTS, TECHNETIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         //noble gasses
         new Helium(Categories.ELEMENTS, HELIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new Neon(Categories.ELEMENTS, NEON, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);

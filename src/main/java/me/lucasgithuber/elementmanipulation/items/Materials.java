@@ -519,7 +519,7 @@
         }).setUseableInWorkbench(true).register(em);
 
 
-        emRedstone.setUseableInWorkbench(true).register(em);
+    emRedstone.setUseableInWorkbench(true).register(em);
     emLapis.setUseableInWorkbench(true).register(em);
     emEmerald.setUseableInWorkbench(true).register(em);
     }

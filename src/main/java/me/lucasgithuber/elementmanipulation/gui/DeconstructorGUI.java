@@ -44,12 +44,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- *
- * THIS IS A MODIFIED VERSION OF ACONTAINER TO FIT THE MACHINES
- *
- *
- */
+
 public abstract class DeconstructorGUI extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
 
     private static final int[] BORDER = {2, 11, 20, 29, 38};

@@ -20,7 +20,10 @@ import me.lucasgithuber.elementmanipulation.machines.Machines;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
-import org.bukkit.*;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
@@ -76,7 +79,6 @@ public class DrugsGroup extends FlexItemGroup {
             "&aLeft-Click to move enough for 1 recipe",
             "&aRight-Click to move enough to as many as possible"
     );
-    private static final ItemStack INFO = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE, "&aInfo");
     private static final SlimefunGuideImplementation GUIDE = Slimefun.getRegistry().getSlimefunGuide(SlimefunGuideMode.SURVIVAL_MODE);
     private static final Map<UUID, String> HISTORY = new HashMap<>();
     private static final LinkedHashMap<String, Pair<SlimefunItemStack, ItemStack[]>> ITEMS = new LinkedHashMap<>();
@@ -117,7 +119,7 @@ public class DrugsGroup extends FlexItemGroup {
             }
         }
 
-        ChestMenu menu = new ChestMenu("&bDrugss ");
+        ChestMenu menu = new ChestMenu("&bDrugs");
 
         if (entry.bench != null) {
             menu.addMenuClickHandler(1, (player1, i, itemStack, clickAction) -> {
@@ -378,10 +380,7 @@ public class DrugsGroup extends FlexItemGroup {
         private final SlimefunGuideImplementation impl;
 
     }
-    public String id;
-    public String getVIID(ItemStack vanillaItem){
-        return id;
-    }
+
     public static ItemStack OUTPUT_BORDER = new CustomItemStack(Material.ORANGE_STAINED_GLASS_PANE, "&6Output");
     public static ItemStack INPUT_BORDER = new CustomItemStack(Material.LIGHT_BLUE_STAINED_GLASS_PANE, "&bInput");
 }

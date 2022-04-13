@@ -2,7 +2,6 @@ package me.lucasgithuber.elementmanipulation.drugs;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
-import me.lucasgithuber.elementmanipulation.drugs.Caffeine;
 import me.lucasgithuber.elementmanipulation.machines.DrugsTable;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import net.md_5.bungee.api.ChatColor;

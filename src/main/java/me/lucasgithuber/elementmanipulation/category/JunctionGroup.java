@@ -378,9 +378,5 @@ public class JunctionGroup extends FlexItemGroup {
         private final SlimefunGuideImplementation impl;
 
     }
-    public String id;
-    public String getVIID(ItemStack vanillaItem){
-        return id;
-    }
-    public static ItemStack OUTPUT_BORDER = new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, "&6Output");
+
 }

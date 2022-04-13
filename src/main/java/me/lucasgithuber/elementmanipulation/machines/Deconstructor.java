@@ -165,4 +165,4 @@ public class Deconstructor extends DeconstructorGUI implements RecipeDisplayItem
     public int getSpeed() {
         return 1;
     }
-        };
+        }

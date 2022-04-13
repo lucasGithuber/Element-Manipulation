@@ -17,8 +17,8 @@ import org.bukkit.potion.PotionEffectType;
 import javax.annotation.Nonnull;
 
 public class Cocaine extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
-    private String durationsPath = "drugs.cocaine.effects-duration.";
-    private String powersPath = "drugs.cocaine.effects-power.";
+    private final String durationsPath = "drugs.cocaine.effects-duration.";
+    private final String powersPath = "drugs.cocaine.effects-power.";
     public Cocaine(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 

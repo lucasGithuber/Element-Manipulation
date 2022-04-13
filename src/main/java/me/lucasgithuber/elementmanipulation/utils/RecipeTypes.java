@@ -16,6 +16,5 @@ public class RecipeTypes {
             ChatColor.DARK_GREEN + "This is an informational book"
     );
     public static final RecipeType EM_DECONSTRUCTOR = new RecipeType(new NamespacedKey(ElementManipulation.i(), "em_deconstructor_recipetype"), Machines.EMDeconstructor, "", "&8Extract using the deconstructor");
-    public static final RecipeType EM_JUNCTIONTABLE = new RecipeType(new NamespacedKey(ElementManipulation.i(), "em_junctiontable_recipetype"), Machines.EMJunctionTable, "", "&8construct using the junction table");
     public static final RecipeType INFO = new RecipeType(new NamespacedKey(ElementManipulation.i(), "em_info_recipetype"), INFO_BOOK, "", ChatColor.DARK_GREEN + "This is an informational book, you must make what the \"recipe\" tells you");
 }
