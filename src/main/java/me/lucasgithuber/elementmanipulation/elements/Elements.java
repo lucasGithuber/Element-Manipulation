@@ -895,7 +895,7 @@ public class Elements {
         //alkalines
         new ChemicalElements(Categories.ELEMENTS, LITHIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, SODIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new ChemicalElements(Categories.ELEMENTS, POTASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new Potassium(Categories.ELEMENTS, POTASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, RUBIDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new RadioactiveElement(Categories.ELEMENTS, Radioactivity.MODERATE, CAESIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, FRANCIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
