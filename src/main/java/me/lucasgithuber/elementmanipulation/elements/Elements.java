@@ -4,6 +4,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
+import me.lucasgithuber.elementmanipulation.elements.WaterReactiveElement;
 import me.lucasgithuber.elementmanipulation.utils.RecipeTypes;
 import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.Material;
@@ -893,12 +894,12 @@ public class Elements {
         new ChemicalElements(Categories.ELEMENTS, SELENIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, SULFUR, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         //alkalines
-        new ChemicalElements(Categories.ELEMENTS, LITHIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new ChemicalElements(Categories.ELEMENTS, SODIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new Potassium(Categories.ELEMENTS, POTASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new ChemicalElements(Categories.ELEMENTS, RUBIDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new WaterReactiveElement(Categories.ELEMENTS, LITHIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new WaterReactiveElement(Categories.ELEMENTS, SODIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new WaterReactiveElement(Categories.ELEMENTS, POTASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new WaterReactiveElement(Categories.ELEMENTS, RUBIDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new RadioactiveElement(Categories.ELEMENTS, Radioactivity.MODERATE, CAESIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new ChemicalElements(Categories.ELEMENTS, FRANCIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new WaterReactiveElement(Categories.ELEMENTS, FRANCIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         //halogens
         new ChemicalElements(Categories.ELEMENTS, FLUORINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new ChemicalElements(Categories.ELEMENTS, CHLORINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
