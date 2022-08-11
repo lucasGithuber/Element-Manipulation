@@ -20,8 +20,8 @@ import javax.annotation.Nonnull;
 import java.util.Collection;
 import java.util.Optional;
 
-public class Potassium extends SimpleSlimefunItem<ItemDropHandler> {
-    protected Potassium(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+public class WaterReactiveElement extends SimpleSlimefunItem<ItemDropHandler> {
+    protected  WaterReactiveElement(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
     }
 
@@ -43,13 +43,13 @@ public class Potassium extends SimpleSlimefunItem<ItemDropHandler> {
         };
     }
 
-    private void activate(@Nonnull Player p, @Nonnull Item potassium) {
+    private void activate(@Nonnull Player p, @Nonnull Item reactiveElement) {
         // Being sure the entity is still valid and not picked up or whatsoever.
-        if (!potassium.isValid()) {
+        if (!reactiveElement.isValid()) {
             return;
         }
 
-        Location l = potassium.getLocation();
+        Location l = reactiveElement.getLocation();
         Collection<Entity> entites = l.getWorld().getNearbyEntities(l, 2, 2, 2);
         Optional<Entity> optional = entites.stream().findFirst();
 
@@ -57,18 +57,16 @@ public class Potassium extends SimpleSlimefunItem<ItemDropHandler> {
             Item item = (Item) optional.get();
             ItemStack itemStack = item.getItemStack();
 
-            if (itemStack.getAmount() == 1) {
+            if (itemStack.getAmount() >= 1) {
                 Slimefun.runSync(() -> {
                     // Being sure entities are still valid and not picked up or whatsoever.
-                    if (potassium.isValid() && potassium.getLocation().getBlock().getType() == Material.WATER) {
+                    if (reactiveElement.isValid() && reactiveElement.getLocation().getBlock().getType() == Material.WATER) {
 
                         l.getBlock().setType(Material.AIR);
                         l.getWorld().createExplosion(l, 3);
                         l.getWorld().playSound(l, Sound.ENTITY_GENERIC_EXPLODE, 0.3F, 1);
 
-                        potassium.remove();
-                    } else {
-                        p.sendMessage(ChatColor.RED + "Element couldn't explode");
+                        reactiveElement.remove();
                     }
                 }, 10L);
             } else {
