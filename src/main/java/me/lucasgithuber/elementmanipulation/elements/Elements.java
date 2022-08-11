@@ -16,8 +16,8 @@ public class Elements {
     public static final String ALKALINE_EARTH = "&aElement group: alkaline earth metals";
     public static final String SEMI_METALS = "&aElement group: semi metals";
     public static final String OTHER_METALS = "&aElement group: other metals";
-    public static final String TRANSITION_METALS = "&aElement group: other metals";
-    public static final String NOBLE_GASSES = "&aElement group: other metals";
+    public static final String TRANSITION_METALS = "&aElement group: Transition metals";
+    public static final String NOBLE_GASSES = "&aElement group: Noble gasses";
     //elements
     //non-metals
     public static final SlimefunItemStack HYDROGEN = new SlimefunItemStack(
@@ -82,7 +82,7 @@ public class Elements {
             new ItemStack(Material.LIME_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#38CA08:#25FF09>Selenium</gradient>")),
-            "&8Symbol: S",
+            "&8Symbol: Se",
             "&8Atomic number: 34",
             "&8Atomic mass: 78.96",
             NON_METALS);
@@ -370,7 +370,7 @@ public class Elements {
             new ItemStack(Material.GRAY_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#8B8B8B:#6E6E6E>Indium</gradient>")),
-            "&8Symbol: Indium",
+            "&8Symbol: In",
             "&8Atomic number: 49",
             "&8Atomic mass: 114.818",
             OTHER_METALS
@@ -452,7 +452,7 @@ public class Elements {
                     "<gradient:#8B8B8B:#6E6E6E>Livermorium</gradient>")),
             "&8Symbol: Lv",
             "&8Atomic number: 116",
-            "&8Atomic mass: [293]]",
+            "&8Atomic mass: [293]",
             OTHER_METALS
     );
 
@@ -743,7 +743,7 @@ public class Elements {
             new ItemStack(Material.MAGENTA_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#f08080:#ffdab9>Seaborgium</gradient>")),
-            "&8Symbol: Sb",
+            "&8Symbol: Sg",
             "&8Atomic number: 106",
             "&8Atomic mass: [266]",
             TRANSITION_METALS
@@ -802,7 +802,7 @@ public class Elements {
             "EM_COPERNICIUM",
             new ItemStack(Material.MAGENTA_DYE),
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
-                    "<gradient:#38CA08:#25FF09>Carbon</gradient>")),
+                    "<gradient:#f08080:#ffdab9>Copernicium</gradient>")),
             "&8Symbol: Cn",
             "&8Atomic number: 112",
             "&8Atomic mass: [277]",
@@ -878,7 +878,7 @@ public class Elements {
             BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
                     "<gradient:#0097B1:#51BFD89>Oganesson</gradient>")),
             "&8Symbol: Og",
-            "&8Atomic number: 110",
+            "&8Atomic number: 118",
             "&8Atomic mass: [294]",
             NOBLE_GASSES
     );
