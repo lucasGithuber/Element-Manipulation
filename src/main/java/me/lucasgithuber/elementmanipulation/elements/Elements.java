@@ -7,7 +7,10 @@ import me.lucasgithuber.elementmanipulation.utils.Categories;
 import me.lucasgithuber.elementmanipulation.utils.RecipeTypes;
 import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class Elements {
     public static final String NON_METALS =  "&aElement group: non-metals";
