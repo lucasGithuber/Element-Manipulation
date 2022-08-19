@@ -3,6 +3,7 @@ package me.lucasgithuber.elementmanipulation.elements;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
+import me.lucasgithuber.elementmanipulation.elements.WaterReactiveElement;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import me.lucasgithuber.elementmanipulation.utils.RecipeTypes;
 import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
@@ -905,9 +906,9 @@ public class Elements {
         //alkalines
         new WaterReactiveElement(Categories.ELEMENTS, LITHIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new WaterReactiveElement(Categories.ELEMENTS, SODIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new WaterReactiveElements(Categories.ELEMENTS, POTASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new WaterReactiveElement(Categories.ELEMENTS, POTASSIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new WaterReactiveElement(Categories.ELEMENTS, RUBIDIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
-        new WaterReactiveElement(Categories.ELEMENTS, Radioactivity.MODERATE, CAESIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
+        new WaterReactiveElement(Categories.ELEMENTS, CAESIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         new WaterReactiveElement(Categories.ELEMENTS, FRANCIUM, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
         //halogens
         new ChemicalElements(Categories.ELEMENTS, FLUORINE, RecipeTypes.EM_DECONSTRUCTOR, new ItemStack[]{null, null, null, null, null, null, null, null, null}).register(em);
