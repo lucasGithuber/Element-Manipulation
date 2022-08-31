@@ -34,10 +34,10 @@ public class Drugs {
             ChatColor.of("#FFD78A") + "Makes you drunk",
             ChatColor.of("#FFD78A") + "Makes emotional pain go away"
     );
-    public static final SlimefunItemStack ANESTHETIC = new SlimefunItemStack(
-            "EM_ANESTHETIC",
+    public static final SlimefunItemStack ANESTHESIC = new SlimefunItemStack(
+            "EM_ANESTHESIC",
             Material.END_ROD,
-            "&8anesthetic",
+            "&8anesthesic",
             "&8Makes you feel nothing"
     );
     public static void setup(ElementManipulation em){
@@ -65,7 +65,7 @@ public class Drugs {
                 HYDROGEN,CARBON,CARBON,OXYGEN,HYDROGEN,null,
                 null,HYDROGEN,HYDROGEN,null,null,null,
         }).register(em);
-        new Anesthetic(Categories.DRUGS_CHEAT, ANESTHESIC, DrugsTable.TYPE, new ItemStack[]{
+        new Anesthesic(Categories.DRUGS_CHEAT, ANESTHESIC, DrugsTable.TYPE, new ItemStack[]{
                 MiscItems.SYRINGE,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
                 HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
                 HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,

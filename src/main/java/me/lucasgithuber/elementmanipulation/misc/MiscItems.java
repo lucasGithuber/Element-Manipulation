@@ -37,7 +37,7 @@ public class MiscItems {
             "EM_SYRINGE",
             Material.END_ROD,
             "&fSyringe",
-            "&fUsed to put anesthetics"
+            "&fUsed to put anesthesics"
     );
     public static void setup(ElementManipulation em){
         new UnplaceableBlock(Categories.MISCELLANEOUS, CLEAR_GLASS_1, RecipeType.SMELTERY, new ItemStack[]{

@@ -16,10 +16,10 @@ import org.bukkit.potion.PotionEffectType;
 
 import javax.annotation.Nonnull;
 
-public class Anesthetic extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
-    private final String durationsPath = "drugs.anesthetic.effects-duration.";
-    private final String powersPath = "drugs.anesthetic.effects-power.";
-    public Anesthetic(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+public class Anesthesic extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
+    private final String durationsPath = "drugs.anesthesic.effects-duration.";
+    private final String powersPath = "drugs.anesthesic.effects-power.";
+    public Anesthesic(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
     }
