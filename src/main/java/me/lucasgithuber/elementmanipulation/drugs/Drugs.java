@@ -29,7 +29,7 @@ public class Drugs {
     public static final SlimefunItemStack ALCOHOL = new SlimefunItemStack(
             "EM_ALCOHOL",
             Color.White,
-            new PotionEffect(PotionEffectType.NIGHT_VISION 2, 0),
+            new PotionEffect(PotionEffectType.NIGHT_VISION, 2, 0),
             ChatColor.of("#FFD78A") + "Alcohol",
             ChatColor.of("#FFD78A") + "Makes you drunk",
             ChatColor.of("#FFD78A") + "Makes emotional pain go away",
