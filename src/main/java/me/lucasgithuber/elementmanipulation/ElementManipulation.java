@@ -9,6 +9,7 @@ import me.lucasgithuber.elementmanipulation.machines.Machines;
 import me.lucasgithuber.elementmanipulation.misc.MiscItems;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import me.lucasgithuber.elementmanipulation.drugs.Drugs;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
 import org.bstats.bukkit.Metrics;
