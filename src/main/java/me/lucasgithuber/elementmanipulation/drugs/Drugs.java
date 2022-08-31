@@ -32,14 +32,13 @@ public class Drugs {
             new PotionEffect(PotionEffectType.NIGHT_VISION, 2, 0),
             ChatColor.of("#FFD78A") + "Alcohol",
             ChatColor.of("#FFD78A") + "Makes you drunk",
-            ChatColor.of("#FFD78A") + "Makes emotional pain go away",
+            ChatColor.of("#FFD78A") + "Makes emotional pain go away"
     );
     public static final SlimefunItemStack ANESTHETIC = new SlimefunItemStack(
             "EM_ANESTHETIC",
             Material.END_ROD,
             "&8anesthetic",
             "&8Makes you feel nothing"
-
     );
     public static void setup(ElementManipulation em){
         new Caffeine(Categories.DRUGS_CHEAT, CAFFEINE, DrugsTable.TYPE, new ItemStack[]{
