@@ -9,6 +9,8 @@ import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Color;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import static me.lucasgithuber.elementmanipulation.elements.Elements.*;
 
@@ -28,7 +30,7 @@ public class Drugs {
     );
     public static final SlimefunItemStack ALCOHOL = new SlimefunItemStack(
             "EM_ALCOHOL",
-            Color.White,
+            Color.WHITE,
             new PotionEffect(PotionEffectType.NIGHT_VISION, 2, 0),
             ChatColor.of("#FFD78A") + "Alcohol",
             ChatColor.of("#FFD78A") + "Makes you drunk",
