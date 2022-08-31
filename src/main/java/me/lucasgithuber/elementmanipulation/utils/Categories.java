@@ -61,10 +61,10 @@ public class Categories {
 
     public static void setup(ElementManipulation em){
         JUNCTION_CATEGORY.register(em);
-        /*DRUGS_CATEGORY.register(em);*/
+        DRUGS_CATEGORY.register(em);
         MAIN.register(em);
         JUNCTION_CHEAT.register(em);
-        /*DRUGS_CHEAT.register(em);*/
+        DRUGS_CHEAT.register(em);
     }
 
 }
