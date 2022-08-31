@@ -9,6 +9,7 @@ import me.lucasgithuber.elementmanipulation.machines.Machines;
 import me.lucasgithuber.elementmanipulation.misc.MiscItems;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import me.lucasgithuber.elementmanipulation.drugs.Drugs;
 import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
 import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
 import org.bstats.bukkit.Metrics;
@@ -37,7 +38,7 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
         Materials.setup(this);
         Machines.setup(this);
         MiscItems.setup(this);
-        //Drugs.setup(this);
+        Drugs.setup(this);
         /*PortalCorners.setup(this);*/
         new Metrics(this, 13718);
     }

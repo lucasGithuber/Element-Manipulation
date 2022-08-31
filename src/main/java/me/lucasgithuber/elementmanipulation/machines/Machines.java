@@ -9,6 +9,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
+import me.lucasgithuber.elementmanipulation.misc.MiscItems;
 import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -84,11 +85,11 @@ public class Machines{
                 SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.GLASS), SlimefunItems.REINFORCED_PLATE,
                 SlimefunItems.REINFORCED_PLATE, SlimefunItems.LARGE_CAPACITOR, SlimefunItems.REINFORCED_PLATE
         }).setProcessingSpeed(1).setCapacity(64).setEnergyConsumption(16);
-        /*new DrugsTable(Categories.MACHINES, DRUGS_TABLE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+        new DrugsTable(Categories.MACHINES, DRUGS_TABLE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 new ItemStack(Material.NETHER_STAR), MiscItems.CLEAR_GLASS_3,new ItemStack(Material.NETHER_STAR),
                 SlimefunItems.REINFORCED_PLATE,SlimefunItems.CRAFTING_MOTOR,SlimefunItems.REINFORCED_PLATE,
                 new ItemStack(Material.BLACK_CONCRETE),SlimefunItems.LARGE_CAPACITOR,new ItemStack(Material.BLACK_CONCRETE),
-        }, 4096).register(em);*/
+        }, 4096).register(em);
         /*new PortalTable(Categories.MACHINES, PORTAL_TABLE, new ItemStack[] {
           *      null , null , null,
                 null, new ItemStack(Material.DARK_OAK_FENCE), null,

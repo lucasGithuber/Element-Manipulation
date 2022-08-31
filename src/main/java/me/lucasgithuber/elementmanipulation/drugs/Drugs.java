@@ -4,9 +4,13 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
 import me.lucasgithuber.elementmanipulation.machines.DrugsTable;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
+import me.lucasgithuber.elementmanipulation.misc.MiscItems;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Color;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import static me.lucasgithuber.elementmanipulation.elements.Elements.*;
 
@@ -24,6 +28,20 @@ public class Drugs {
             ChatColor.WHITE +"Makes you feel good"
 
     );
+    public static final SlimefunItemStack ALCOHOL = new SlimefunItemStack(
+            "EM_ALCOHOL",
+            Color.WHITE,
+            new PotionEffect(PotionEffectType.NIGHT_VISION, 2, 0),
+            ChatColor.of("#FFD78A") + "Alcohol",
+            ChatColor.of("#FFD78A") + "Makes you drunk",
+            ChatColor.of("#FFD78A") + "Makes emotional pain go away"
+    );
+    public static final SlimefunItemStack ANESTHESIC = new SlimefunItemStack(
+            "EM_ANESTHESIC",
+            Material.END_ROD,
+            "&8anesthesic",
+            "&8Makes you feel nothing"
+    );
     public static void setup(ElementManipulation em){
         new Caffeine(Categories.DRUGS_CHEAT, CAFFEINE, DrugsTable.TYPE, new ItemStack[]{
                 null,null,null,OXYGEN,null,null,
@@ -40,6 +58,22 @@ public class Drugs {
                 HYDROGEN,null,CARBON,CARBON,CARBON,null,
                 null,null,null,CARBON,null,null,
                 null,null,null,HYDROGEN,NITROGEN,HYDROGEN
+        }).register(em);
+        new Alcohol(Categories.DRUGS_CHEAT, ALCOHOL, DrugsTable.TYPE, new ItemStack[]{
+                new ItemStack(Material.GLASS_BOTTLE),HYDROGEN,HYDROGEN,null,null,null,
+                HYDROGEN,CARBON,CARBON,OXYGEN,HYDROGEN,null,
+                null,HYDROGEN,HYDROGEN,null,null,null,
+                null,HYDROGEN,HYDROGEN,null,null,null,
+                HYDROGEN,CARBON,CARBON,OXYGEN,HYDROGEN,null,
+                null,HYDROGEN,HYDROGEN,null,null,null,
+        }).register(em);
+        new Anesthesic(Categories.DRUGS_CHEAT, ANESTHESIC, DrugsTable.TYPE, new ItemStack[]{
+                MiscItems.SYRINGE,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
+                HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
+                HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
+                HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
+                HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
+                HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
         }).register(em);
     }
 }

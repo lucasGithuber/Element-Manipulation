@@ -98,6 +98,7 @@ public class Deconstructor extends DeconstructorGUI implements RecipeDisplayItem
                         new CustomItemStack(Elements.SODIUM, 8),
                         new CustomItemStack(Elements.CALCIUM, 8),
                         new CustomItemStack(Elements.SILICON, 4),
+                        new CustomItemStack(Elements.SULFUR, 4),
                 });
         registerRecipe(4, new ItemStack[] {new ItemStack(Material.EMERALD, 64)},
                 new ItemStack[] {
