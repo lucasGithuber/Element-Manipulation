@@ -4,6 +4,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
 import me.lucasgithuber.elementmanipulation.machines.DrugsTable;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
+import me.lucasgithuber.elementmanipulation.misc.MiscItems;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Color;
@@ -37,7 +38,7 @@ public class Drugs {
             "EM_ANESTHETIC",
             Material.END_ROD,
             "&8anesthetic",
-            "&8Makes you feel good"
+            "&8Makes you feel nothing"
 
     );
     public static void setup(ElementManipulation em){
@@ -57,7 +58,7 @@ public class Drugs {
                 null,null,null,CARBON,null,null,
                 null,null,null,HYDROGEN,NITROGEN,HYDROGEN
         }).register(em);
-        new Alcohol(Categories.DRUGS_CHEAT, COCAINE, DrugsTable.TYPE, new ItemStack[]{
+        new Alcohol(Categories.DRUGS_CHEAT, ALCOHOL, DrugsTable.TYPE, new ItemStack[]{
                 new ItemStack(Material.GLASS_BOTTLE),HYDROGEN,HYDROGEN,null,null,null,
                 HYDROGEN,CARBON,CARBON,OXYGEN,HYDROGEN,null,
                 null,HYDROGEN,HYDROGEN,null,null,null,
@@ -65,8 +66,8 @@ public class Drugs {
                 HYDROGEN,CARBON,CARBON,OXYGEN,HYDROGEN,null,
                 null,HYDROGEN,HYDROGEN,null,null,null,
         }).register(em);
-        new Anesthetic(Categories.DRUGS_CHEAT, COCAINE, DrugsTable.TYPE, new ItemStack[]{
-                ,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
+        new Anesthetic(Categories.DRUGS_CHEAT, ANESTHESIC, DrugsTable.TYPE, new ItemStack[]{
+                MiscItems.SYRINGE,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
                 HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
                 HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
                 HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
