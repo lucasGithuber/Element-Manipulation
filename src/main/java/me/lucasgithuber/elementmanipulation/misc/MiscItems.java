@@ -64,15 +64,16 @@ public class MiscItems {
                 null, null, null,
                 null, null, null
         }).register(em);
-        new UnplaceableBlock(Categories.MISCELLANEOUS, SYRINGE, RecipeType.SMELTERY, new ItemStack[]{
-                SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
-                SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
-                SlimefunItems.PLASTIC_SHEET, RUBBER_PISTON, SlimefunItems.PLASTIC_SHEET
-        }).register(em);
         new SlimefunItem(Categories.MISCELLANEOUS, RUBBER_PISTON, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 SULFUR,SULFUR,SULFUR,
                 SULFUR,CARBON,SULFUR,
                 SULFUR,SULFUR,SULFUR,
         }).register(em);
+        new UnplaceableBlock(Categories.MISCELLANEOUS, SYRINGE, RecipeType.SMELTERY, new ItemStack[]{
+                SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
+                SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
+                SlimefunItems.PLASTIC_SHEET, RUBBER_PISTON, SlimefunItems.PLASTIC_SHEET
+        }).register(em);
+        
     }
 }
