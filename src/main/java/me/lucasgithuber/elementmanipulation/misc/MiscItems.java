@@ -64,6 +64,6 @@ public class MiscItems {
                 SULFUR,SULFUR,SULFUR,
                 SULFUR,CARBON,SULFUR,
                 SULFUR,SULFUR,SULFUR,
-        })
+        }).register(em);
     }
 }
