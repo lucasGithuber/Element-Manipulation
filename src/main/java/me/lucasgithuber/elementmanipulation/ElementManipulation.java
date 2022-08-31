@@ -37,7 +37,7 @@ public final class ElementManipulation extends AbstractAddon implements Slimefun
         Materials.setup(this);
         Machines.setup(this);
         MiscItems.setup(this);
-        //Drugs.setup(this);
+        Drugs.setup(this);
         /*PortalCorners.setup(this);*/
         new Metrics(this, 13718);
     }
