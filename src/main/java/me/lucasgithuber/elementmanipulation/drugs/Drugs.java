@@ -28,15 +28,15 @@ public class Drugs {
     public static final SlimefunItemStack ALCOHOL = new SlimefunItemStack(
             "EM_ALCOHOL",
             Color.White,
-            new PotionEffect(PotionEffectType.NIGHT_VISION, 2, 0),
+            new PotionEffect(PotionEffectType.NIGHT_VISION 2, 0),
             ChatColor.of("#FFD78A") + "Alcohol",
             ChatColor.of("#FFD78A") + "Makes you drunk",
-            ChatColor.of("#FFD78A") + "Makes emotional pain go away"
+            ChatColor.of("#FFD78A") + "Makes emotional pain go away",
     );
-    public static final SlimefunItemStack ANESTHETIC = new SlimefunItemStack(
-            "EM_ANESTHETIC",
+    public static final SlimefunItemStack ANESTHESIC = new SlimefunItemStack(
+            "EM_ANESTHESIC",
             Material.END_ROD,
-            "&8anesthetic",
+            "&8anesthesic",
             "&8Makes you feel good"
 
     );
@@ -57,7 +57,7 @@ public class Drugs {
                 null,null,null,CARBON,null,null,
                 null,null,null,HYDROGEN,NITROGEN,HYDROGEN
         }).register(em);
-        new Alcohol(Categories.DRUGS_CHEAT, COCAINE, DrugsTable.TYPE, new ItemStack[]{
+        new Alcohol(Categories.DRUGS_CHEAT, ALCOHOL, DrugsTable.TYPE, new ItemStack[]{
                 new ItemStack(Material.GLASS_BOTTLE),HYDROGEN,HYDROGEN,null,null,null,
                 HYDROGEN,CARBON,CARBON,OXYGEN,HYDROGEN,null,
                 null,HYDROGEN,HYDROGEN,null,null,null,
@@ -65,7 +65,7 @@ public class Drugs {
                 HYDROGEN,CARBON,CARBON,OXYGEN,HYDROGEN,null,
                 null,HYDROGEN,HYDROGEN,null,null,null,
         }).register(em);
-        new Anesthetic(Categories.DRUGS_CHEAT, COCAINE, DrugsTable.TYPE, new ItemStack[]{
+        new Anesthetic(Categories.DRUGS_CHEAT, ANESTHESIC, DrugsTable.TYPE, new ItemStack[]{
                 ,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
                 HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,
                 HYDROGEN,CARBON,NITROGEN,NITROGEN,CARBON,HYDROGEN,

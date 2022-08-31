@@ -1,15 +1,14 @@
 package me.lucasgithuber.elementmanipulation.misc;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
-import me.lucasgithuber.elementmanipulation.elements.Elements;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
-import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+
+import static me.lucasgithuber.elementmanipulation.elements.Elements.*;
 
 public class MiscItems {
     public static final SlimefunItemStack CLEAR_GLASS_1 = new SlimefunItemStack(
@@ -34,13 +33,11 @@ public class MiscItems {
             "&fThis glass is so clear that it seems",
             "&fThere's nothing in your way"
     );
-    public static final SlimefunItemStack BISMUTH_BLOCK = new SlimefunItemStack(
-            "EM_BISMUTH_BLOCK",
-            Material.SEA_LANTERN,
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
-                    "<gradient:#FF00D0:#8C00F7>Bismuth block</gradient>")),
-            BukkitComponentSerializer.legacy().serialize(ElementManipulation.MM.deserialize(
-                    "<gradient:#FF00D0:#8C00F7>Glows</gradient>"))
+    public static final SlimefunItemStack SYRINGE = new SlimefunItemStack(
+            "EM_SYRINGE",
+            Material.END_ROD,
+            "&fSyringe",
+            "&fUsed to put anesthetics"
     );
     public static void setup(ElementManipulation em){
         new UnplaceableBlock(Categories.MISCELLANEOUS, CLEAR_GLASS_1, RecipeType.SMELTERY, new ItemStack[]{
@@ -58,10 +55,15 @@ public class MiscItems {
                 null, null, null,
                 null, null, null
         }).register(em);
-        new SlimefunItem(Categories.MISCELLANEOUS, BISMUTH_BLOCK, RecipeType.COMPRESSOR, new ItemStack[]{
-                Elements.BISMUTH,Elements.BISMUTH,Elements.BISMUTH,
-                Elements.BISMUTH,Elements.BISMUTH,Elements.BISMUTH,
-                Elements.BISMUTH,Elements.BISMUTH,Elements.BISMUTH
+        new UnplaceableBlock(Categories.MISCELLANEOUS, SYRINGE, RecipeType.SMELTERY, new ItemStack[]{
+                SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
+                SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
+                SlimefunItems.PLASTIC_SHEET, Materials.RUBBER_PISTOL, SlimefunItems.PLASTIC_SHEET
         }).register(em);
+        new SlimefunItem(Categories.MISCELLANEOUS, RUBBER_PISTON, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+                SULFUR,SULFUR,SULFUR,
+                SULFUR,CARBON,SULFUR,
+                SULFUR,SULFUR,SULFUR,
+        })
     }
 }
