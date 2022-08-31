@@ -9,6 +9,7 @@ import me.lucasgithuber.elementmanipulation.utils.Categories;
 import me.lucasgithuber.elementmanipulation.items.Materials;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 
 import static me.lucasgithuber.elementmanipulation.elements.Elements.*;
 
@@ -66,7 +67,7 @@ public class MiscItems {
         new UnplaceableBlock(Categories.MISCELLANEOUS, SYRINGE, RecipeType.SMELTERY, new ItemStack[]{
                 SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
                 SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
-                SlimefunItems.PLASTIC_SHEET, Materials.RUBBER_PISTON, SlimefunItems.PLASTIC_SHEET
+                SlimefunItems.PLASTIC_SHEET, RUBBER_PISTON, SlimefunItems.PLASTIC_SHEET
         }).register(em);
         new SlimefunItem(Categories.MISCELLANEOUS, RUBBER_PISTON, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 SULFUR,SULFUR,SULFUR,
