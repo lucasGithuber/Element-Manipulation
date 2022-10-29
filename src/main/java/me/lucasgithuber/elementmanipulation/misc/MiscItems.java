@@ -2,11 +2,14 @@ package me.lucasgithuber.elementmanipulation.misc;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
 import me.lucasgithuber.elementmanipulation.ElementManipulation;
 import me.lucasgithuber.elementmanipulation.utils.Categories;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import me.lucasgithuber.elementmanipulation.items.Materials;
 
 import static me.lucasgithuber.elementmanipulation.elements.Elements.*;
 
