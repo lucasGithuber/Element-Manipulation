@@ -41,9 +41,9 @@ public class MiscItems {
     );
     public static void setup(ElementManipulation em){
         new UnplaceableBlock(Categories.MISCELLANEOUS, CLEAR_GLASS_1, RecipeType.SMELTERY, new ItemStack[]{
-                new ItemStack(Material.GLASS_PANE), null, null,
-                null, null, null,
-                null, null, null
+                CARBON,CARBON,CARBON,
+                CARBON, new ItemStack(Material.GLASS_PANE), CARBON,
+                CARBON,CARBON,CARBON,
         }).register(em);
         new UnplaceableBlock(Categories.MISCELLANEOUS, CLEAR_GLASS_2, RecipeType.SMELTERY, new ItemStack[]{
                 CLEAR_GLASS_1, null, null,
