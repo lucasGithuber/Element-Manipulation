@@ -42,6 +42,12 @@ public class MiscItems {
             "&fSyringe",
             "&fUsed to put anesthetics"
     );
+    public static final SlimefunItemStack RUBBER_PISTOL = new SlimefunItemStack(
+            "EM_RUBBER_PISTOL",
+            Material.COAL,
+            "&fRubber pistol",
+            "&fSyringe part"
+    );
     public static void setup(ElementManipulation em){
         new UnplaceableBlock(Categories.MISCELLANEOUS, CLEAR_GLASS_1, RecipeType.SMELTERY, new ItemStack[]{
                 CARBON,CARBON,CARBON,
@@ -61,9 +67,9 @@ public class MiscItems {
         new UnplaceableBlock(Categories.MISCELLANEOUS, SYRINGE, RecipeType.SMELTERY, new ItemStack[]{
                 SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
                 SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
-                SlimefunItems.PLASTIC_SHEET, Materials.RUBBER_PISTOL, SlimefunItems.PLASTIC_SHEET
+                SlimefunItems.PLASTIC_SHEET, RUBBER_PISTOL, SlimefunItems.PLASTIC_SHEET
         }).register(em);
-        new SlimefunItem(Categories.MISCELLANEOUS, RUBBER_PISTON, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+        new SlimefunItem(Categories.MISCELLANEOUS, RUBBER_PISTOL, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 SULFUR,SULFUR,SULFUR,
                 SULFUR,CARBON,SULFUR,
                 SULFUR,SULFUR,SULFUR,
