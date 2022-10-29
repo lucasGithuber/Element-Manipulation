@@ -8,6 +8,8 @@ import me.lucasgithuber.elementmanipulation.utils.Categories;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+import static me.lucasgithuber.elementmanipulation.elements.Elements.*;
+
 public class MiscItems {
     public static final SlimefunItemStack CLEAR_GLASS_1 = new SlimefunItemStack(
             "EM_CLEAR_GLASS_1",
@@ -31,11 +33,17 @@ public class MiscItems {
             "&fThis glass is so clear that it seems",
             "&fThere's nothing in your way"
     );
+    public static final SlimefunItemStack SYRINGE = new SlimefunItemStack(
+            "EM_SYRINGE",
+            Material.END_ROD,
+            "&fSyringe",
+            "&fUsed to put anesthetics"
+    );
     public static void setup(ElementManipulation em){
         new UnplaceableBlock(Categories.MISCELLANEOUS, CLEAR_GLASS_1, RecipeType.SMELTERY, new ItemStack[]{
-                new ItemStack(Material.GLASS_PANE), null, null,
-                null, null, null,
-                null, null, null
+                CARBON,CARBON,CARBON,
+                CARBON, new ItemStack(Material.GLASS_PANE), CARBON,
+                CARBON,CARBON,CARBON,
         }).register(em);
         new UnplaceableBlock(Categories.MISCELLANEOUS, CLEAR_GLASS_2, RecipeType.SMELTERY, new ItemStack[]{
                 CLEAR_GLASS_1, null, null,
@@ -46,6 +54,16 @@ public class MiscItems {
                 CLEAR_GLASS_2, null, null,
                 null, null, null,
                 null, null, null
+        }).register(em);
+        new UnplaceableBlock(Categories.MISCELLANEOUS, SYRINGE, RecipeType.SMELTERY, new ItemStack[]{
+                SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
+                SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
+                SlimefunItems.PLASTIC_SHEET, Materials.RUBBER_PISTOL, SlimefunItems.PLASTIC_SHEET
+        }).register(em);
+        new SlimefunItem(Categories.MISCELLANEOUS, RUBBER_PISTON, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+                SULFUR,SULFUR,SULFUR,
+                SULFUR,CARBON,SULFUR,
+                SULFUR,SULFUR,SULFUR,
         }).register(em);
     }
 }
